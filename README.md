@@ -11,3 +11,7 @@ $ meteor npm install ionic-scripts
 $ meteor npm install angular-meteor
 $ meteor npm install angular-ecmascript
 $ meteor add mquandalle:bower
+$ meteor npm install moment
+$ meteor add fourseven:scss
+$ meteor npm install angular-moment
+$ meteor add check
