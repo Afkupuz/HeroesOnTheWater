@@ -1,0 +1,23 @@
+<div layout="column" layout-padding>
+  <md-input-container>
+    <label>
+      Event Name:
+    </label>
+    <input type="text" ng-model="eventAdd.event.name"/>
+  </md-input-container>
+  <md-input-container>
+    <label>
+      Description:
+    </label>
+    <input type="text" ng-model="eventAdd.event.description"/>
+  </md-input-container>
+  <div flex>
+    <md-checkbox ng-model="eventAdd.event.public" aria-label="Public Event?">
+      Public Event?
+    </md-checkbox>
+  </div>
+  <div flex>
+    <md-button ng-click="eventAdd.submit()" class="md-raised">Add Event!</md-button>
+  </div>
+  <event-upload files="eventAdd.event.images"></event-upload>
+</div>

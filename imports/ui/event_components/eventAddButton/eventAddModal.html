@@ -1,0 +1,16 @@
+<md-dialog aria-label="New event" ng-cloak>
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>New event</h2>
+      <span flex></span>
+      <md-button ng-click="eventAddModal.close()">
+        Close
+      </md-button>
+    </div>
+  </md-toolbar>
+  <md-dialog-content>
+    <div class="md-dialog-content">
+      <event-add done="eventAddModal.close()"></event-add>
+    </div>
+  </md-dialog-content>
+</md-dialog>

@@ -1,5 +1,6 @@
-import { Meteor } from 'meteor/meteor';
+import '../imports/startup/fixtures';
+import '../imports/api/events';
+import '../imports/api/users';
+import '../imports/api/images';
 
-Meteor.startup(() => {
-  // code to run on server at startup
-});
+import '../imports/api/parties';

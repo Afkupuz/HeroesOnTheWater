@@ -1,0 +1,12 @@
+<h4 class="md-headline">
+  Users to invite:
+</h4>
+
+<md-list>
+  <md-list-item ng-repeat="user in eventUninvited.users | uninvitedFilter:eventUninvited.event" ng-click="eventUninvited.invite(user)">
+    <p>{{ user | displayNameFilter }}</p>
+  </md-list-item>
+  <md-list-item ng-if="(eventUninvited.users | uninvitedFilter:eventUninvited.event).length <= 0">
+    Everyone are already invited.
+  </md-list-item>
+</md-list>

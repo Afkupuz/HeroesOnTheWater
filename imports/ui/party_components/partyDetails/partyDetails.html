@@ -1,0 +1,28 @@
+<div layout="column" layout-padding>
+  <div layout="column" layout-gt-sm="row"  layout-padding>
+    <form flex="50" layout="column">
+      <md-input-container>
+        <label>Party name</label>
+        <input ng-model="partyDetails.party.name" ng-disabled="!partyDetails.isLoggedIn">
+      </md-input-container>
+
+      <md-input-container>
+        <label>Description</label>
+        <input ng-model="partyDetails.party.description" ng-disabled="!partyDetails.isLoggedIn">
+      </md-input-container>
+
+      <div>
+        <md-checkbox ng-model="partyDetails.party.public" ng-disabled="!partyDetails.isLoggedIn" aria-label="Public Party?">
+          Public Party?
+        </md-checkbox>
+      </div>
+
+      <div>
+        <md-button ng-click="partyDetails.save()" class="md-primary md-raised">Save</md-button>
+      </div>
+    </form>
+    <party-map flex="50" location="partyDetails.party.location"></party-map>
+  </div>
+
+  <party-uninvited flex party="partyDetails.party" ng-show="partyDetails.canInvite()"></party-uninvited>
+</div>
