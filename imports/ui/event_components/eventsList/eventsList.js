@@ -10,7 +10,6 @@ import webTemplate from './web.html';
 import mobileTemplate from './mobile.html';
 import { Events } from '../../../api/events';
 import { name as EventsSort } from '../eventsSort/eventsSort';
-import { name as EventsMap } from '../eventsMap/eventsMap';
 import { name as EventAddButton } from '../eventAddButton/eventAddButton';
 import { name as EventRemove } from '../eventRemove/eventRemove';
 import { name as EventCreator } from '../eventCreator/eventCreator';
@@ -81,7 +80,6 @@ export default angular.module(name, [
   uiRouter,
   utilsPagination,
   EventsSort,
-  EventsMap,
   EventAddButton,
   EventRemove,
   EventCreator,

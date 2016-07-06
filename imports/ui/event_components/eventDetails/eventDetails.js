@@ -7,7 +7,6 @@ import { Meteor } from 'meteor/meteor';
 import template from './eventDetails.html';
 import { Events } from '../../../api/events';
 import { name as EventUninvited } from '../eventUninvited/eventUninvited';
-import { name as EventMap } from '../eventMap/eventMap';
 
 class EventDetails {
   constructor($stateParams, $scope, $reactive) {
@@ -70,7 +69,6 @@ export default angular.module(name, [
   angularMeteor,
   uiRouter,
   EventUninvited,
-  EventMap
 ]).component(name, {
   template,
   controllerAs: name,

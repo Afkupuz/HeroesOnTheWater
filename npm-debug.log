@@ -1,0 +1,563 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/nodejs',
+1 verbose cli   '/usr/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'angular-google-maps' ]
+2 info using npm@3.5.2
+3 info using node@v4.2.6
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly fetchPackageMetaData angular-google-maps@^2.3.2
+8 silly fetchNamedPackageData angular-google-maps
+9 silly mapToRegistry name angular-google-maps
+10 silly mapToRegistry using default registry
+11 silly mapToRegistry registry https://registry.npmjs.org/
+12 silly mapToRegistry uri https://registry.npmjs.org/angular-google-maps
+13 verbose request uri https://registry.npmjs.org/angular-google-maps
+14 verbose request no auth needed
+15 info attempt registry request try #1 at 4:36:56 PM
+16 verbose request id 410970c13077bde7
+17 verbose etag "DB5UPKJHY9WTNXLVCV3CNWRHQ"
+18 http request GET https://registry.npmjs.org/angular-google-maps
+19 http 304 https://registry.npmjs.org/angular-google-maps
+20 verbose headers { date: 'Tue, 05 Jul 2016 21:36:53 GMT',
+20 verbose headers   via: '1.1 varnish',
+20 verbose headers   'cache-control': 'max-age=300',
+20 verbose headers   etag: '"DB5UPKJHY9WTNXLVCV3CNWRHQ"',
+20 verbose headers   age: '0',
+20 verbose headers   connection: 'close',
+20 verbose headers   'x-served-by': 'cache-ord1721-ORD',
+20 verbose headers   'x-cache': 'HIT',
+20 verbose headers   'x-cache-hits': '1',
+20 verbose headers   'x-timer': 'S1467754613.904719,VS0,VE87',
+20 verbose headers   vary: 'Accept-Encoding' }
+21 silly get cb [ 304,
+21 silly get   { date: 'Tue, 05 Jul 2016 21:36:53 GMT',
+21 silly get     via: '1.1 varnish',
+21 silly get     'cache-control': 'max-age=300',
+21 silly get     etag: '"DB5UPKJHY9WTNXLVCV3CNWRHQ"',
+21 silly get     age: '0',
+21 silly get     connection: 'close',
+21 silly get     'x-served-by': 'cache-ord1721-ORD',
+21 silly get     'x-cache': 'HIT',
+21 silly get     'x-cache-hits': '1',
+21 silly get     'x-timer': 'S1467754613.904719,VS0,VE87',
+21 silly get     vary: 'Accept-Encoding' } ]
+22 verbose etag https://registry.npmjs.org/angular-google-maps from cache
+23 verbose get saving angular-google-maps to /home/nicolas/.npm/registry.npmjs.org/angular-google-maps/.cache.json
+24 silly install normalizeTree
+25 silly loadCurrentTree Finishing
+26 silly loadIdealTree Starting
+27 silly install loadIdealTree
+28 silly cloneCurrentTree Starting
+29 silly install cloneCurrentTreeToIdealTree
+30 silly cloneCurrentTree Finishing
+31 silly loadShrinkwrap Starting
+32 silly install loadShrinkwrap
+33 silly loadShrinkwrap Finishing
+34 silly loadAllDepsIntoIdealTree Starting
+35 silly install loadAllDepsIntoIdealTree
+36 silly resolveWithNewModule angular-google-maps@2.3.3 checking installable status
+37 silly cache add args [ 'angular-google-maps@^2.3.2', null ]
+38 verbose cache add spec angular-google-maps@^2.3.2
+39 silly cache add parsed spec Result {
+39 silly cache add   raw: 'angular-google-maps@^2.3.2',
+39 silly cache add   scope: null,
+39 silly cache add   name: 'angular-google-maps',
+39 silly cache add   rawSpec: '^2.3.2',
+39 silly cache add   spec: '>=2.3.2 <3.0.0',
+39 silly cache add   type: 'range' }
+40 silly addNamed angular-google-maps@>=2.3.2 <3.0.0
+41 verbose addNamed ">=2.3.2 <3.0.0" is a valid semver range for angular-google-maps
+42 silly addNameRange { name: 'angular-google-maps',
+42 silly addNameRange   range: '>=2.3.2 <3.0.0',
+42 silly addNameRange   hasData: false }
+43 silly mapToRegistry name angular-google-maps
+44 silly mapToRegistry using default registry
+45 silly mapToRegistry registry https://registry.npmjs.org/
+46 silly mapToRegistry uri https://registry.npmjs.org/angular-google-maps
+47 verbose addNameRange registry:https://registry.npmjs.org/angular-google-maps not in flight; fetching
+48 verbose get https://registry.npmjs.org/angular-google-maps not expired, no request
+49 silly addNameRange number 2 { name: 'angular-google-maps',
+49 silly addNameRange   range: '>=2.3.2 <3.0.0',
+49 silly addNameRange   hasData: true }
+50 silly addNameRange versions [ 'angular-google-maps',
+50 silly addNameRange   [ '2.0.12',
+50 silly addNameRange     '2.0.13',
+50 silly addNameRange     '2.0.14',
+50 silly addNameRange     '2.0.16',
+50 silly addNameRange     '2.0.17',
+50 silly addNameRange     '2.0.18',
+50 silly addNameRange     '2.0.19',
+50 silly addNameRange     '2.0.20',
+50 silly addNameRange     '2.1.0',
+50 silly addNameRange     '2.1.1',
+50 silly addNameRange     '2.1.3',
+50 silly addNameRange     '2.1.4',
+50 silly addNameRange     '2.1.5',
+50 silly addNameRange     '2.1.6',
+50 silly addNameRange     '2.2.0',
+50 silly addNameRange     '2.2.1',
+50 silly addNameRange     '2.3.0',
+50 silly addNameRange     '2.3.1',
+50 silly addNameRange     '2.3.2',
+50 silly addNameRange     '2.3.3' ] ]
+51 silly addNamed angular-google-maps@2.3.3
+52 verbose addNamed "2.3.3" is a plain semver version for angular-google-maps
+53 silly cache afterAdd angular-google-maps@2.3.3
+54 verbose afterAdd /home/nicolas/.npm/angular-google-maps/2.3.3/package/package.json not in flight; writing
+55 verbose afterAdd /home/nicolas/.npm/angular-google-maps/2.3.3/package/package.json written
+56 silly fetchNamedPackageData google-maps-utility-library-v3-infobox
+57 silly mapToRegistry name google-maps-utility-library-v3-infobox
+58 silly mapToRegistry using default registry
+59 silly mapToRegistry registry https://registry.npmjs.org/
+60 silly mapToRegistry uri https://registry.npmjs.org/google-maps-utility-library-v3-infobox
+61 silly fetchNamedPackageData google-maps-utility-library-v3-keydragzoom
+62 silly mapToRegistry name google-maps-utility-library-v3-keydragzoom
+63 silly mapToRegistry using default registry
+64 silly mapToRegistry registry https://registry.npmjs.org/
+65 silly mapToRegistry uri https://registry.npmjs.org/google-maps-utility-library-v3-keydragzoom
+66 silly fetchNamedPackageData lodash
+67 silly mapToRegistry name lodash
+68 silly mapToRegistry using default registry
+69 silly mapToRegistry registry https://registry.npmjs.org/
+70 silly mapToRegistry uri https://registry.npmjs.org/lodash
+71 silly fetchNamedPackageData markerclustererplus
+72 silly mapToRegistry name markerclustererplus
+73 silly mapToRegistry using default registry
+74 silly mapToRegistry registry https://registry.npmjs.org/
+75 silly mapToRegistry uri https://registry.npmjs.org/markerclustererplus
+76 silly fetchOtherPackageData google-maps-utility-library-v3-markerwithlabel@git://github.com/nmccready/google-maps-utility-library-v3-markerwithlabel.git
+77 silly cache add args [ 'google-maps-utility-library-v3-markerwithlabel@git://github.com/nmccready/google-maps-utility-library-v3-markerwithlabel.git',
+77 silly cache add   null ]
+78 verbose cache add spec google-maps-utility-library-v3-markerwithlabel@git://github.com/nmccready/google-maps-utility-library-v3-markerwithlabel.git
+79 silly fetchOtherPackageData js-rich-marker@git://github.com/MikaFima/js-rich-marker.git#0383f4bbdad4ddf154772fedbdd27e464600e943
+80 silly cache add args [ 'js-rich-marker@git://github.com/MikaFima/js-rich-marker.git#0383f4bbdad4ddf154772fedbdd27e464600e943',
+80 silly cache add   null ]
+81 verbose cache add spec js-rich-marker@git://github.com/MikaFima/js-rich-marker.git#0383f4bbdad4ddf154772fedbdd27e464600e943
+82 silly cache add parsed spec Result {
+82 silly cache add   raw: 'google-maps-utility-library-v3-markerwithlabel@git://github.com/nmccready/google-maps-utility-library-v3-markerwithlabel.git',
+82 silly cache add   scope: null,
+82 silly cache add   name: 'google-maps-utility-library-v3-markerwithlabel',
+82 silly cache add   rawSpec: 'git://github.com/nmccready/google-maps-utility-library-v3-markerwithlabel.git',
+82 silly cache add   spec: 'git://github.com/nmccready/google-maps-utility-library-v3-markerwithlabel.git',
+82 silly cache add   type: 'hosted',
+82 silly cache add   hosted:
+82 silly cache add    { type: 'github',
+82 silly cache add      ssh: 'git@github.com:nmccready/google-maps-utility-library-v3-markerwithlabel.git',
+82 silly cache add      sshUrl: 'git+ssh://git@github.com/nmccready/google-maps-utility-library-v3-markerwithlabel.git',
+82 silly cache add      httpsUrl: 'git+https://github.com/nmccready/google-maps-utility-library-v3-markerwithlabel.git',
+82 silly cache add      gitUrl: 'git://github.com/nmccready/google-maps-utility-library-v3-markerwithlabel.git',
+82 silly cache add      shortcut: 'github:nmccready/google-maps-utility-library-v3-markerwithlabel',
+82 silly cache add      directUrl: 'https://raw.githubusercontent.com/nmccready/google-maps-utility-library-v3-markerwithlabel/master/package.json' } }
+83 verbose addRemoteGit caching git://github.com/nmccready/google-maps-utility-library-v3-markerwithlabel.git
+84 verbose addRemoteGit git://github.com/nmccready/google-maps-utility-library-v3-markerwithlabel.git is a repository hosted by github
+85 silly tryClone cloning git://github.com/nmccready/google-maps-utility-library-v3-markerwithlabel.git via git://github.com/nmccready/google-maps-utility-library-v3-markerwithlabel.git
+86 verbose tryClone git-github-com-nmccready-google-maps-utility-library-v3-markerwithlabel-git-535ad55b not in flight; caching
+87 silly cache add parsed spec Result {
+87 silly cache add   raw: 'js-rich-marker@git://github.com/MikaFima/js-rich-marker.git#0383f4bbdad4ddf154772fedbdd27e464600e943',
+87 silly cache add   scope: null,
+87 silly cache add   name: 'js-rich-marker',
+87 silly cache add   rawSpec: 'git://github.com/MikaFima/js-rich-marker.git#0383f4bbdad4ddf154772fedbdd27e464600e943',
+87 silly cache add   spec: 'git://github.com/MikaFima/js-rich-marker.git#0383f4bbdad4ddf154772fedbdd27e464600e943',
+87 silly cache add   type: 'hosted',
+87 silly cache add   hosted:
+87 silly cache add    { type: 'github',
+87 silly cache add      ssh: 'git@github.com:MikaFima/js-rich-marker.git#0383f4bbdad4ddf154772fedbdd27e464600e943',
+87 silly cache add      sshUrl: 'git+ssh://git@github.com/MikaFima/js-rich-marker.git#0383f4bbdad4ddf154772fedbdd27e464600e943',
+87 silly cache add      httpsUrl: 'git+https://github.com/MikaFima/js-rich-marker.git#0383f4bbdad4ddf154772fedbdd27e464600e943',
+87 silly cache add      gitUrl: 'git://github.com/MikaFima/js-rich-marker.git#0383f4bbdad4ddf154772fedbdd27e464600e943',
+87 silly cache add      shortcut: 'github:MikaFima/js-rich-marker#0383f4bbdad4ddf154772fedbdd27e464600e943',
+87 silly cache add      directUrl: 'https://raw.githubusercontent.com/MikaFima/js-rich-marker/0383f4bbdad4ddf154772fedbdd27e464600e943/package.json' } }
+88 verbose addRemoteGit caching git://github.com/MikaFima/js-rich-marker.git#0383f4bbdad4ddf154772fedbdd27e464600e943
+89 verbose addRemoteGit git://github.com/MikaFima/js-rich-marker.git#0383f4bbdad4ddf154772fedbdd27e464600e943 is a repository hosted by github
+90 silly tryClone cloning git://github.com/MikaFima/js-rich-marker.git#0383f4bbdad4ddf154772fedbdd27e464600e943 via git://github.com/MikaFima/js-rich-marker.git#0383f4bbdad4ddf154772fedbdd27e464600e943
+91 verbose tryClone git-github-com-MikaFima-js-rich-marker-git-0383f4bbdad4ddf154772fedbdd27e464600e943-e7abb722 not in flight; caching
+92 verbose request uri https://registry.npmjs.org/google-maps-utility-library-v3-infobox
+93 verbose request no auth needed
+94 info attempt registry request try #1 at 4:36:57 PM
+95 verbose etag "6ZCXYKNZ960ENQKOOMYKS00SC"
+96 http request GET https://registry.npmjs.org/google-maps-utility-library-v3-infobox
+97 verbose request uri https://registry.npmjs.org/google-maps-utility-library-v3-keydragzoom
+98 verbose request no auth needed
+99 info attempt registry request try #1 at 4:36:57 PM
+100 verbose etag "71E1IW5FJZN0PN10KWII4UW57"
+101 http request GET https://registry.npmjs.org/google-maps-utility-library-v3-keydragzoom
+102 verbose request uri https://registry.npmjs.org/markerclustererplus
+103 verbose request no auth needed
+104 info attempt registry request try #1 at 4:36:57 PM
+105 verbose etag "DBCNME7X11UTJJ8ZOQAC86VWT"
+106 http request GET https://registry.npmjs.org/markerclustererplus
+107 verbose request uri https://registry.npmjs.org/lodash
+108 verbose request no auth needed
+109 info attempt registry request try #1 at 4:36:57 PM
+110 verbose etag "5UX0C0V4X1XDTU3HGBAHP7QP6"
+111 http request GET https://registry.npmjs.org/lodash
+112 info git [ 'clone',
+112 info git   '--template=/home/nicolas/.npm/_git-remotes/_templates',
+112 info git   '--mirror',
+112 info git   'git://github.com/nmccready/google-maps-utility-library-v3-markerwithlabel.git',
+112 info git   '/home/nicolas/.npm/_git-remotes/git-github-com-nmccready-google-maps-utility-library-v3-markerwithlabel-git-535ad55b' ]
+113 info git [ 'clone',
+113 info git   '--template=/home/nicolas/.npm/_git-remotes/_templates',
+113 info git   '--mirror',
+113 info git   'git://github.com/MikaFima/js-rich-marker.git',
+113 info git   '/home/nicolas/.npm/_git-remotes/git-github-com-MikaFima-js-rich-marker-git-0383f4bbdad4ddf154772fedbdd27e464600e943-e7abb722' ]
+114 http 304 https://registry.npmjs.org/lodash
+115 verbose headers { date: 'Tue, 05 Jul 2016 21:36:54 GMT',
+115 verbose headers   via: '1.1 varnish',
+115 verbose headers   'cache-control': 'max-age=300',
+115 verbose headers   etag: '"5UX0C0V4X1XDTU3HGBAHP7QP6"',
+115 verbose headers   age: '294',
+115 verbose headers   connection: 'close',
+115 verbose headers   'x-served-by': 'cache-ord1739-ORD',
+115 verbose headers   'x-cache': 'HIT',
+115 verbose headers   'x-cache-hits': '16',
+115 verbose headers   'x-timer': 'S1467754614.523741,VS0,VE0',
+115 verbose headers   vary: 'Accept-Encoding' }
+116 silly get cb [ 304,
+116 silly get   { date: 'Tue, 05 Jul 2016 21:36:54 GMT',
+116 silly get     via: '1.1 varnish',
+116 silly get     'cache-control': 'max-age=300',
+116 silly get     etag: '"5UX0C0V4X1XDTU3HGBAHP7QP6"',
+116 silly get     age: '294',
+116 silly get     connection: 'close',
+116 silly get     'x-served-by': 'cache-ord1739-ORD',
+116 silly get     'x-cache': 'HIT',
+116 silly get     'x-cache-hits': '16',
+116 silly get     'x-timer': 'S1467754614.523741,VS0,VE0',
+116 silly get     vary: 'Accept-Encoding' } ]
+117 verbose etag https://registry.npmjs.org/lodash from cache
+118 verbose get saving lodash to /home/nicolas/.npm/registry.npmjs.org/lodash/.cache.json
+119 silly resolveWithNewModule lodash@4.13.1 checking installable status
+120 silly cache add args [ 'lodash@3.X - 4.X', null ]
+121 verbose cache add spec lodash@3.X - 4.X
+122 silly cache add parsed spec Result {
+122 silly cache add   raw: 'lodash@3.X - 4.X',
+122 silly cache add   scope: null,
+122 silly cache add   name: 'lodash',
+122 silly cache add   rawSpec: '3.X - 4.X',
+122 silly cache add   spec: '>=3.0.0 <5.0.0',
+122 silly cache add   type: 'range' }
+123 silly addNamed lodash@>=3.0.0 <5.0.0
+124 verbose addNamed ">=3.0.0 <5.0.0" is a valid semver range for lodash
+125 silly addNameRange { name: 'lodash', range: '>=3.0.0 <5.0.0', hasData: false }
+126 silly mapToRegistry name lodash
+127 silly mapToRegistry using default registry
+128 silly mapToRegistry registry https://registry.npmjs.org/
+129 silly mapToRegistry uri https://registry.npmjs.org/lodash
+130 verbose addNameRange registry:https://registry.npmjs.org/lodash not in flight; fetching
+131 verbose get https://registry.npmjs.org/lodash not expired, no request
+132 silly addNameRange number 2 { name: 'lodash', range: '>=3.0.0 <5.0.0', hasData: true }
+133 silly addNameRange versions [ 'lodash',
+133 silly addNameRange   [ '0.1.0',
+133 silly addNameRange     '0.2.0',
+133 silly addNameRange     '0.2.1',
+133 silly addNameRange     '0.2.2',
+133 silly addNameRange     '0.3.0',
+133 silly addNameRange     '0.3.1',
+133 silly addNameRange     '0.3.2',
+133 silly addNameRange     '0.4.0',
+133 silly addNameRange     '0.4.1',
+133 silly addNameRange     '0.4.2',
+133 silly addNameRange     '0.5.0-rc.1',
+133 silly addNameRange     '0.5.0',
+133 silly addNameRange     '0.5.1',
+133 silly addNameRange     '0.5.2',
+133 silly addNameRange     '0.6.0',
+133 silly addNameRange     '0.6.1',
+133 silly addNameRange     '0.7.0',
+133 silly addNameRange     '0.8.0',
+133 silly addNameRange     '0.8.1',
+133 silly addNameRange     '0.8.2',
+133 silly addNameRange     '0.9.0',
+133 silly addNameRange     '0.9.1',
+133 silly addNameRange     '0.9.2',
+133 silly addNameRange     '0.10.0',
+133 silly addNameRange     '1.0.0-rc.1',
+133 silly addNameRange     '1.0.0-rc.2',
+133 silly addNameRange     '1.0.0-rc.3',
+133 silly addNameRange     '1.0.0',
+133 silly addNameRange     '1.0.1',
+133 silly addNameRange     '1.1.0',
+133 silly addNameRange     '1.1.1',
+133 silly addNameRange     '1.2.0',
+133 silly addNameRange     '1.2.1',
+133 silly addNameRange     '1.3.0',
+133 silly addNameRange     '1.3.1',
+133 silly addNameRange     '2.0.0',
+133 silly addNameRange     '2.1.0',
+133 silly addNameRange     '2.2.0',
+133 silly addNameRange     '2.2.1',
+133 silly addNameRange     '2.3.0',
+133 silly addNameRange     '2.4.0',
+133 silly addNameRange     '2.4.1',
+133 silly addNameRange     '3.0.0',
+133 silly addNameRange     '3.0.1',
+133 silly addNameRange     '3.1.0',
+133 silly addNameRange     '3.2.0',
+133 silly addNameRange     '3.3.0',
+133 silly addNameRange     '3.3.1',
+133 silly addNameRange     '3.4.0',
+133 silly addNameRange     '3.5.0',
+133 silly addNameRange     '3.6.0',
+133 silly addNameRange     '1.0.2',
+133 silly addNameRange     '3.7.0',
+133 silly addNameRange     '2.4.2',
+133 silly addNameRange     '3.8.0',
+133 silly addNameRange     '3.9.0',
+133 silly addNameRange     '3.9.1',
+133 silly addNameRange     '3.9.2',
+133 silly addNameRange     '3.9.3',
+133 silly addNameRange     '3.10.0',
+133 silly addNameRange     '3.10.1',
+133 silly addNameRange     '4.0.0',
+133 silly addNameRange     '4.0.1',
+133 silly addNameRange     '4.1.0',
+133 silly addNameRange     '4.2.0',
+133 silly addNameRange     '4.2.1',
+133 silly addNameRange     '4.3.0',
+133 silly addNameRange     '4.4.0',
+133 silly addNameRange     '4.5.0',
+133 silly addNameRange     '4.5.1',
+133 silly addNameRange     '4.6.0',
+133 silly addNameRange     '4.6.1',
+133 silly addNameRange     '4.7.0',
+133 silly addNameRange     '4.8.0',
+133 silly addNameRange     '4.8.1',
+133 silly addNameRange     '4.8.2',
+133 silly addNameRange     '4.9.0',
+133 silly addNameRange     '4.10.0',
+133 silly addNameRange     '4.11.0',
+133 silly addNameRange     '4.11.1',
+133 silly addNameRange     '4.11.2',
+133 silly addNameRange     '4.12.0',
+133 silly addNameRange     '4.13.0',
+133 silly addNameRange     '4.13.1' ] ]
+134 silly addNamed lodash@4.13.1
+135 verbose addNamed "4.13.1" is a plain semver version for lodash
+136 silly cache afterAdd lodash@4.13.1
+137 verbose afterAdd /home/nicolas/.npm/lodash/4.13.1/package/package.json not in flight; writing
+138 verbose afterAdd /home/nicolas/.npm/lodash/4.13.1/package/package.json written
+139 http 304 https://registry.npmjs.org/google-maps-utility-library-v3-infobox
+140 verbose headers { date: 'Tue, 05 Jul 2016 21:36:54 GMT',
+140 verbose headers   via: '1.1 varnish',
+140 verbose headers   'cache-control': 'max-age=300',
+140 verbose headers   etag: '"6ZCXYKNZ960ENQKOOMYKS00SC"',
+140 verbose headers   age: '0',
+140 verbose headers   connection: 'close',
+140 verbose headers   'x-served-by': 'cache-ord1731-ORD',
+140 verbose headers   'x-cache': 'HIT',
+140 verbose headers   'x-cache-hits': '1',
+140 verbose headers   'x-timer': 'S1467754614.524979,VS0,VE87',
+140 verbose headers   vary: 'Accept-Encoding' }
+141 silly get cb [ 304,
+141 silly get   { date: 'Tue, 05 Jul 2016 21:36:54 GMT',
+141 silly get     via: '1.1 varnish',
+141 silly get     'cache-control': 'max-age=300',
+141 silly get     etag: '"6ZCXYKNZ960ENQKOOMYKS00SC"',
+141 silly get     age: '0',
+141 silly get     connection: 'close',
+141 silly get     'x-served-by': 'cache-ord1731-ORD',
+141 silly get     'x-cache': 'HIT',
+141 silly get     'x-cache-hits': '1',
+141 silly get     'x-timer': 'S1467754614.524979,VS0,VE87',
+141 silly get     vary: 'Accept-Encoding' } ]
+142 verbose etag https://registry.npmjs.org/google-maps-utility-library-v3-infobox from cache
+143 verbose get saving google-maps-utility-library-v3-infobox to /home/nicolas/.npm/registry.npmjs.org/google-maps-utility-library-v3-infobox/.cache.json
+144 silly resolveWithNewModule google-maps-utility-library-v3-infobox@1.1.14 checking installable status
+145 silly cache add args [ 'google-maps-utility-library-v3-infobox@1.1.14', null ]
+146 verbose cache add spec google-maps-utility-library-v3-infobox@1.1.14
+147 silly cache add parsed spec Result {
+147 silly cache add   raw: 'google-maps-utility-library-v3-infobox@1.1.14',
+147 silly cache add   scope: null,
+147 silly cache add   name: 'google-maps-utility-library-v3-infobox',
+147 silly cache add   rawSpec: '1.1.14',
+147 silly cache add   spec: '1.1.14',
+147 silly cache add   type: 'version' }
+148 silly addNamed google-maps-utility-library-v3-infobox@1.1.14
+149 verbose addNamed "1.1.14" is a plain semver version for google-maps-utility-library-v3-infobox
+150 silly mapToRegistry name google-maps-utility-library-v3-infobox
+151 silly mapToRegistry using default registry
+152 silly mapToRegistry registry https://registry.npmjs.org/
+153 silly mapToRegistry uri https://registry.npmjs.org/google-maps-utility-library-v3-infobox
+154 verbose addNameVersion registry:https://registry.npmjs.org/google-maps-utility-library-v3-infobox not in flight; fetching
+155 verbose get https://registry.npmjs.org/google-maps-utility-library-v3-infobox not expired, no request
+156 silly cache afterAdd google-maps-utility-library-v3-infobox@1.1.14
+157 verbose afterAdd /home/nicolas/.npm/google-maps-utility-library-v3-infobox/1.1.14/package/package.json not in flight; writing
+158 verbose afterAdd /home/nicolas/.npm/google-maps-utility-library-v3-infobox/1.1.14/package/package.json written
+159 http 304 https://registry.npmjs.org/markerclustererplus
+160 verbose headers { date: 'Tue, 05 Jul 2016 21:36:54 GMT',
+160 verbose headers   via: '1.1 varnish',
+160 verbose headers   'cache-control': 'max-age=300',
+160 verbose headers   etag: '"DBCNME7X11UTJJ8ZOQAC86VWT"',
+160 verbose headers   age: '0',
+160 verbose headers   connection: 'close',
+160 verbose headers   'x-served-by': 'cache-ord1734-ORD',
+160 verbose headers   'x-cache': 'HIT',
+160 verbose headers   'x-cache-hits': '1',
+160 verbose headers   'x-timer': 'S1467754614.656197,VS0,VE32',
+160 verbose headers   vary: 'Accept-Encoding' }
+161 silly get cb [ 304,
+161 silly get   { date: 'Tue, 05 Jul 2016 21:36:54 GMT',
+161 silly get     via: '1.1 varnish',
+161 silly get     'cache-control': 'max-age=300',
+161 silly get     etag: '"DBCNME7X11UTJJ8ZOQAC86VWT"',
+161 silly get     age: '0',
+161 silly get     connection: 'close',
+161 silly get     'x-served-by': 'cache-ord1734-ORD',
+161 silly get     'x-cache': 'HIT',
+161 silly get     'x-cache-hits': '1',
+161 silly get     'x-timer': 'S1467754614.656197,VS0,VE32',
+161 silly get     vary: 'Accept-Encoding' } ]
+162 verbose etag https://registry.npmjs.org/markerclustererplus from cache
+163 verbose get saving markerclustererplus to /home/nicolas/.npm/registry.npmjs.org/markerclustererplus/.cache.json
+164 silly resolveWithNewModule markerclustererplus@2.1.4 checking installable status
+165 silly cache add args [ 'markerclustererplus@2.1.4', null ]
+166 verbose cache add spec markerclustererplus@2.1.4
+167 silly cache add parsed spec Result {
+167 silly cache add   raw: 'markerclustererplus@2.1.4',
+167 silly cache add   scope: null,
+167 silly cache add   name: 'markerclustererplus',
+167 silly cache add   rawSpec: '2.1.4',
+167 silly cache add   spec: '2.1.4',
+167 silly cache add   type: 'version' }
+168 silly addNamed markerclustererplus@2.1.4
+169 verbose addNamed "2.1.4" is a plain semver version for markerclustererplus
+170 silly mapToRegistry name markerclustererplus
+171 silly mapToRegistry using default registry
+172 silly mapToRegistry registry https://registry.npmjs.org/
+173 silly mapToRegistry uri https://registry.npmjs.org/markerclustererplus
+174 verbose addNameVersion registry:https://registry.npmjs.org/markerclustererplus not in flight; fetching
+175 verbose get https://registry.npmjs.org/markerclustererplus not expired, no request
+176 silly cache afterAdd markerclustererplus@2.1.4
+177 verbose afterAdd /home/nicolas/.npm/markerclustererplus/2.1.4/package/package.json not in flight; writing
+178 verbose afterAdd /home/nicolas/.npm/markerclustererplus/2.1.4/package/package.json written
+179 http 304 https://registry.npmjs.org/google-maps-utility-library-v3-keydragzoom
+180 verbose headers { date: 'Tue, 05 Jul 2016 21:36:54 GMT',
+180 verbose headers   via: '1.1 varnish',
+180 verbose headers   'cache-control': 'max-age=300',
+180 verbose headers   etag: '"71E1IW5FJZN0PN10KWII4UW57"',
+180 verbose headers   age: '0',
+180 verbose headers   connection: 'close',
+180 verbose headers   'x-served-by': 'cache-ord1739-ORD',
+180 verbose headers   'x-cache': 'HIT',
+180 verbose headers   'x-cache-hits': '1',
+180 verbose headers   'x-timer': 'S1467754614.655579,VS0,VE86',
+180 verbose headers   vary: 'Accept-Encoding' }
+181 silly get cb [ 304,
+181 silly get   { date: 'Tue, 05 Jul 2016 21:36:54 GMT',
+181 silly get     via: '1.1 varnish',
+181 silly get     'cache-control': 'max-age=300',
+181 silly get     etag: '"71E1IW5FJZN0PN10KWII4UW57"',
+181 silly get     age: '0',
+181 silly get     connection: 'close',
+181 silly get     'x-served-by': 'cache-ord1739-ORD',
+181 silly get     'x-cache': 'HIT',
+181 silly get     'x-cache-hits': '1',
+181 silly get     'x-timer': 'S1467754614.655579,VS0,VE86',
+181 silly get     vary: 'Accept-Encoding' } ]
+182 verbose etag https://registry.npmjs.org/google-maps-utility-library-v3-keydragzoom from cache
+183 verbose get saving google-maps-utility-library-v3-keydragzoom to /home/nicolas/.npm/registry.npmjs.org/google-maps-utility-library-v3-keydragzoom/.cache.json
+184 silly resolveWithNewModule google-maps-utility-library-v3-keydragzoom@2.0.9 checking installable status
+185 silly cache add args [ 'google-maps-utility-library-v3-keydragzoom@2.0.9', null ]
+186 verbose cache add spec google-maps-utility-library-v3-keydragzoom@2.0.9
+187 silly cache add parsed spec Result {
+187 silly cache add   raw: 'google-maps-utility-library-v3-keydragzoom@2.0.9',
+187 silly cache add   scope: null,
+187 silly cache add   name: 'google-maps-utility-library-v3-keydragzoom',
+187 silly cache add   rawSpec: '2.0.9',
+187 silly cache add   spec: '2.0.9',
+187 silly cache add   type: 'version' }
+188 silly addNamed google-maps-utility-library-v3-keydragzoom@2.0.9
+189 verbose addNamed "2.0.9" is a plain semver version for google-maps-utility-library-v3-keydragzoom
+190 silly mapToRegistry name google-maps-utility-library-v3-keydragzoom
+191 silly mapToRegistry using default registry
+192 silly mapToRegistry registry https://registry.npmjs.org/
+193 silly mapToRegistry uri https://registry.npmjs.org/google-maps-utility-library-v3-keydragzoom
+194 verbose addNameVersion registry:https://registry.npmjs.org/google-maps-utility-library-v3-keydragzoom not in flight; fetching
+195 verbose get https://registry.npmjs.org/google-maps-utility-library-v3-keydragzoom not expired, no request
+196 silly cache afterAdd google-maps-utility-library-v3-keydragzoom@2.0.9
+197 verbose afterAdd /home/nicolas/.npm/google-maps-utility-library-v3-keydragzoom/2.0.9/package/package.json not in flight; writing
+198 verbose afterAdd /home/nicolas/.npm/google-maps-utility-library-v3-keydragzoom/2.0.9/package/package.json written
+199 error git clone --template=/home/nicolas/.npm/_git-remotes/_templates --mirror git://github.com/MikaFima/js-rich-marker.git /home/nicolas/.npm/_git-remotes/git-github-com-MikaFima-js-rich-marker-git-0383f4bbdad4ddf154772fedbdd27e464600e943-e7abb722: Cloning into bare repository '/home/nicolas/.npm/_git-remotes/git-github-com-MikaFima-js-rich-marker-git-0383f4bbdad4ddf154772fedbdd27e464600e943-e7abb722'...
+199 error git clone --template=/home/nicolas/.npm/_git-remotes/_templates --mirror git://github.com/MikaFima/js-rich-marker.git /home/nicolas/.npm/_git-remotes/git-github-com-MikaFima-js-rich-marker-git-0383f4bbdad4ddf154772fedbdd27e464600e943-e7abb722: fatal: unable to connect to github.com:
+199 error git clone --template=/home/nicolas/.npm/_git-remotes/_templates --mirror git://github.com/MikaFima/js-rich-marker.git /home/nicolas/.npm/_git-remotes/git-github-com-MikaFima-js-rich-marker-git-0383f4bbdad4ddf154772fedbdd27e464600e943-e7abb722: github.com[0: 192.30.253.112]: errno=Connection refused
+200 silly fetchPackageMetaData Error: Command failed: git clone --template=/home/nicolas/.npm/_git-remotes/_templates --mirror git://github.com/MikaFima/js-rich-marker.git /home/nicolas/.npm/_git-remotes/git-github-com-MikaFima-js-rich-marker-git-0383f4bbdad4ddf154772fedbdd27e464600e943-e7abb722
+200 silly fetchPackageMetaData Cloning into bare repository '/home/nicolas/.npm/_git-remotes/git-github-com-MikaFima-js-rich-marker-git-0383f4bbdad4ddf154772fedbdd27e464600e943-e7abb722'...
+200 silly fetchPackageMetaData fatal: unable to connect to github.com:
+200 silly fetchPackageMetaData github.com[0: 192.30.253.112]: errno=Connection refused
+200 silly fetchPackageMetaData
+200 silly fetchPackageMetaData
+200 silly fetchPackageMetaData     at ChildProcess.exithandler (child_process.js:213:12)
+200 silly fetchPackageMetaData     at emitTwo (events.js:87:13)
+200 silly fetchPackageMetaData     at ChildProcess.emit (events.js:172:7)
+200 silly fetchPackageMetaData     at maybeClose (internal/child_process.js:821:16)
+200 silly fetchPackageMetaData     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
+200 silly fetchPackageMetaData  error for js-rich-marker@git://github.com/MikaFima/js-rich-marker.git#0383f4bbdad4ddf154772fedbdd27e464600e943 { [Error: Command failed: git clone --template=/home/nicolas/.npm/_git-remotes/_templates --mirror git://github.com/MikaFima/js-rich-marker.git /home/nicolas/.npm/_git-remotes/git-github-com-MikaFima-js-rich-marker-git-0383f4bbdad4ddf154772fedbdd27e464600e943-e7abb722
+200 silly fetchPackageMetaData Cloning into bare repository '/home/nicolas/.npm/_git-remotes/git-github-com-MikaFima-js-rich-marker-git-0383f4bbdad4ddf154772fedbdd27e464600e943-e7abb722'...
+200 silly fetchPackageMetaData fatal: unable to connect to github.com:
+200 silly fetchPackageMetaData github.com[0: 192.30.253.112]: errno=Connection refused
+200 silly fetchPackageMetaData
+200 silly fetchPackageMetaData ]
+200 silly fetchPackageMetaData   killed: false,
+200 silly fetchPackageMetaData   code: 128,
+200 silly fetchPackageMetaData   signal: null,
+200 silly fetchPackageMetaData   cmd: 'git clone --template=/home/nicolas/.npm/_git-remotes/_templates --mirror git://github.com/MikaFima/js-rich-marker.git /home/nicolas/.npm/_git-remotes/git-github-com-MikaFima-js-rich-marker-git-0383f4bbdad4ddf154772fedbdd27e464600e943-e7abb722' }
+201 error git clone --template=/home/nicolas/.npm/_git-remotes/_templates --mirror git://github.com/nmccready/google-maps-utility-library-v3-markerwithlabel.git /home/nicolas/.npm/_git-remotes/git-github-com-nmccready-google-maps-utility-library-v3-markerwithlabel-git-535ad55b: Cloning into bare repository '/home/nicolas/.npm/_git-remotes/git-github-com-nmccready-google-maps-utility-library-v3-markerwithlabel-git-535ad55b'...
+201 error git clone --template=/home/nicolas/.npm/_git-remotes/_templates --mirror git://github.com/nmccready/google-maps-utility-library-v3-markerwithlabel.git /home/nicolas/.npm/_git-remotes/git-github-com-nmccready-google-maps-utility-library-v3-markerwithlabel-git-535ad55b: fatal: unable to connect to github.com:
+201 error git clone --template=/home/nicolas/.npm/_git-remotes/_templates --mirror git://github.com/nmccready/google-maps-utility-library-v3-markerwithlabel.git /home/nicolas/.npm/_git-remotes/git-github-com-nmccready-google-maps-utility-library-v3-markerwithlabel-git-535ad55b: github.com[0: 192.30.253.112]: errno=Connection refused
+202 silly fetchPackageMetaData Error: Command failed: git clone --template=/home/nicolas/.npm/_git-remotes/_templates --mirror git://github.com/nmccready/google-maps-utility-library-v3-markerwithlabel.git /home/nicolas/.npm/_git-remotes/git-github-com-nmccready-google-maps-utility-library-v3-markerwithlabel-git-535ad55b
+202 silly fetchPackageMetaData Cloning into bare repository '/home/nicolas/.npm/_git-remotes/git-github-com-nmccready-google-maps-utility-library-v3-markerwithlabel-git-535ad55b'...
+202 silly fetchPackageMetaData fatal: unable to connect to github.com:
+202 silly fetchPackageMetaData github.com[0: 192.30.253.112]: errno=Connection refused
+202 silly fetchPackageMetaData
+202 silly fetchPackageMetaData
+202 silly fetchPackageMetaData     at ChildProcess.exithandler (child_process.js:213:12)
+202 silly fetchPackageMetaData     at emitTwo (events.js:87:13)
+202 silly fetchPackageMetaData     at ChildProcess.emit (events.js:172:7)
+202 silly fetchPackageMetaData     at maybeClose (internal/child_process.js:821:16)
+202 silly fetchPackageMetaData     at Socket.<anonymous> (internal/child_process.js:319:11)
+202 silly fetchPackageMetaData     at emitOne (events.js:77:13)
+202 silly fetchPackageMetaData     at Socket.emit (events.js:169:7)
+202 silly fetchPackageMetaData     at Pipe._onclose (net.js:469:12)
+202 silly fetchPackageMetaData  error for google-maps-utility-library-v3-markerwithlabel@git://github.com/nmccready/google-maps-utility-library-v3-markerwithlabel.git { [Error: Command failed: git clone --template=/home/nicolas/.npm/_git-remotes/_templates --mirror git://github.com/nmccready/google-maps-utility-library-v3-markerwithlabel.git /home/nicolas/.npm/_git-remotes/git-github-com-nmccready-google-maps-utility-library-v3-markerwithlabel-git-535ad55b
+202 silly fetchPackageMetaData Cloning into bare repository '/home/nicolas/.npm/_git-remotes/git-github-com-nmccready-google-maps-utility-library-v3-markerwithlabel-git-535ad55b'...
+202 silly fetchPackageMetaData fatal: unable to connect to github.com:
+202 silly fetchPackageMetaData github.com[0: 192.30.253.112]: errno=Connection refused
+202 silly fetchPackageMetaData
+202 silly fetchPackageMetaData ]
+202 silly fetchPackageMetaData   killed: false,
+202 silly fetchPackageMetaData   code: 128,
+202 silly fetchPackageMetaData   signal: null,
+202 silly fetchPackageMetaData   cmd: 'git clone --template=/home/nicolas/.npm/_git-remotes/_templates --mirror git://github.com/nmccready/google-maps-utility-library-v3-markerwithlabel.git /home/nicolas/.npm/_git-remotes/git-github-com-nmccready-google-maps-utility-library-v3-markerwithlabel-git-535ad55b' }
+203 silly rollbackFailedOptional Starting
+204 silly rollbackFailedOptional Finishing
+205 silly runTopLevelLifecycles Starting
+206 silly runTopLevelLifecycles Finishing
+207 silly install printInstalled
+208 verbose stack Error: Command failed: git clone --template=/home/nicolas/.npm/_git-remotes/_templates --mirror git://github.com/MikaFima/js-rich-marker.git /home/nicolas/.npm/_git-remotes/git-github-com-MikaFima-js-rich-marker-git-0383f4bbdad4ddf154772fedbdd27e464600e943-e7abb722
+208 verbose stack Cloning into bare repository '/home/nicolas/.npm/_git-remotes/git-github-com-MikaFima-js-rich-marker-git-0383f4bbdad4ddf154772fedbdd27e464600e943-e7abb722'...
+208 verbose stack fatal: unable to connect to github.com:
+208 verbose stack github.com[0: 192.30.253.112]: errno=Connection refused
+208 verbose stack
+208 verbose stack
+208 verbose stack     at ChildProcess.exithandler (child_process.js:213:12)
+208 verbose stack     at emitTwo (events.js:87:13)
+208 verbose stack     at ChildProcess.emit (events.js:172:7)
+208 verbose stack     at maybeClose (internal/child_process.js:821:16)
+208 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
+209 verbose cwd /home/nicolas/HeroesOnTheWater
+210 error Linux 4.4.0-28-generic
+211 error argv "/usr/bin/nodejs" "/usr/bin/npm" "install" "angular-google-maps"
+212 error node v4.2.6
+213 error npm  v3.5.2
+214 error code 128
+215 error Command failed: git clone --template=/home/nicolas/.npm/_git-remotes/_templates --mirror git://github.com/MikaFima/js-rich-marker.git /home/nicolas/.npm/_git-remotes/git-github-com-MikaFima-js-rich-marker-git-0383f4bbdad4ddf154772fedbdd27e464600e943-e7abb722
+215 error Cloning into bare repository '/home/nicolas/.npm/_git-remotes/git-github-com-MikaFima-js-rich-marker-git-0383f4bbdad4ddf154772fedbdd27e464600e943-e7abb722'...
+215 error fatal: unable to connect to github.com:
+215 error github.com[0: 192.30.253.112]: errno=Connection refused
+216 error If you need help, you may report this error at:
+216 error     <https://github.com/npm/npm/issues>
+217 verbose exit [ 1, true ]

@@ -10,7 +10,6 @@ import webTemplate from './web.html';
 import mobileTemplate from './mobile.html';
 import { Parties } from '../../../api/parties';
 import { name as PartiesSort } from '../partiesSort/partiesSort';
-import { name as PartiesMap } from '../partiesMap/partiesMap';
 import { name as PartyAddButton } from '../partyAddButton/partyAddButton';
 import { name as PartyRemove } from '../partyRemove/partyRemove';
 import { name as PartyCreator } from '../partyCreator/partyCreator';
@@ -81,7 +80,6 @@ export default angular.module(name, [
   uiRouter,
   utilsPagination,
   PartiesSort,
-  PartiesMap,
   PartyAddButton,
   PartyRemove,
   PartyCreator,
