@@ -44,6 +44,7 @@ class EventDetails {
   }
 
   save() {
+    console.log(this.event.location)
     Events.update({
       _id: this.event._id
     }, {

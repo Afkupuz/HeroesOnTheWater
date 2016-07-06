@@ -1,4 +1,3 @@
-
 import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 import ngMaterial from 'angular-material';
@@ -11,8 +10,8 @@ import { Meteor } from 'meteor/meteor';
 
 import webTemplate from './web.html';
 import mobileTemplate from './mobile.html';
-import { name as Navigation } from '../navigation/navigation';
-import { name as Auth } from '../auth/auth';
+import { name as SplashIndex } from '../../splash_components/splashIndex/splashIndex';
+
 
 class Splash {}
 
@@ -25,8 +24,7 @@ export default angular.module(name, [
   ngMaterial,
   ngSanitize,
   uiRouter,
-  Navigation,
-  Auth,
+  SplashIndex,
   'accounts.ui',
   'ionic'
 ]).component(name, {
@@ -74,3 +72,5 @@ function run($rootScope, $state) {
     }
   );
 }
+
+

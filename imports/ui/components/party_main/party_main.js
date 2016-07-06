@@ -12,8 +12,6 @@ import webTemplate from './web.html';
 import mobileTemplate from './mobile.html';
 import { name as PartiesList } from '../../party_components/partiesList/partiesList';
 import { name as PartyDetails } from '../../party_components/partyDetails/partyDetails';
-import { name as Navigation } from '../navigation/navigation';
-import { name as Auth } from '../auth/auth';
 
 class Party_main {}
 
@@ -28,8 +26,6 @@ export default angular.module(name, [
   uiRouter,
   PartiesList,
   PartyDetails,
-  Navigation,
-  Auth,
   'accounts.ui',
   'ionic'
 ]).component(name, {

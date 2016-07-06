@@ -12,8 +12,6 @@ import webTemplate from './web.html';
 import mobileTemplate from './mobile.html';
 import { name as EventsList } from '../../event_components/eventsList/eventsList';
 import { name as EventDetails } from '../../event_components/eventDetails/eventDetails';
-import { name as Navigation } from '../navigation/navigation';
-import { name as Auth } from '../auth/auth';
 
 class Event_main {}
 
@@ -28,8 +26,6 @@ export default angular.module(name, [
   uiRouter,
   EventsList,
   EventDetails,
-  Navigation,
-  Auth,
   'accounts.ui',
   'ionic'
 ]).component(name, {
