@@ -5,7 +5,6 @@ import ngSanitize from 'angular-sanitize';
 import uiRouter from 'angular-ui-router';
 import 'ionic-sdk/release/js/ionic';
 import 'ionic-sdk/release/js/ionic-angular';
-import 'ionic-sdk/release/css/ionic.css';
 
 import { Meteor } from 'meteor/meteor';
 

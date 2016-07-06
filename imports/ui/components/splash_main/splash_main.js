@@ -6,14 +6,11 @@ import ngSanitize from 'angular-sanitize';
 import uiRouter from 'angular-ui-router';
 import 'ionic-sdk/release/js/ionic';
 import 'ionic-sdk/release/js/ionic-angular';
-import 'ionic-sdk/release/css/ionic.css';
 
 import { Meteor } from 'meteor/meteor';
 
 import webTemplate from './web.html';
 import mobileTemplate from './mobile.html';
-import { name as PartiesList } from '../../party_components/partiesList/partiesList';
-import { name as PartyDetails } from '../../party_components/partyDetails/partyDetails';
 import { name as Navigation } from '../navigation/navigation';
 import { name as Auth } from '../auth/auth';
 
@@ -28,8 +25,6 @@ export default angular.module(name, [
   ngMaterial,
   ngSanitize,
   uiRouter,
-  PartiesList,
-  PartyDetails,
   Navigation,
   Auth,
   'accounts.ui',
