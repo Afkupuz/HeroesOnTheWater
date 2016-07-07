@@ -18,9 +18,12 @@ import { name as EventRsvp } from '../eventRsvp/eventRsvp';
 import { name as EventRsvpsList } from '../eventRsvpsList/eventRsvpsList';
 import { name as EventImage } from '../eventImage/eventImage';
 
+var multibutton = 0
+
 class EventsList {
   constructor($scope, $reactive) {
     'ngInject';
+
 
     $reactive(this).attach($scope);
 
@@ -71,6 +74,7 @@ class EventsList {
     this.sort = sort;
   }
 }
+
 
 const name = 'eventsList';
 const template = Meteor.isCordova ? mobileTemplate : webTemplate;
