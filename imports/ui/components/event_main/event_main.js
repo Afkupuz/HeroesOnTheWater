@@ -11,6 +11,7 @@ import { Meteor } from 'meteor/meteor';
 import webTemplate from './web.html';
 import mobileTemplate from './mobile.html';
 import { name as EventsList } from '../../event_components/eventsList/eventsList';
+import { name as EventsDb } from '../../event_components/eventsDb/eventsDb';
 import { name as EventDetails } from '../../event_components/eventDetails/eventDetails';
 
 class Event_main {}
@@ -25,6 +26,7 @@ export default angular.module(name, [
   ngSanitize,
   uiRouter,
   EventsList,
+  EventsDb,
   EventDetails,
   'accounts.ui',
   'ionic'

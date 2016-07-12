@@ -1,0 +1,64 @@
+<div layout="column" layout-padding>
+  <event-add-button ng-show="eventsDb.isLoggedIn"></event-add-button>
+
+  <div flex>
+    <h2 class="md-display-1">List of the events:</h2>
+  </div>
+
+  <div><button ng-focus="console.log('fdsfzd')" >This is a button</button></div>
+
+  <div flex layout="row" layout-padding>
+    <md-input-container>
+      <label>Search</label>
+      <input ng-model="eventsDb.searchText" />
+    </md-input-container>
+    <md-input-container>
+    <label>Column</label>
+    <md-select ng-model="eventsDb.opt">
+        <md-option data-ng-repeat="o in eventsDb.column">{{o}}</md-option>
+      </md-select>
+    </md-input-container>
+
+    
+  </div>
+
+  <table>
+    <thead></thead>
+    <tbody>
+      <tr >
+      <td> Link </td>
+      <td ng-repeat="subject in eventsDb.column" > {{subject}} </td>
+      <td> Picture </td>
+      <td> Edit </td>
+      <td> Delete </td>
+      </tr>  
+
+      <tr ng-repeat="event in eventsDb.events">
+        <td ui-sref="eventDetails({ eventId: event._id })"> Detail Page </td>
+        <td> {{event.name}} </td>
+        <td> {{event.date}} </td>
+        <td> {{event.description}} </td>
+        <td> {{event.address}} </td>
+        <td> {{event.resources}} </td>
+        <td> {{event.volunteers}} </td>
+        <td> {{event.organizer}} </td>
+        <td> {{event.attendants}} </td>
+        <td> {{event.chapter}} </td>
+        <td><div style="height:80px" ng-if="event.images">
+              <event-image images="event.images"></event-image>
+            </div></td>
+        <td><md-button ng-click="eventsDb.open({ eventId: event._id })" class="md-primary md-raised" >Edit</md-button></td>
+        <td> <event-remove event="event"></event-remove> </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div layout="column" layout-gt-sm="row">
+    <div flex="50">
+      
+    <dir-pagination-controls on-page-change="eventsDb.pageChanged(newPageNumber)"></dir-pagination-controls>
+    
+    <div flex="50">
+    </div>
+  </div>
+</div>

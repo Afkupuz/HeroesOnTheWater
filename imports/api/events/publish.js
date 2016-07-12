@@ -4,7 +4,7 @@ import { Counts } from 'meteor/tmeasday:publish-counts';
 import { Events } from './collection';
 
 if (Meteor.isServer) {
-  Meteor.publish('events', function(options, searchString) {
+  Meteor.publish('events', function(options, searchString, opt) {
     const selector = {
       $or: [{
         // the public events
@@ -37,10 +37,70 @@ if (Meteor.isServer) {
     };
 
     if (typeof searchString === 'string' && searchString.length) {
-      selector.name = {
-        $regex: `.*${searchString}.*`,
-        $options : 'i'
-      };
+      switch(opt) {
+        case 'Name':
+            selector.name = {
+            $regex: `.*${searchString}.*`,
+            $options : 'i'
+            };
+            break;
+        case 'Date':
+            selector.date = {
+            $regex: `.*${searchString}.*`,
+            $options : 'i'
+            };
+            break;
+        case 'Description':
+            selector.description = {
+            $regex: `.*${searchString}.*`,
+            $options : 'i'
+            };
+            break;
+        case 'Address':
+            selector.address = {
+            $regex: `.*${searchString}.*`,
+            $options : 'i'
+            };
+            break;
+        case 'Resources':
+            selector.resources = {
+            $regex: `.*${searchString}.*`,
+            $options : 'i'
+            };
+            break;
+        case 'Volunteers':
+            selector.volunteers = {
+            $regex: `.*${searchString}.*`,
+            $options : 'i'
+            };
+            break;
+        case 'Organizer':
+            selector.organizer = {
+            $regex: `.*${searchString}.*`,
+            $options : 'i'
+            };
+            break;
+        case 'Attendants':
+            selector.attendants = {
+            $regex: `.*${searchString}.*`,
+            $options : 'i'
+            };
+            break;
+        case 'Chapter':
+            selector.chapter = {
+            $regex: `.*${searchString}.*`,
+            $options : 'i'
+            };
+            break;
+        default:
+            selector.name = {
+            $regex: `.*${searchString}.*`,
+            $options : 'i'
+            };
+            break;
+        }
+      console.log(opt)
+      console.log(searchString)
     }
 
     Counts.publish(this, 'numberOfEvents', Events.find(selector), {

@@ -1,0 +1,120 @@
+<script>
+$('#datepick').daterangepicker({
+    "singleDatePicker": true,
+    "timePicker": true,
+    "timePicker24Hour": true,
+    "linkedCalendars": false,
+    "locale": {
+        "format": "dddd MMMM DD, h:mm",
+        "separator": " - ",
+        "applyLabel": "Apply",
+        "cancelLabel": "Cancel",
+        "fromLabel": "From",
+        "toLabel": "To",
+        "customRangeLabel": "Custom",
+        "weekLabel": "W",
+        "daysOfWeek": [
+            "Su",
+            "Mo",
+            "Tu",
+            "We",
+            "Th",
+            "Fr",
+            "Sa"
+        ],
+        "monthNames": [
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"
+        ],
+        "firstDay": 1
+    },
+    "opens": "center"
+}, function(start, end, label) {
+  console.log("New date range selected: ' + start.format('EEEE MMMM d, h:mm') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')");
+});
+</script>
+
+
+<div layout="column" layout-padding>
+  <md-input-container>
+    <label>
+      Event Name:
+    </label>
+    <input type="text" ng-model="eventModify.event.name"/>
+  </md-input-container>
+  <div style="height:100px">
+    <label>
+    <!-- need to get a datepicker module from atmosphere -->
+      Date:
+    </label>
+    <input id='datepick' ng-model="eventModify.event.date" />
+  </div>
+  <md-input-container>
+    <label>
+      Description:
+    </label>
+    <input type="text" ng-model="eventModify.event.description"/>
+  </md-input-container>
+    <md-input-container>
+    <label>
+      Address:
+    </label>
+    <input type="text" ng-model="eventModify.event.address"/>
+  </md-input-container>
+    <md-input-container>
+    <label>
+      Resources:
+    </label>
+    <input type="text" ng-model="eventModify.event.resources"/>
+  </md-input-container>
+    <md-input-container>
+    <label>
+      Volunteers:
+    </label>
+    <input type="text" ng-model="eventModify.event.volunteers"/>
+  </md-input-container>
+    <md-input-container>
+    <label>
+      Organizer:
+    </label>
+    <input type="text" ng-model="eventModify.event.organizer"/>
+  </md-input-container>
+    <md-input-container>
+    <label>
+      Attendants:
+    </label>
+    <input type="text" ng-model="eventModify.event.attendants"/>
+  </md-input-container>
+      <md-input-container>
+    <label>
+      Chapter:
+    </label>
+    <input type="text" ng-model="eventModify.event.chapter"/>
+  </md-input-container>
+  <div>
+    <event-upload files="eventModify.event.images"></event-upload>
+    <md-card-title-media ng-if="eventModify.event.images">
+            <div class="md-media-lg card-media">
+              <event-image images="eventModify.event.images"></event-image>
+            </div>
+    </md-card-title-media>
+  </div>
+  <div>
+    <label>
+      Location:
+    </label>
+    <div> {{eventModify.event.location}} </div>
+  </div>
+  
+    <md-button ng-click="eventModify.save()" class="md-raised">Save Changes</md-button>
+</div>

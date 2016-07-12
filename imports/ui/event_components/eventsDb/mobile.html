@@ -1,0 +1,22 @@
+<ion-view hide-back-button="true">
+  <ion-content padding="true" class="has-header">
+    <div class="list">
+      <div class="card" ng-repeat="event in eventsList.events">
+        <div class="item">
+          <h2>
+            {{event.name}}
+          </h2>
+          <p>
+            {{event.description}}
+          </p>
+        </div>
+
+        <div class="item item-image">
+          <event-image images="event.images"></event-image>
+        </div>
+
+        <event-rsvps-list class="item" rsvps="event.rsvps"></event-rsvps-list>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
