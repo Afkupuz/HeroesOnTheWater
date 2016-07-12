@@ -20,3 +20,4 @@ meteor npm install ng-img-crop --save
 meteor npm install angular-sortable-view --save
 meteor npm install ionic-sdk --save
 meteor npm install angular-sanitize --save
+meteor add dangrossman:bootstrap-daterangepicker
