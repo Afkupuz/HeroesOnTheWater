@@ -46,12 +46,12 @@
           <label>
             Password
           </label>
-          <input type="password" ng-model="login.credentials.password" aria-label="password" required/>
+          <input type="password" ng-model="login.credentials.password" aria-label="password" required />
         </md-input-container>
         <div layout="row" layout-align="space-between center">
           <a class="md-button" href="/password">Forgot password?</a>
           
-          <md-button class="md-raised md-primary" ng-click="login.login()" aria-label="login" ng-disabled="login.loginForm.$invalid()">Sign In
+          <md-button class="md-raised md-primary" ng-click="login.login()" aria-label="login" ng-disabled="login.loginForm.$invalid()" >Sign In
           </md-button>
         </div>
       </form>

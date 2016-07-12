@@ -27,6 +27,18 @@
           </label>
           <input type="password" ng-model="register.credentials.password" placeholder="password" aria-label="password" required/>
         </md-input-container>
+        <md-input-container >
+          <label>
+            Name
+          </label>
+          <input type="text" ng-model="register.profile.name" placeholder="name" aria-label="text" required/>
+        </md-input-container>
+        <md-input-container >
+          <label>
+            Auth
+          </label>
+          <input type="text" ng-model="register.profile.auth" placeholder="auth level" aria-label="text" required/>
+        </md-input-container>
         <div layout="row" layout-align="end center">
           <md-button class="md-raised md-primary" ng-click="register.register()" aria-label="login" ng-disabled="register.registerForm.$invalid()">Register</md-button>
         </div>
