@@ -1,0 +1,20 @@
+ion-view hide-back-button="true">
+  <ion-content padding="true" class="has-header">
+    <div class="list">
+      <div class="card" ng-repeat="inventory in inventoryList.inventory">
+        <div class="item">
+          <h2>
+            {{inventory.name}}
+          </h2>
+          <p>
+            {{inventory.description}}
+          </p>
+        </div>
+
+        <div class="item item-image">
+          <event-image images="ivnentory.images"></event-image>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
