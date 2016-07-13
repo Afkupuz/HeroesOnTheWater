@@ -12,12 +12,10 @@
     <input type="text" ng-model="inventoryAdd.event.description"/>
   </md-input-container>
   <div flex>
-    <md-checkbox ng-model="eventAdd.event.public" aria-label="Public Event?">
-      Public Event?
-    </md-checkbox>
+    <md-checkbox ng-model="inventoryAdd.inventory">
   </div>
   <div flex>
-    <md-button ng-click="inventoryAdd.submit()" class="md-raised">Add Inventory!</md-button>
+    <md-button ng-click="inventoryAdd.submit()" class="md-raised">Add Inventory</md-button>
   </div>
   <inventory-upload files="inventoryAdd.inventory.images"></inventory-upload>
 </div>

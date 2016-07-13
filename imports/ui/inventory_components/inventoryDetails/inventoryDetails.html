@@ -1,0 +1,26 @@
+<div layout="column" layout-padding>
+  <div layout="column" layout-gt-sm="row"  layout-padding>
+    <form flex="50" layout="column">
+      <md-input-container>
+        <label>Inventory item name</label>
+        <input ng-model="inventoryDetails.inventory.name" ng-disabled="!inventoryDetails.isLoggedIn">
+      </md-input-container>
+
+      <md-input-container>
+        <label>Description</label>
+        <input ng-model="inventoryDetails.inventory.description" ng-disabled="!inventoryDetails.isLoggedIn">
+      </md-input-container>
+
+      <div>
+        <md-checkbox ng-model="inventoryDetails.inventory.public" ng-disabled="!inventoryDetails.isLoggedIn">
+          
+        </md>
+      </div>
+
+      <div>
+        <md-button ng-click="inventoryDetails.save()" class="md-primary md-raised">Save</md-button>
+      </div>
+    </form>
+    <event-map flex="50" location="inventoryDetails.inventory.location"></event-map>
+  </div>
+</div>
