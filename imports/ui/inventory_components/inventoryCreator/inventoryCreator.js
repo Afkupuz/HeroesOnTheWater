@@ -9,7 +9,7 @@ import { name as DisplayNameFilter } from '../../filters/displayNameFilter';
 /**
  * EventCreator component
  */
-class inventoryCreator {
+class InventoryCreator {
   constructor($scope) {
     'ngInject';
 
@@ -45,5 +45,5 @@ export default angular.module(name, [
   bindings: {
     inventory: '<'
   },
-  controller: inventoryCreator
+  controller: InventoryCreator
 });

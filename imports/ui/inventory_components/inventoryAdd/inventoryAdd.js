@@ -5,7 +5,7 @@ import { Meteor } from 'meteor/meteor';
 
 import template from './inventoryAdd.html';
 import { Inventory } from '../../../api/inventory';
-import { name as inventoryUpload } from '../inventoryUpload/inventoryUpload';
+//import { name as inventoryUpload } from '../inventoryUpload/inventoryUpload';
 
 
 class InventoryAdd 
@@ -18,8 +18,8 @@ class InventoryAdd
 	}
 
 	submit() {
-    this.event.owner = Meteor.user()._id;
-    Events.insert(this.event);
+    this.inventory.owner = Meteor.user()._id;
+    Inventory.insert(this.inventory);
 
     if(this.done) {
       this.done();
@@ -29,7 +29,7 @@ class InventoryAdd
   }
 
   reset() {
-    this.event = {};
+    this.inventory = {};
   }
 
 }
