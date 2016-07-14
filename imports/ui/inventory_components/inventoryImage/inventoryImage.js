@@ -2,7 +2,7 @@ import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 
 import template from './inventoryImage.html';
-import { Images } from '../../../api/inventory';
+import { Images } from '../../../api/images';
 import { name as DisplayImageFilter } from '../../filters/displayImageFilter';
 
 class InventoryImage {

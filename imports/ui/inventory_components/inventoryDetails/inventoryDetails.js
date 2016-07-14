@@ -5,7 +5,7 @@ import uiRouter from 'angular-ui-router';
 import { Meteor } from 'meteor/meteor';
 
 import template from './inventoryDetails.html';
-import { Events } from '../../../api/inventory';
+import { Inventory } from '../../../api/inventory';
 i
 class InventoryDetails {
   constructor($stateParams, $scope, $reactive) {
@@ -36,7 +36,7 @@ class InventoryDetails {
   
   save() {
     Invnetory.update({
-      _id: this.event._id
+      _id: this.inventory._id
     }, {
       $set: {
         name: this.inventory.name,

@@ -2,12 +2,12 @@ import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 
 import template from './inventoryRemove.html';
-import { Events } from '../../../api/inventory';
+import { Inventory } from '../../../api/inventory';
 
 class InventoryRemove {
   remove() {
     if (this.inventory) {
-      inventory.remove(this.inventory._id);
+      Inventory.remove(this.inventory._id);
     }
   }
 }
