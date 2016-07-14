@@ -10,12 +10,12 @@ import { Meteor } from 'meteor/meteor';
 
 import webTemplate from './web.html';
 import mobileTemplate from './mobile.html';
-import { name as SplashIndex } from '../../splash_components/splashIndex/splashIndex';
+import { name as InventoriesList } from '../../inventory_components/inventoriesList/inventoriesList';
+import { name as InventoryDetails } from '../../inventory_components/inventoryDetails/inventoryDetails';
 
+class Inventory_main {}
 
-class Splash {}
-
-const name = 'splash';
+const name = 'inventory_main';
 const template = Meteor.isCordova ? mobileTemplate : webTemplate;
 
 // create a module
@@ -24,13 +24,14 @@ export default angular.module(name, [
   ngMaterial,
   ngSanitize,
   uiRouter,
-  SplashIndex,
+  InventoriesList,
+  InventoryDetails,
   'accounts.ui',
   'ionic'
 ]).component(name, {
   template,
   controllerAs: name,
-  controller: Splash
+  controller: Inventory_main
 })
   .config(config)
   .run(run);
@@ -67,10 +68,8 @@ function run($rootScope, $state) {
   $rootScope.$on('$stateChangeError',
     (event, toState, toParams, fromState, fromParams, error) => {
       if (error === 'AUTH_REQUIRED') {
-        $state.go('splash');
+        $state.go('inventories');
       }
     }
   );
 }
-
-

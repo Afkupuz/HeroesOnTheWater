@@ -1,0 +1,12 @@
+<h4 class="md-headline">
+  Users to invite:
+</h4>
+
+<md-list>
+  <md-list-item ng-repeat="user in inventoryUninvited.users | uninvitedFilter:inventoryUninvited.inventory" ng-click="inventoryUninvited.invite(user)">
+    <p>{{ user | displayNameFilter }}</p>
+  </md-list-item>
+  <md-list-item ng-if="(inventoryUninvited.users | uninvitedFilter:inventoryUninvited.inventory).length <= 0">
+    Everyone are already invited.
+  </md-list-item>
+</md-list>
