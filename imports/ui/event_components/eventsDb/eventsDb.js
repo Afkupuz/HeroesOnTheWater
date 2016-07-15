@@ -16,6 +16,7 @@ import { name as EventsMap } from '../eventsMap/eventsMap';
 import { name as EventAddButton } from '../eventAddButton/eventAddButton';
 import { name as EventRemove } from '../eventRemove/eventRemove';
 import { name as EventCreator } from '../eventCreator/eventCreator';
+import { name as EventAttendees } from '../eventAttendees/eventAttendees';
 import { name as EventRsvp } from '../eventRsvp/eventRsvp';
 import { name as EventRsvpsList } from '../eventRsvpsList/eventRsvpsList';
 import { name as EventImage } from '../eventImage/eventImage';
@@ -68,6 +69,11 @@ class EventsDb {
           sort : this.getReactively('sort')
         });
       },
+      event() {
+        var x = Events.findOne('Micmw2CBgA9bTaeLk')
+        console.log(x)
+        return x;
+      },
       users() {
         //var x = Meteor.users.findOne('PwT9tYc9GroZcny8Y')
         //console.log(x)
@@ -86,8 +92,6 @@ class EventsDb {
   }
 
   open(event) {
-    console.log(this.searchText)
-
     this.$mdDialog.show({
       controller($mdDialog) {
         'ngInject';
@@ -140,6 +144,7 @@ export default angular.module(name, [
   EventRsvp,
   EventRsvpsList,
   EventImage,
+  EventAttendees,
   EventModify
 ]).component(name, {
   template,

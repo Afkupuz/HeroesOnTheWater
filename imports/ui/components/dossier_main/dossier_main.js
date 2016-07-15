@@ -41,7 +41,7 @@ function config($locationProvider, $urlRouterProvider, $mdIconProvider) {
 
   $locationProvider.html5Mode(true);
 
-  $urlRouterProvider.otherwise('/dossiers');
+  //$urlRouterProvider.otherwise('/dossiers');
 
   const iconPath =  '/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/';
 

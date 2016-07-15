@@ -4,12 +4,18 @@ export const Events = new Mongo.Collection('events');
 
 Events.allow({
   insert(userId, event) {
-    return userId && event.owner === userId;
+    if (Meteor.user().auth['auth'] == 'admin') {
+      return true;
+    };
   },
   update(userId, event, fields, modifier) {
-    return userId && event.owner === userId;
+    if (Meteor.user().auth['auth'] == 'admin') {
+      return true;
+    };
   },
   remove(userId, event) {
-    return userId && event.owner === userId;
+    if (Meteor.user().auth['auth'] == 'admin') {
+      return true;
+    };
   }
 });

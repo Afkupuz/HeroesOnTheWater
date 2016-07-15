@@ -38,8 +38,8 @@
         <td> {{event.description}} </td>
         <td> {{event.address}} </td>
         <td> {{event.resources}} </td>
-        <td> {{event.volunteers}} </td>
-        <td> {{event.organizer}} </td>
+        <td> <event-attendees event="event"></event-attendees> </td>
+        <td> <event-creator event="event"></event-creator> </td>
         <td> {{event.attendants}} </td>
         <td> {{event.chapter}} </td>
         <td><div style="height:80px" ng-if="event.images">
