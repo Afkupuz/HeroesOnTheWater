@@ -1,0 +1,29 @@
+<div layout="column" layout-padding>
+  <div layout="column" layout-gt-sm="row"  layout-padding>
+
+
+     <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">{{dossierDetails.user.profile.username}}</span>
+            <span class="md-subhead">Name: {{dossierDetails.user.profile.first_name}} {{dossierDetails.user.profile.last_name}}</span>
+            <span class="md-subhead">Phone: {{dossierDetails.user.profile.phone}}</span>
+            <span class="md-subhead">Email: {{dossierDetails.user.emails[0].address}}</span>
+            <span class="md-subhead">Chapter: {{dossierDetails.user.profile.chapter}}</span>
+          </md-card-title-text>
+          <md-card-title-media>
+            <div class="md-media-lg card-media">
+              <dossier-image images="dossierDetails.user.profile.picture"></dossier-image>
+            </div>
+          </md-card-title-media>
+        </md-card-title>
+        <md-card-content>
+        <p>{{dossierDetails.user.profile.bio}}</p>
+        </md-card-content>
+        <md-card-actions layout="row" layout-align="end center">
+          <md-button ng-click="dossierDetails.open({ userId: dossierDetails.user._id })" class="md-primary md-raised" >Edit</md-button>
+          <md-button>Action 2</md-button>
+        </md-card-actions>
+      </md-card>
+
+

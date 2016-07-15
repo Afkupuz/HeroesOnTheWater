@@ -1,0 +1,16 @@
+<md-dialog aria-label="New dossier" ng-cloak>
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>New dossier = {{dossierAddModal.testval}}</h2>
+      <span flex></span>
+      <md-button ng-click="dossierAddModal.close()">
+        Close
+      </md-button>
+    </div>
+  </md-toolbar>
+  <md-dialog-content>
+    <div class="md-dialog-content">
+      <dossier-add done="dossierAddModal.close()" passed="dossierAddModal.getval()" ></dossier-add>
+    </div>
+  </md-dialog-content>
+</md-dialog>

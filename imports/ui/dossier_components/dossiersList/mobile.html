@@ -1,0 +1,22 @@
+<ion-view hide-back-button="true">
+  <ion-content padding="true" class="has-header">
+    <div class="list">
+      <div class="card" ng-repeat="dossier in dossiersList.dossiers">
+        <div class="item">
+          <h2>
+            {{dossier.name}}
+          </h2>
+          <p>
+            {{dossier.description}}
+          </p>
+        </div>
+
+        <div class="item item-image">
+          <dossier-image images="dossier.images"></dossier-image>
+        </div>
+
+        <dossier-rsvps-list class="item" rsvps="dossier.rsvps"></dossier-rsvps-list>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

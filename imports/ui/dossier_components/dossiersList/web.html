@@ -1,0 +1,58 @@
+<div layout="column" layout-padding>
+  <dossier-add-button ng-show="dossiersList.isLoggedIn"></dossier-add-button>
+
+
+
+
+  <div flex>
+    <h2 class="md-display-1">List of the Users:</h2>
+  </div>
+
+  <div flex layout="row" layout-padding>
+    <md-input-container>
+      <label>Search</label>
+      <input ng-model="dossiersList.searchText" />
+    </md-input-container>
+    <md-input-container>
+    <label>Column</label>
+    <md-select ng-model="dossiersList.opt">
+        <md-option data-ng-repeat="o in dossiersList.column">{{o}}</md-option>
+      </md-select>
+    </md-input-container>
+  </div>
+
+<div layout="column" layout-gt-sm="row">
+  <table>
+    <thead></thead>
+    <tbody>
+      <tr >
+      <td ng-repeat="subject in dossiersList.column" > {{subject}} </td>
+      <td> Picture </td>
+      <td> Edit </td>
+      <td> Delete </td>
+      </tr>  
+
+      <tr ng-repeat="user in dossiersList.users">
+        <td> {{user._id}} </td>
+        <td> {{user.auth.auth}} </td>
+        <td> {{user.auth.note}} </td>
+        <td> {{user.emails[0].address}} </td>
+        <td> {{user.createdAt | date :  "dd/MM/y"}} </td>
+        <td> {{user.profile.username}} </td>
+        <td> {{user.profile.first_name}} </td>
+        <td> {{user.profile.last_name}} </td>
+        <td> {{user.profile.phone}} </td>
+        <td> {{user.profile.bio}} </td>
+        <td> {{user.profile.chapter}} </td>
+        <td><div style="height:80px" ng-if="user.profile.picture">
+              <dossier-image images="user.profile.picture"></dossier-image>
+            </div>
+        </td>
+        <td><md-button ng-click="dossiersList.open({ userId: user._id })" class="md-primary md-raised" >Edit</md-button></td>
+        <td> <dossier-remove user="user"></dossier-remove> </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+<div style="height:300px">HI</div>

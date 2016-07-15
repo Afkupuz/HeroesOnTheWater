@@ -1,0 +1,71 @@
+
+<div layout="column" layout-padding>
+<form name="adminEdit">
+  <md-input-container>
+    <label>
+      UserName:
+    </label>
+    <input type="text" ng-model="dossierModify.user.profile.username"/>
+  </md-input-container>
+  <md-input-container>
+    <label>
+      First Name:
+    </label>
+    <input type="text" ng-model="dossierModify.user.profile.first_name"/>
+  </md-input-container>
+  <md-input-container>
+    <label>
+      Last Name:
+    </label>
+    <input type="text" ng-model="dossierModify.user.profile.last_name"/>
+  </md-input-container>
+  <md-input-container>
+    <label>
+      Phone:
+    </label>
+    <input type="number" ng-model="dossierModify.user.profile.phone" min='1000000000' max="10000000000" />
+  </md-input-container>
+  <md-input-container>
+    <label>
+      Bio:
+    </label>
+    <input type="text" ng-model="dossierModify.user.profile.bio"/>
+  </md-input-container>
+  <md-input-container>
+    <label>
+      Chapter:
+    </label>
+    <input type="text" ng-model="dossierModify.user.profile.chapter"/>
+  </md-input-container>
+  <md-input-container ng-show="dossierModify.isAuthorized">
+    <label>
+      Auth Level:
+    </label>
+    <input type="text" ng-model="dossierModify.user.auth.auth"/>
+  </md-input-container>
+  <md-input-container ng-show="dossierModify.isAuthorized">
+    <label>
+      Admin Note:
+    </label>
+    <input type="text" ng-model="dossierModify.user.auth.note"/>
+  </md-input-container>
+  
+  <div>
+    <dossier-upload files="dossierModify.user.profile.picture"></dossier-upload>
+    <md-card-title-media ng-if="dossierModify.user.profile.picture">
+            <div class="md-media-lg card-media">
+              <dossier-image images="dossierModify.user.profile.picture"></dossier-image>
+            </div>
+    </md-card-title-media>
+
+  </div>
+  <div>
+    <label>
+      Location:
+    </label>
+    <div> {{dossierModify.dossier.location}} </div>
+  </div>
+  
+    <md-button ng-click="dossierModify.save()" class="md-raised" ng-disabled="adminEdit.$invalid">Save Changes</md-button>
+</form>
+</div>

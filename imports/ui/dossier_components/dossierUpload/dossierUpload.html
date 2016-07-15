@@ -1,0 +1,37 @@
+<div layout="column">
+  <div ngf-drop
+    ngf-select
+    ngf-change="dossierUpload.addImages($files)"
+    ngf-drag-over-class="{accept:'dragover', reject:'dragover-err', delay:100}"
+    class="drop-box"
+    ngf-multiple="false"
+    ngf-allow-dir="false"
+    ngf-accept="'image/*'"
+    ngf-drop-available="true"
+    ng-hide="dossierUpload.cropImgSrc">
+    <div>Click here to select image</div>
+    <div>
+      <strong>OR</strong>
+    </div>
+    <div>You can also drop image to here</div>
+  </div>
+  <div ng-show="dossierUpload.cropImgSrc" layout="column" class="ng-crop">
+    <div>
+      <h3>Edit &amp; crop</h3>
+      <md-button ng-click="dossierUpload.save()" class="md-primary">
+        Save Image
+      </md-button>
+      <md-button ng-click="dossierUpload.reset()">
+        Cancel
+      </md-button>
+    </div>
+    <div class="ng-crop-container">
+      <img-crop image="dossierUpload.cropImgSrc" result-image="dossierUpload.myCroppedImage" area-type="square"></img-crop>
+    </div>
+  </div>
+  <div layout="row" class="images-container-title" sv-root sv-part="dossierUpload.thumbs">
+    <div sv-element class="dossier-image-container" ng-class="{'main-image': $index === 0}" ng-repeat="thumb in dossierUpload.thumbs">
+      <img draggable="false" ng-src="{{ thumb.url }}"/>
+    </div>
+  </div>
+</div>

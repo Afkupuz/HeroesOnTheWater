@@ -29,7 +29,7 @@ class Register {
         if (err) {
           this.error = err;
         } else {
-          this.$state.go('events');
+          this.$state.go('dossiers');
         }
       })
     );
