@@ -18,6 +18,15 @@ class DossierDetails {
 
     $reactive(this).attach($scope);
 
+    this.test = Meteor.userId()
+    console.log(this.test)
+
+    if ($stateParams) {
+      //this.user = stateParam
+      //else current user so that admins can see profile from invitee list
+      console.log($stateParams)
+    }
+
     this.$mdDialog = $mdDialog;
     this.$mdMedia = $mdMedia
 
@@ -26,10 +35,14 @@ class DossierDetails {
     this.subscribe('images');
 
     this.helpers({
-      event() {
-        return Events.findOne({
-          _id: $stateParams.dossierId
+      events() {
+        var x = Events.find({
+          'rsvps.user': this.test
+        }, {
+          sort : {name: 1}
         });
+        console.log(x)
+        return x
       },
       user() {
         console.log(Meteor.user())
@@ -41,6 +54,7 @@ class DossierDetails {
     });
   }
 
+    //opens modal editing window and provides controller data
     open(dossier) {
     this.$mdDialog.show({
       controller($mdDialog) {
@@ -51,10 +65,11 @@ class DossierDetails {
           return dossier
         }
 
+        //closs modal
         this.close = () => {
           $mdDialog.hide();
         }
-      },
+      }, //provides controller information
       controllerAs: 'profileModifyModal',
       template: modalTemplate,
       targetDossier: dossier,

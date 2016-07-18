@@ -1,26 +1,26 @@
-<div class="rsvp-sum">
-  <div class="rsvp-amount">
-    <div class="amount">
+<div class="rsvp-sum-e">
+  <div class="rsvp-amount-e">
+    <div class="amount-e">
       {{ (eventRsvpsList.rsvps | filter:{rsvp:'yes'}).length || 0 }}
     </div>
-    <div class="rsvp-title">
-      YES
+    <div class="rsvp-title-e">
+      Attending
     </div>
   </div>
-  <div class="rsvp-amount">
-    <div class="amount">
-      {{ (eventRsvpsList.rsvps | filter:{rsvp:'maybe'}).length || 0 }}
+  <div class="rsvp-amount-e">
+    <div class="amount-e">
+      {{ (eventRsvpsList.rsvps | filter:{rsvp:'volunteer'}).length || 0 }}
     </div>
-    <div class="rsvp-title">
-      MAYBE
+    <div class="rsvp-title-e">
+      Voluneers
     </div>
   </div>
-  <div class="rsvp-amount">
-    <div class="amount">
-      {{ (eventRsvpsList.rsvps | filter:{rsvp:'no'}).length || 0 }}
+  <div class="rsvp-amount-e">
+    <div class="amount-e">
+      {{ (eventRsvpsList.rsvps | filter:{rsvp:'cancel'}).length || 0 }}
     </div>
-    <div class="rsvp-title">
-      NO
+    <div class="rsvp-title-e">
+      Cancelled
     </div>
   </div>
 </div>

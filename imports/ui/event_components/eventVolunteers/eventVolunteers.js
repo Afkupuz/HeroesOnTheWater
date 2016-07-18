@@ -3,32 +3,27 @@ import angularMeteor from 'angular-meteor';
 
 import { Meteor } from 'meteor/meteor';
 
-import template from './eventAttendees.html';
+import template from './eventVolunteers.html';
 import { name as DisplayNameFilter } from '../../filters/displayNameFilter';
 
 /**
  * EventCreator component
  */
-class EventAttendees {
+class EventVolunteers {
   constructor($scope) {
     'ngInject';
 
     $scope.viewModel(this);
-
-    this.list = [];
 
 
     var userdb = this.subscribe('users', function() {
       return ['is loaded']
     });
 
+    this.attendants = [];
+
     this.helpers({
       attendees() {
-
-        var cancelations = [];
-        var volunteers = [];
-        var attendants = [];
-        var listName = '';
 
         if (userdb.ready() != true){
           return "loading"
@@ -43,35 +38,22 @@ class EventAttendees {
         for (var i = 0 ; i < attendantids.length ; i++) {
           var id = attendantids[i].user
           var name = Meteor.users.findOne(id);
-
-          if (name) {
-            listName = name.profile.username
-          }else {
-            listName = this.event.rsvps[i].user
+          if (name && this.event.rsvps[i].rsvp == 'volunteer') {
+              this.attendants.push(name.profile.username)
           }
-
-          if (this.event.rsvps[i].rsvp == "cancel") {
-              cancelations.push(listName)
-          }else if (this.event.rsvps[i].rsvp == 'volunteer') {
-              volunteers.push(listName)
-          }else if (this.event.rsvps[i].rsvp == 'yes')
-              attendants.push(listName)
+          else {
+              this.attendants.push(this.event.rsvps[i].user)
+              console.log(this.event.rsvps[i].user)
           }
-        
-        if (this.attendtype == 'vol') {
-          this.list = volunteers;
-        }else if (this.attendtype == 'can') {
-          this.list = cancelations;
-        }else if (this.attendtype == 'yes') {
-          this.list = attendants;
         }
 
+        return 'Somebody';
       }
     });
   }
 }
 
-const name = 'eventAttendees';
+const name = 'eventVolunteers';
 
 // create a module
 export default angular.module(name, [
@@ -84,5 +66,5 @@ export default angular.module(name, [
     attendtype: '<',
     event: '<'
   },
-  controller: EventAttendees
+  controller: EventVolunteers
 });

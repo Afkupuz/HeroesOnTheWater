@@ -1,5 +1,5 @@
 <div layout="row" layout-align="end center">
   <md-button ng-click="eventRsvp.yes()" ng-class="{'md-primary' : eventRsvp.isYes()}">I'm going!</md-button>
-  <md-button ng-click="eventRsvp.maybe()" ng-class="{'md-primary' : eventRsvp.isMaybe()}">Maybe</md-button>
-  <md-button ng-click="eventRsvp.no()" ng-class="{'md-primary' : eventRsvp.isNo()}">No</md-button>
+  <md-button ng-click="eventRsvp.volunteer()" ng-show="eventRsvp.isLoggedIn()" ng-class="{'md-primary' : eventRsvp.isVolunteer()}">I'll Volunteer!</md-button>
+  <md-button ng-click="eventRsvp.cancel()" ng-class="{'md-primary' : eventRsvp.isCancel()}">Cancel</md-button>
 </div>

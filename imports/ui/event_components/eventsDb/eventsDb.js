@@ -49,7 +49,8 @@ class EventsDb {
         "Resources", 
         "Volunteers", 
         "Organizer", 
-        "Attendants", 
+        "Attendants",
+        "Cancellations", 
         "Chapter"];
 
     this.searchText = '';
@@ -65,9 +66,11 @@ class EventsDb {
 
     this.helpers({
       events() {
-        return Events.find({}, {
+        var x = Events.find({}, {
           sort : this.getReactively('sort')
         });
+        console.log(x)
+        return x;
       },
       event() {
         var x = Events.findOne('Micmw2CBgA9bTaeLk')
