@@ -57,8 +57,14 @@ $('#datepick').daterangepicker({
     <!-- need to get a datepicker module from atmosphere -->
       Date:
     </label>
-    <input id='datepick' ng-model="eventModify.event.date" />
+    <md-datepicker ng-model="eventModify.event.date" md-placeholder="Enter date"></md-datepicker>
   </div>
+  <md-input-container>
+    <label>
+      Time:
+    </label>
+    <input type="time" ng-model="eventModify.event.time"/>
+  </md-input-container>
   <md-input-container>
     <label>
       Description:

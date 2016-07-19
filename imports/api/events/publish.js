@@ -4,6 +4,15 @@ import { Counts } from 'meteor/tmeasday:publish-counts';
 import { Events } from './collection';
 
 if (Meteor.isServer) {
+
+    var everyMinute = new Cron(function() {
+var x = Events.findOne('Micmw2CBgA9bTaeLk')
+        console.log(x)
+        
+
+    console.log("another minute has passed!");
+}, {});
+
   Meteor.publish('events', function(options, searchString, opt) {
     const selector = {
       $or: [{

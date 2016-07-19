@@ -16,7 +16,7 @@ class SplashIndex {
     $reactive(this).attach($scope);
 
   }
-
+  
   isOwner(event) {
     return this.isLoggedIn && event.owner === this.currentUserId;
   }
@@ -29,6 +29,7 @@ class SplashIndex {
     this.sort = sort;
   }
 }
+
 
 const name = 'splashIndex';
 const template = Meteor.isCordova ? mobileTemplate : webTemplate;

@@ -1,5 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { Events } from '../api/events';
+import { Easycron } from 'meteor/chfritz:easycron';
 
 Meteor.startup(() => {
   if (Events.find().count() === 0) {

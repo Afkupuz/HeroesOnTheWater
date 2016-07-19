@@ -1,8 +1,8 @@
 import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
-
 import { Meteor } from 'meteor/meteor';
+
 
 import template from './dossierDetails.html';
 import { Events } from '../../../api/events';
@@ -35,14 +35,26 @@ class DossierDetails {
     this.subscribe('images');
 
     this.helpers({
-      events() {
-        var x = Events.find({
-          'rsvps.user': this.test
+      eventsY() {
+        return Events.find({
+          'rsvps': { $elemMatch: { user: this.test, rsvp: 'yes'}}
         }, {
           sort : {name: 1}
         });
-        console.log(x)
-        return x
+      },
+      eventsV() {
+        return Events.find({
+          'rsvps': { $elemMatch: { user: this.test, rsvp: 'volunteer'}}
+        }, {
+          sort : {name: 1}
+        });
+      },
+      eventsC() {
+        return Events.find({
+          'rsvps': { $elemMatch: { user: this.test, rsvp: 'cancel'}}
+        }, {
+          sort : {name: 1}
+        });
       },
       user() {
         console.log(Meteor.user())
@@ -53,6 +65,18 @@ class DossierDetails {
       }
     });
   }
+
+
+    dateWarn(eventDate){
+
+      var now = new Date()
+      var timeDiff = Math.abs(now.getTime() - eventDate.getTime());
+      var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+
+      return diffDays
+
+
+    }
 
     //opens modal editing window and provides controller data
     open(dossier) {
@@ -80,6 +104,7 @@ class DossierDetails {
   }
 
 }
+
 
 const name = 'dossierDetails';
 

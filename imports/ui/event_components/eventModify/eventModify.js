@@ -48,6 +48,9 @@ class EventModify {
   }
 
   save() {
+    this.event.date.setHours(this.event.time.getHours())
+    this.event.date.setMinutes(this.event.time.getMinutes())
+
     Events.update({
       _id: this.event._id
     }, {
