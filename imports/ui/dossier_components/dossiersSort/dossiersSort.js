@@ -3,6 +3,7 @@ import angularMeteor from 'angular-meteor';
 
 import template from './dossiersSort.html';
 
+//sorting class
 class DossiersSort {
   constructor() {
     this.changed();

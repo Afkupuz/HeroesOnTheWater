@@ -5,6 +5,8 @@ import template from './dossierImage.html';
 import { Images } from '../../../api/images';
 import { name as DisplayImageFilter } from '../../filters/displayImageFilter';
 
+//supplies an image template for loading pictures
+//todo merge image loaders across other modules
 class DossierImage {
   constructor($scope, $reactive) {
     'ngInject';

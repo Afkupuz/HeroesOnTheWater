@@ -5,6 +5,9 @@ import { Events } from './collection';
 
 if (Meteor.isServer) {
 
+/*
+//meteor add chfritz:easycron
+
     var everyMinute = new Cron(function() {
 var x = Events.findOne('Micmw2CBgA9bTaeLk')
         console.log(x)
@@ -12,6 +15,8 @@ var x = Events.findOne('Micmw2CBgA9bTaeLk')
 
     console.log("another minute has passed!");
 }, {});
+
+    */
 
   Meteor.publish('events', function(options, searchString, opt) {
     const selector = {

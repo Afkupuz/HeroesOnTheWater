@@ -6,67 +6,92 @@ import { Meteor } from 'meteor/meteor';
 
 import template from './dossierDetails.html';
 import { Events } from '../../../api/events';
-import { name as DossierUninvited } from '../dossierUninvited/dossierUninvited';
-import { name as DossierMap } from '../dossierMap/dossierMap';
 import { name as DossierImage } from '../dossierImage/dossierImage';
 
 import modalTemplate from './profileModifyModal.html';
 
+//provides profile view
 class DossierDetails {
   constructor($stateParams, $scope, $reactive, $mdDialog, $mdMedia) {
     'ngInject';
 
     $reactive(this).attach($scope);
 
-    this.test = Meteor.userId()
-    console.log(this.test)
+    this.userId = $stateParams.userId;
 
-    if ($stateParams) {
-      //this.user = stateParam
-      //else current user so that admins can see profile from invitee list
-      console.log($stateParams)
+    //if someone navigates to the profile page without clicking a button
+    if (this.userId == "" || this.userId == undefined){
+      this.userId = Meteor.userId()
     }
 
     this.$mdDialog = $mdDialog;
     this.$mdMedia = $mdMedia
 
+    // assigning subscribe a variable allows us to check if it is ready later
+    // being ready means fewer errors caused by hitting the database for information
+    // that hasnt loaded yet
     this.subscribe('events');
-    this.subscribe('users');
+    var userDB = this.subscribe('users');
     this.subscribe('images');
 
+    //return database information based on user profile and other checks
     this.helpers({
+      profileCheck(){
+        if (!userDB.ready()){
+          return false
+        }
+        console.log("checking 1....")
+        if (Meteor.user().profile.first_name == "" || Meteor.user().profile.first_name == undefined){
+          console.log("checking 2....")
+          console.log(Meteor.user().profile.first_name)
+          this.open({userId : this.userId})
+        }
+
+        return true
+
+      },
       eventsY() {
         return Events.find({
-          'rsvps': { $elemMatch: { user: this.test, rsvp: 'yes'}}
+          'rsvps': { $elemMatch: { user: this.userId, rsvp: 'yes'}}
         }, {
           sort : {name: 1}
         });
       },
       eventsV() {
         return Events.find({
-          'rsvps': { $elemMatch: { user: this.test, rsvp: 'volunteer'}}
+          'rsvps': { $elemMatch: { user: this.userId, rsvp: 'volunteer'}}
         }, {
           sort : {name: 1}
         });
       },
       eventsC() {
         return Events.find({
-          'rsvps': { $elemMatch: { user: this.test, rsvp: 'cancel'}}
+          'rsvps': { $elemMatch: { user: this.userId, rsvp: 'cancel'}}
         }, {
           sort : {name: 1}
         });
       },
       user() {
-        console.log(Meteor.user())
-        return Meteor.user()
+        var x = Meteor.users.findOne(this.userId)
+        console.log(x)
+        return x;
       },
       isLoggedIn() {
         return !!Meteor.userId();
       }
     });
   }
+    //checks to see if profile is current users
+    isUser() {
+        var stateUser = Meteor.users.findOne(this.userId)
+        var current = Meteor.userId()
+        if (stateUser._id == current) {
+          return true
+        }
+        return false
+      }
 
-
+    //function that calculates days to an event
     dateWarn(eventDate){
 
       var now = new Date()
@@ -112,8 +137,6 @@ const name = 'dossierDetails';
 export default angular.module(name, [
   angularMeteor,
   uiRouter,
-  DossierUninvited,
-  DossierMap,
   DossierImage
 ]).component(name, {
   template,
@@ -126,16 +149,17 @@ function config($stateProvider) {
   'ngInject';
 
   $stateProvider.state('dossierDetails', {
-    url: '/profile',
+    url: '/profile/:userId',
     template: '<dossier-details></dossier-details>',
     resolve: {
-      currentUser($q) {
-        if (Meteor.userId() === null) {
-          return $q.reject('AUTH_REQUIRED');
-        } else {
-          return $q.resolve();
+        currentUser($q) {
+          if (Meteor.user().auth.auth != 'admin') {
+            console.log(Meteor.user.auth.auth)
+            return $q.reject('AUTH_REQUIRED');
+          } else {
+            return $q.resolve();
+          }
         }
-      }
     }
   });
 }

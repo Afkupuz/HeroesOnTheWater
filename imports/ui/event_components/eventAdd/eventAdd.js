@@ -7,11 +7,23 @@ import template from './eventAdd.html';
 import { Events } from '../../../api/events';
 import { name as EventUpload } from '../eventUpload/eventUpload';
 
+//creates new events
 class EventAdd {
   constructor() {
     this.event = {};
+
   }
 
+  //checks for admin auth when creating events for public/private
+ isAdmin(){
+    var check = Meteor.user().auth.auth
+    if (check == 'admin'){
+      return true
+    }
+    return false
+  }
+
+  //collects entered data and creates new event
   submit() {
     this.event.owner = Meteor.user()._id;
     Events.insert(this.event);

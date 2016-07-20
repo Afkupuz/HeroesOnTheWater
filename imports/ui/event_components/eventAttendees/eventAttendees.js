@@ -6,9 +6,7 @@ import { Meteor } from 'meteor/meteor';
 import template from './eventAttendees.html';
 import { name as DisplayNameFilter } from '../../filters/displayNameFilter';
 
-/**
- * EventCreator component
- */
+//Module to lost attendees/volunteers/cancellations
 class EventAttendees {
   constructor($scope) {
     'ngInject';
@@ -17,7 +15,7 @@ class EventAttendees {
 
     this.list = [];
 
-
+    //assigned a variable so that we can check "ready()" later
     var userdb = this.subscribe('users', function() {
       return ['is loaded']
     });
@@ -30,16 +28,19 @@ class EventAttendees {
         var attendants = [];
         var listName = '';
 
+        //ensure database is loaded
         if (userdb.ready() != true){
           return "loading"
         }
 
+        //check for empty
         if (!this.event || !this.event.rsvps) {
           return 'no attendants';
         }
 
         var attendantids = this.event.rsvps;
 
+        //sepparates user/attend type/and event and puts them in different arrays
         for (var i = 0 ; i < attendantids.length ; i++) {
           var id = attendantids[i].user
           var name = Meteor.users.findOne(id);
@@ -58,6 +59,7 @@ class EventAttendees {
               attendants.push(listName)
           }
         
+        //returns requested array
         if (this.attendtype == 'vol') {
           this.list = volunteers;
         }else if (this.attendtype == 'can') {

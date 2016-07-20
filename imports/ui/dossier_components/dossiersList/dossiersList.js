@@ -1,5 +1,3 @@
-//meteor add dangrossman:bootstrap-daterangepicker
-
 import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
@@ -7,22 +5,18 @@ import utilsPagination from 'angular-utils-pagination';
 
 import { Counts } from 'meteor/tmeasday:publish-counts';
 import { Meteor } from 'meteor/meteor';
-
-import webTemplate from './web.html';
-import mobileTemplate from './mobile.html';
 import { Events } from '../../../api/events';
-import { name as DossiersSort } from '../dossiersSort/dossiersSort';
-import { name as DossiersMap } from '../dossiersMap/dossiersMap';
-import { name as DossierAddButton } from '../dossierAddButton/dossierAddButton';
-import { name as DossierRemove } from '../dossierRemove/dossierRemove';
-import { name as DossierCreator } from '../dossierCreator/dossierCreator';
-import { name as DossierRsvp } from '../dossierRsvp/dossierRsvp';
-import { name as DossierRsvpsList } from '../dossierRsvpsList/dossierRsvpsList';
-import { name as DossierImage } from '../dossierImage/dossierImage';
 
-import modalTemplate from './dossierModifyModal.html';
+import { name as DossiersSort } from '../dossiersSort/dossiersSort';
+import { name as DossierRemove } from '../dossierRemove/dossierRemove';
+import { name as DossierImage } from '../dossierImage/dossierImage';
 import { name as DossierModify } from '../dossierModify/dossierModify';
 
+import modalTemplate from './dossierModifyModal.html';
+import webTemplate from './web.html';
+import mobileTemplate from './mobile.html';
+
+//lists all profiles in database for admin view
 class DossiersList {
   constructor($scope, $reactive, $mdDialog, $mdMedia) {
     'ngInject';
@@ -38,8 +32,10 @@ class DossiersList {
       name: 1
     };
 
+    //provides the search option once selected from column dropdown
     this.opt = '';
 
+    //supplies dropdown menue
     this.column = [
         "ID", 
         "Auth Level", 
@@ -55,13 +51,7 @@ class DossiersList {
 
     this.searchText = '';
 
-/*
-    this.subscribe('dossiers', () => [{
-        skip: parseInt((this.getReactively('page') - 1) * this.perPage),
-        sort: this.getReactively('sort')
-      }, this.getReactively('searchText'), this.getReactively('opt')
-    ]);
-*/
+    //added parameters to the subscription so that it can be searched
     this.subscribe('users', () => [
         this.getReactively('searchText'),
         this.getReactively('opt')
@@ -91,6 +81,7 @@ class DossiersList {
     });
   }
 
+  //opens modal window and provides a controller for it
   open(dossier) {
     this.$mdDialog.show({
       controller($mdDialog) {
@@ -136,12 +127,7 @@ export default angular.module(name, [
   uiRouter,
   utilsPagination,
   DossiersSort,
-  DossiersMap,
-  DossierAddButton,
   DossierRemove,
-  DossierCreator,
-  DossierRsvp,
-  DossierRsvpsList,
   DossierImage,
   DossierModify
 ]).component(name, {
@@ -158,13 +144,14 @@ function config($stateProvider) {
       url: '/dossiers',
       template: '<dossiers-list></dossiers-list>',
       resolve: {
-      currentUser($q) {
-        if (Meteor.userId() === null) {
-          return $q.reject('AUTH_REQUIRED');
-        } else {
-          return $q.resolve();
+        currentUser($q) {
+          if (Meteor.user().auth.auth != 'admin') {
+            console.log(Meteor.user.auth.auth)
+            return $q.reject('AUTH_REQUIRED');
+          } else {
+            return $q.resolve();
+          }
         }
-      }
     }
     });
 }

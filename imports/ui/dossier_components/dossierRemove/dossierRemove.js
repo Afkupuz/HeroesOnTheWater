@@ -4,6 +4,7 @@ import angularMeteor from 'angular-meteor';
 import template from './dossierRemove.html';
 import { Meteor } from 'meteor/meteor';
 
+//deletes data from database
 class DossierRemove {
   remove() {
     var check = confirm("Are you sure you want to delete user: " + this.user.profile.username)

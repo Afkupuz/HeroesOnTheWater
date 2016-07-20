@@ -29,7 +29,8 @@ class Register {
         if (err) {
           this.error = err;
         } else {
-          this.$state.go('dossiers');
+          console.log(this.$state)
+          this.$state.go('splash');
         }
       })
     );

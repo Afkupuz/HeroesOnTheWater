@@ -9,6 +9,7 @@ import { Events } from '../../../api/events';
 import { name as DossierUpload } from '../dossierUpload/dossierUpload';
 import { name as DossierImage } from '../dossierImage/dossierImage';
 
+//primarily served as a modal template to edit information
 class DossierModify {
   constructor($stateParams, $scope, $reactive) {
     'ngInject';
@@ -21,6 +22,7 @@ class DossierModify {
     this.subscribe('dossiers');
     this.subscribe('users');
 
+    //load database info and checks
     this.helpers({
       dossier() {
         return Events.findOne({
@@ -41,7 +43,7 @@ class DossierModify {
       }
     });
   }
-
+  //saves changed data
   save() {
     var check = confirm("Are you sure you want to save?")
     

@@ -5,7 +5,8 @@ import 'angular-sortable-view';
 import 'ng-img-crop/compile/minified/ng-img-crop';
 import 'ng-img-crop/compile/minified/ng-img-crop.css';
 
-
+//uploads images to image database
+//todo merge with other modules
 import { Meteor } from 'meteor/meteor';
 
 import template from './dossierUpload.html';

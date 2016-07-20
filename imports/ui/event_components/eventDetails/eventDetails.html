@@ -1,28 +1,24 @@
 <div layout="column" layout-padding>
   <div layout="column" layout-gt-sm="row"  layout-padding>
-    <form flex="50" layout="column">
-      <md-input-container>
-        <label>Event name</label>
-        <input ng-model="eventDetails.event.name" ng-disabled="!eventDetails.isLoggedIn">
-      </md-input-container>
+    <div flex="50" layout="column" >
+    <h1> {{eventDetails.event.name}} </h1>
+    <h3> {{eventDetails.event.description}} </h3>
 
-      <md-input-container>
-        <label>Description</label>
-        <input ng-model="eventDetails.event.description" ng-disabled="!eventDetails.isLoggedIn">
-      </md-input-container>
+    <div>
+     <p>Event time: {{eventDetails.event.date}}</p>
+     <p>Address: {{eventDetails.event.address}}</p>
+     <p>Chapter: {{eventDetails.event.chapter}}</p>
+    </div>
 
-      <div>
-        <md-checkbox ng-model="eventDetails.event.public" ng-disabled="!eventDetails.isLoggedIn" aria-label="Public Event?">
-          Public Event?
-        </md-checkbox>
-      </div>
+    <div>
+    <div> {{eventDetails.event.rsvps}} </div>
+    <p> <event-attendees event="eventDetails.event" attendtype="'vol'"></event-attendees> </p>
+    <p> <event-attendees event="eventDetails.event" attendtype="'can'"></event-attendees> </p>
+    </div>
 
-      <div>
-        <md-button ng-click="eventDetails.save()" class="md-primary md-raised">Save</md-button>
-      </div>
-    </form>
-    <event-map flex="50" location="eventDetails.event.location"></event-map>
+    <div>
+      <event-map flex="50" location="eventDetails.event.location"></event-map>
+    </div>
+    </div>
   </div>
-
-  <event-uninvited flex event="eventDetails.event" ng-show="eventDetails.canInvite()"></event-uninvited>
 </div>

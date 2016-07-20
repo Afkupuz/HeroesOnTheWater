@@ -8,6 +8,7 @@ import template from './eventDetails.html';
 import { Events } from '../../../api/events';
 import { name as EventUninvited } from '../eventUninvited/eventUninvited';
 import { name as EventMap } from '../eventMap/eventMap';
+import { name as EventAttendees } from '../eventAttendees/eventAttendees';
 
 class EventDetails {
   constructor($stateParams, $scope, $reactive) {
@@ -35,14 +36,7 @@ class EventDetails {
     });
   }
 
-  canInvite() {
-    if (!this.event) {
-      return false;
-    }
-
-    return !this.event.public && this.event.owner === Meteor.userId();
-  }
-
+/*
   save() {
     console.log(this.event.location)
     Events.update({
@@ -62,6 +56,7 @@ class EventDetails {
       }
     });
   }
+  */
 }
 
 const name = 'eventDetails';
@@ -71,6 +66,7 @@ export default angular.module(name, [
   angularMeteor,
   uiRouter,
   EventUninvited,
+  EventAttendees,
   EventMap
 ]).component(name, {
   template,
@@ -84,15 +80,6 @@ function config($stateProvider) {
 
   $stateProvider.state('eventDetails', {
     url: '/events/:eventId',
-    template: '<event-details></event-details>',
-    resolve: {
-      currentUser($q) {
-        if (Meteor.userId() === null) {
-          return $q.reject('AUTH_REQUIRED');
-        } else {
-          return $q.resolve();
-        }
-      }
-    }
+    template: '<event-details></event-details>'
   });
 }

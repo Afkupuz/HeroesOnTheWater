@@ -5,31 +5,31 @@
     <label>
       UserName:
     </label>
-    <input type="text" ng-model="dossierModify.user.profile.username"/>
+    <input type="text" ng-model="dossierModify.user.profile.username" required />
   </md-input-container>
   <md-input-container>
     <label>
       First Name:
     </label>
-    <input type="text" ng-model="dossierModify.user.profile.first_name"/>
+    <input type="text" ng-model="dossierModify.user.profile.first_name" required/>
   </md-input-container>
   <md-input-container>
     <label>
       Last Name:
     </label>
-    <input type="text" ng-model="dossierModify.user.profile.last_name"/>
+    <input type="text" ng-model="dossierModify.user.profile.last_name" required/>
   </md-input-container>
   <md-input-container>
     <label>
       Phone:
     </label>
-    <input type="number" ng-model="dossierModify.user.profile.phone" min='1000000000' max="10000000000" />
+    <input type="number" ng-model="dossierModify.user.profile.phone" min='1000000000' max="10000000000" required/>
   </md-input-container>
   <md-input-container>
     <label>
       Bio:
     </label>
-    <input type="text" ng-model="dossierModify.user.profile.bio"/>
+    <input type="text" ng-model="dossierModify.user.profile.bio" />
   </md-input-container>
   <md-input-container>
     <label>
@@ -57,14 +57,6 @@
               <dossier-image images="dossierModify.user.profile.picture"></dossier-image>
             </div>
     </md-card-title-media>
-
-  </div>
-  <div>
-    <label>
-      Location:
-    </label>
-    <div> {{dossierModify.dossier.location}} </div>
-  </div>
   
     <md-button ng-click="dossierModify.save()" class="md-raised" ng-disabled="adminEdit.$invalid">Save Changes</md-button>
 </form>
