@@ -9,6 +9,7 @@ import { Meteor } from 'meteor/meteor';
 import webTemplate from './web.html';
 import mobileTemplate from './mobile.html';
 import { Events } from '../../../api/events';
+import { Chapters } from '../../../api/chapters';
 import { name as EventsSort } from '../eventsSort/eventsSort';
 import { name as EventsMap } from '../eventsMap/eventsMap';
 import { name as EventAddButton } from '../eventAddButton/eventAddButton';
@@ -27,12 +28,15 @@ class EventsList {
 
     $reactive(this).attach($scope);
 
-    this.perPage = 3;
+    //date sorting includes filtered out events...
+    this.perPage = 4;
     this.page = 1;
-    this.sort = {
-      name: 1
-    };
+    this.sort = { date: -1 };
     this.searchText = '';
+
+    this.tess = '';
+
+    this.today = new Date()
 
     this.subscribe('events', () => [{
         limit: parseInt(this.perPage),
@@ -43,10 +47,11 @@ class EventsList {
 
     this.subscribe('users');
     this.subscribe('images');
+    this.subscribe('chapters');
 
     this.helpers({
       events() {
-        return Events.find({}, {
+        return Events.find({ 'date' : {$gte : this.today}}, {
           sort : this.getReactively('sort')
         });
       },
@@ -58,6 +63,12 @@ class EventsList {
       },
       currentUserId() {
         return Meteor.userId();
+      },
+      chapter(jac){
+        console.log("id : "+ jac)
+        var x = Chapters.findOne('LBJiLABt3ah7oXkXr')
+        console.log(x)
+        return x
       }
     });
   }

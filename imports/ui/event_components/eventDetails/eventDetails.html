@@ -1,24 +1,31 @@
-<div layout="column" layout-padding>
-  <div layout="column" layout-gt-sm="row"  layout-padding>
-    <div flex="50" layout="column" >
-    <h1> {{eventDetails.event.name}} </h1>
-    <h3> {{eventDetails.event.description}} </h3>
+  <div layout="column" layout-gt-sm="row">
+    <div flex="50">
+      <md-card>
+        <md-card-title>
+          <md-card-title-text>
+             {{eventDetails.event.name}}
+            <span class="md-subhead">{{eventDetails.event.description}}</span>
+          </md-card-title-text>
+          <md-card-title-media>
+            <div class="md-media-lg card-media">
+              <event-image images="eventDetails.event.images"></event-image>
+            </div>
+          </md-card-title-media>
+        </md-card-title>
+        <md-card-content>
+          <p> Date and Time: {{eventDetails.event.date | date: "EEEE, MMMM d, y @ h:mm:ss a"}} </p>
+          <p> Address: {{eventDetails.event.address}}</p>
+          <p> Chapter: {{eventDetails.event.chapter}}</p>
 
-    <div>
-     <p>Event time: {{eventDetails.event.date}}</p>
-     <p>Address: {{eventDetails.event.address}}</p>
-     <p>Chapter: {{eventDetails.event.chapter}}</p>
+          <event-creator event="eventDetails.event"></event-creator>
+        </md-card-content>
+        <md-card-actions>
+          <event-rsvp event="eventDetails.event" ></event-rsvp>
+        </md-card-actions>
+      </md-card>
     </div>
-
-    <div>
-    <div> {{eventDetails.event.rsvps}} </div>
-    <p> <event-attendees event="eventDetails.event" attendtype="'vol'"></event-attendees> </p>
-    <p> <event-attendees event="eventDetails.event" attendtype="'can'"></event-attendees> </p>
-    </div>
-
-    <div>
+    <div flex="50">
       <event-map flex="50" location="eventDetails.event.location"></event-map>
-    </div>
     </div>
   </div>
 </div>

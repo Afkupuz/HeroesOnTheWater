@@ -2,7 +2,7 @@
   <event-add-button ng-show="eventsDb.isLoggedIn"></event-add-button>
 
   <div flex>
-    <h2 class="md-display-1">List of the events:</h2>
+    <h2 class="md-display-1">List of events:</h2>
   </div>
 
   <div flex layout="row" layout-padding>
@@ -17,47 +17,42 @@
       </md-select>
     </md-input-container>
 
-    
+    <events-sort on-change="eventsList.sortChanged(sort)" property="date" order="-1"></events-sort>
   </div>
 
-  <table>
-    <thead></thead>
-    <tbody>
-      <tr >
-      <td> Link </td>
-      <td ng-repeat="subject in eventsDb.column" > {{subject}} </td>
-      <td> Picture </td>
-      <td> Edit </td>
-      <td> Delete </td>
-      </tr>  
+  <div layout="column" layout-gt-sm="row" class='datagrid'>
+    <table>
+      <thead></thead>
+      <tbody>
+        <tr >
+        <td> Link </td>
+        <td ng-repeat="subject in eventsDb.column" > {{subject}} </td>
+        <td> Picture </td>
+        <td> Edit </td>
+        <td> Delete </td>
+        </tr>  
 
-      <tr ng-repeat="event in eventsDb.events">
-        <td ui-sref="eventDetails({ eventId: event._id })"> Detail Page </td>
-        <td> {{event.name}} </td>
-        <td> {{event.date}} </td>
-        <td> {{event.description}} </td>
-        <td> {{event.address}} </td>
-        <td> {{event.resources}} </td>
-        <td> <event-attendees event="event" attendtype="'vol'"></event-attendees> </td>
-        <td> <event-creator event="event"></event-creator> </td>
-        <td> <event-attendees event="event" attendtype="'yes'"></event-attendees> </td>
-        <td> <event-attendees event="event" attendtype="'can'"></event-attendees> </td>
-        <td> {{event.chapter}} </td>
-        <td><div style="height:80px" ng-if="event.images">
-              <event-image images="event.images"></event-image>
-            </div></td>
-        <td><md-button ng-click="eventsDb.open({ eventId: event._id })" class="md-primary md-raised" >Edit</md-button></td>
-        <td> <event-remove event="event"></event-remove> </td>
-      </tr>
-    </tbody>
-  </table>
-
-  <div layout="column" layout-gt-sm="row">
-    <div flex="50">
-      
-    <dir-pagination-controls on-page-change="eventsDb.pageChanged(newPageNumber)"></dir-pagination-controls>
-    
-    <div flex="50">
-    </div>
+        <tr ng-repeat="event in eventsDb.events">
+          <td ui-sref="eventDetails({ eventId: event._id })"> Detail Page </td>
+          <td> {{event.name}} </td>
+          <td> {{event.date | date: "EEEE, MMMM d, y @ h:mm:ss a"}} </td>
+          <td> {{event.description}} </td>
+          <td> {{event.address}} </td>
+          <td> {{event.resources}} </td>
+          <td> <event-attendees event="event" attendtype="'vol'"></event-attendees> </td>
+          <td> <event-creator event="event"></event-creator> </td>
+          <td> <event-attendees event="event" attendtype="'yes'"></event-attendees> </td>
+          <td> <event-attendees event="event" attendtype="'can'"></event-attendees> </td>
+          <td> {{event.chapter}} </td>
+          <td><div style="height:80px" ng-if="event.images">
+                <event-image images="event.images"></event-image>
+              </div></td>
+          <td><md-button ng-click="eventsDb.open({ eventId: event._id })" class="md-primary md-raised" >Edit</md-button></td>
+          <td> <event-remove event="event"></event-remove> </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
+
 </div>
+

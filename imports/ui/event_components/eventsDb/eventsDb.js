@@ -66,16 +66,12 @@ class EventsDb {
 
     this.helpers({
       events() {
-        var x = Events.find({}, {
+        return Events.find({}, {
           sort : this.getReactively('sort')
         });
-        console.log(x)
-        return x;
       },
       event() {
-        var x = Events.findOne('Micmw2CBgA9bTaeLk')
-        console.log(x)
-        return x;
+        return Events.findOne('Micmw2CBgA9bTaeLk')
       },
       users() {
         //var x = Meteor.users.findOne('PwT9tYc9GroZcny8Y')
@@ -101,7 +97,6 @@ class EventsDb {
 
         //helps pass selected id to modal edit
         this.getval = () => {
-          console.log(event)
           return event
         }
 

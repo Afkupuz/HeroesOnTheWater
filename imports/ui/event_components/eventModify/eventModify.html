@@ -48,7 +48,7 @@ $('#datepick').daterangepicker({
 <div layout="column" layout-padding>
   <md-input-container>
     <label>
-      Event Name:
+      Edit Event Details:
     </label>
     <input type="text" ng-model="eventModify.event.name"/>
   </md-input-container>
@@ -122,5 +122,5 @@ $('#datepick').daterangepicker({
     <div> {{eventModify.event.location}} </div>
   </div>
   
-    <md-button ng-click="eventModify.save()" class="md-raised">Save Changes</md-button>
+    <md-button ng-click="eventModify.getlocation(eventModify.event)" class="md-raised">Save Changes</md-button>
 </div>

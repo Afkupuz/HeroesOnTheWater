@@ -19,6 +19,7 @@ var x = Events.findOne('Micmw2CBgA9bTaeLk')
     */
 
   Meteor.publish('events', function(options, searchString, opt) {
+
     const selector = {
       $or: [{
         // the public events
@@ -122,5 +123,6 @@ var x = Events.findOne('Micmw2CBgA9bTaeLk')
     });
 
     return Events.find(selector, options);
+
   });
 }

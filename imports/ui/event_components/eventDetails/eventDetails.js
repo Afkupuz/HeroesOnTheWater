@@ -9,7 +9,9 @@ import { Events } from '../../../api/events';
 import { name as EventUninvited } from '../eventUninvited/eventUninvited';
 import { name as EventMap } from '../eventMap/eventMap';
 import { name as EventAttendees } from '../eventAttendees/eventAttendees';
+import { name as EventImage } from '../eventImage/eventImage';
 
+//displays details on event for users
 class EventDetails {
   constructor($stateParams, $scope, $reactive) {
     'ngInject';
@@ -20,6 +22,7 @@ class EventDetails {
 
     this.subscribe('events');
     this.subscribe('users');
+    this.subscribe('images');
 
     this.helpers({
       event() {
@@ -35,28 +38,6 @@ class EventDetails {
       }
     });
   }
-
-/*
-  save() {
-    console.log(this.event.location)
-    Events.update({
-      _id: this.event._id
-    }, {
-      $set: {
-        name: this.event.name,
-        description: this.event.description,
-        public: this.event.public,
-        location: this.event.location
-      }
-    }, (error) => {
-      if (error) {
-        console.log('Oops, unable to update the event...');
-      } else {
-        console.log('Done!');
-      }
-    });
-  }
-  */
 }
 
 const name = 'eventDetails';
@@ -67,6 +48,7 @@ export default angular.module(name, [
   uiRouter,
   EventUninvited,
   EventAttendees,
+  EventImage,
   EventMap
 ]).component(name, {
   template,

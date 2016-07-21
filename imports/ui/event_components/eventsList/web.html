@@ -11,7 +11,7 @@
       <input ng-model="eventsList.searchText">
     </md-input-container>
 
-    <events-sort on-change="eventsList.sortChanged(sort)" property="name" order="1"></events-sort>
+    <events-sort on-change="eventsList.sortChanged(sort)" property="date" order="-1"></events-sort>
   </div>
 
   <div layout="column" layout-gt-sm="row">
@@ -32,12 +32,12 @@
           </md-card-title-media>
         </md-card-title>
         <md-card-content>
+          <p>{{event.date | date: "EEEE, MMMM d, y @ h:mm:ss a"}}</p>
+          <p>{{event.chapter_id}}</p>
+          <p ng-bind="eventList.chapter('sad')"> this is cool </p>
           <event-rsvps-list rsvps="event.rsvps"></event-rsvps-list>
 
           <event-unanswered event="event" ng-if="!event.public"></event-unanswered>
-          <div ng-if="event.public">
-            Everyone is invited
-          </div>
 
           <event-creator event="event"></event-creator>
         </md-card-content>

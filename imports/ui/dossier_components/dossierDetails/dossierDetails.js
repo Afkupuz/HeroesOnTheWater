@@ -34,6 +34,8 @@ class DossierDetails {
     var userDB = this.subscribe('users');
     this.subscribe('images');
 
+    this.today = new Date()
+
     //return database information based on user profile and other checks
     this.helpers({
       profileCheck(){
@@ -51,25 +53,25 @@ class DossierDetails {
 
       },
       eventsY() {
-        return Events.find({
-          'rsvps': { $elemMatch: { user: this.userId, rsvp: 'yes'}}
-        }, {
-          sort : {name: 1}
-        });
+        return Events.find({ $and : [{
+          'rsvps': { $elemMatch: { user: this.userId, rsvp: 'yes'}} }, , { 'date' : {$gte : this.today}}]
+          }, {
+            sort : {name: 1}
+            });
       },
       eventsV() {
-        return Events.find({
-          'rsvps': { $elemMatch: { user: this.userId, rsvp: 'volunteer'}}
-        }, {
-          sort : {name: 1}
-        });
+        return Events.find({ $and : [{
+          'rsvps': { $elemMatch: { user: this.userId, rsvp: 'volunteer'}} }, , { 'date' : {$gte : this.today}}]
+          }, {
+            sort : {name: 1}
+            });
       },
       eventsC() {
-        return Events.find({
-          'rsvps': { $elemMatch: { user: this.userId, rsvp: 'cancel'}}
-        }, {
-          sort : {name: 1}
-        });
+        return Events.find({ $and : [{
+          'rsvps': { $elemMatch: { user: this.userId, rsvp: 'cancel'}} }, , { 'date' : {$gte : this.today}}]
+          }, {
+            sort : {name: 1}
+            });
       },
       user() {
         var x = Meteor.users.findOne(this.userId)
@@ -95,12 +97,10 @@ class DossierDetails {
     dateWarn(eventDate){
 
       var now = new Date()
-      var timeDiff = Math.abs(now.getTime() - eventDate.getTime());
+      var timeDiff = eventDate.getTime() - now.getTime();
       var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
 
       return diffDays
-
-
     }
 
     //opens modal editing window and provides controller data
@@ -153,7 +153,7 @@ function config($stateProvider) {
     template: '<dossier-details></dossier-details>',
     resolve: {
         currentUser($q) {
-          if (Meteor.user().auth.auth != 'admin') {
+          if (Meteor.user() == undefined) {
             console.log(Meteor.user.auth.auth)
             return $q.reject('AUTH_REQUIRED');
           } else {
