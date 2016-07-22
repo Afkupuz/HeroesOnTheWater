@@ -5,6 +5,7 @@ import utilsPagination from 'angular-utils-pagination';
 
 import { Counts } from 'meteor/tmeasday:publish-counts';
 import { Meteor } from 'meteor/meteor';
+import { Donations } from '../../../api/donations';
 
 import webTemplate from './web.html';
 import mobileTemplate from './mobile.html';
@@ -14,6 +15,10 @@ class SplashIndex {
     'ngInject';
 
     $reactive(this).attach($scope);
+
+    this.subscribe('donations')
+
+    this.donations = {}
 
   }
   
@@ -28,6 +33,13 @@ class SplashIndex {
   sortChanged(sort) {
     this.sort = sort;
   }
+
+  donate(){
+    Donations.insert(this.donations);
+    alert("Thank you for your donation!")
+    this.donations = {}
+  }
+
 }
 
 
