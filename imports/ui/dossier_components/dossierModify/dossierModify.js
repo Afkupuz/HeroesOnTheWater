@@ -22,6 +22,8 @@ class DossierModify {
     this.subscribe('dossiers');
     this.subscribe('users');
 
+    this.authLevels = ['amin', 'manager', 'volunteer']
+
     //load database info and checks
     this.helpers({
       dossier() {
@@ -42,6 +44,13 @@ class DossierModify {
         return false
       }
     });
+  }
+  getSelected(){
+    if (this.user.auth.auth !== undefined) {
+          return this.user.auth.auth;
+        } else {
+          return "Please select Authorization";
+        }
   }
   //saves changed data
   save() {

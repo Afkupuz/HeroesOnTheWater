@@ -41,7 +41,9 @@
     <label>
       Auth Level:
     </label>
-    <input type="text" ng-model="dossierModify.user.auth.auth"/>
+    <md-select ng-model="dossierModify.user.auth.auth" md-selected-text='dossierModify.getSelected()'>
+        <md-option ng-value='level' ng-repeat='level in dossierModify.authLevels' > {{level}} </md-option>
+    </md-select>
   </md-input-container>
   <md-input-container ng-show="dossierModify.isAuthorized">
     <label>

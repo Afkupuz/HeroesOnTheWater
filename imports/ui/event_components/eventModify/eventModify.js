@@ -63,9 +63,7 @@ class EventModify {
           description: this.event.description,
           address: this.event.address,
           resources: this.event.resources,
-          volunteers: this.event.volunteers,
           organizer: this.event.organizer,
-          attendants: this.event.attendants,
           chapter: this.event.chapter,
           images: this.event.images,
           location: this.event.location

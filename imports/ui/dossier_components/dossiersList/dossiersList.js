@@ -80,6 +80,12 @@ class DossiersList {
       }
     });
   }
+  isAuthorized() {
+        if (Meteor.user().auth.auth == 'admin') {
+            return true
+        }
+        return false
+  }
 
   //opens modal window and provides a controller for it
   open(dossier) {
@@ -145,11 +151,12 @@ function config($stateProvider) {
       template: '<dossiers-list></dossiers-list>',
       resolve: {
         currentUser($q) {
-          if (Meteor.user().auth.auth != 'admin') {
-            console.log(Meteor.user.auth.auth)
-            return $q.reject('AUTH_REQUIRED');
-          } else {
+          if (Meteor.user().auth.auth == 'admin') {
             return $q.resolve();
+          } else if (Meteor.user().auth.auth == 'manager'){
+            return $q.resolve();
+          } else {
+            return $q.reject('AUTH_REQUIRED');
           }
         }
     }

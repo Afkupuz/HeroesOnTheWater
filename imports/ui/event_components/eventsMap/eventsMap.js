@@ -34,4 +34,4 @@ export default angular.module(name, [
     events: '='
   },
   controller: EventsMap
-});
+})

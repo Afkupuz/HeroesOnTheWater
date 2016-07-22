@@ -17,7 +17,7 @@
       </md-select>
     </md-input-container>
 
-    <events-sort on-change="eventsList.sortChanged(sort)" property="date" order="-1"></events-sort>
+    <events-sort on-change="eventsDb.sortChanged(sort)" property="date" order="-1"></events-sort>
   </div>
 
   <div layout="column" layout-gt-sm="row" class='datagrid'>
@@ -27,9 +27,12 @@
         <tr >
         <td> Link </td>
         <td ng-repeat="subject in eventsDb.column" > {{subject}} </td>
+        <td> Attendants </td>
+        <td> Volunteers </td>
+        <td> Cancellations </td>
         <td> Picture </td>
-        <td> Edit </td>
-        <td> Delete </td>
+        <td ng-show="eventsDb.isAuthorized()"> Edit </td>
+        <td ng-show="eventsDb.isAuthorized()"> Delete </td>
         </tr>  
 
         <tr ng-repeat="event in eventsDb.events">
@@ -39,16 +42,16 @@
           <td> {{event.description}} </td>
           <td> {{event.address}} </td>
           <td> {{event.resources}} </td>
-          <td> <event-attendees event="event" attendtype="'vol'"></event-attendees> </td>
           <td> <event-creator event="event"></event-creator> </td>
-          <td> <event-attendees event="event" attendtype="'yes'"></event-attendees> </td>
-          <td> <event-attendees event="event" attendtype="'can'"></event-attendees> </td>
           <td> {{event.chapter}} </td>
+          <td> <event-attendees event="event" attendtype="'yes'"></event-attendees> </td>
+          <td> <event-attendees event="event" attendtype="'vol'"></event-attendees> </td>
+          <td> <event-attendees event="event" attendtype="'can'"></event-attendees> </td>
           <td><div style="height:80px" ng-if="event.images">
                 <event-image images="event.images"></event-image>
               </div></td>
-          <td><md-button ng-click="eventsDb.open({ eventId: event._id })" class="md-primary md-raised" >Edit</md-button></td>
-          <td> <event-remove event="event"></event-remove> </td>
+          <td ng-show="eventsDb.isAuthorized()"><md-button ng-click="eventsDb.open({ eventId: event._id })" class="md-primary md-raised" >Edit</md-button></td>
+          <td ng-show="eventsDb.isAuthorized()"> <event-remove event="event"></event-remove> </td>
         </tr>
       </tbody>
     </table>

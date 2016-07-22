@@ -16,16 +16,23 @@
           <p> Date and Time: {{eventDetails.event.date | date: "EEEE, MMMM d, y @ h:mm:ss a"}} </p>
           <p> Address: {{eventDetails.event.address}}</p>
           <p> Chapter: {{eventDetails.event.chapter}}</p>
-
           <event-creator event="eventDetails.event"></event-creator>
         </md-card-content>
         <md-card-actions>
+          <event-rsvps-list rsvps="eventDetails.event.rsvps"></event-rsvps-list>
           <event-rsvp event="eventDetails.event" ></event-rsvp>
         </md-card-actions>
       </md-card>
+<div ng-show="eventDetails.isAuthorized()">
+    <md-button ng-click="eventDetails.listYes(eventDetails.event.rsvps)" class="md-primary md-raised" >See Attendees</md-button>
+    <md-button ng-click="eventDetails.listVol(eventDetails.event.rsvps)" class="md-primary md-raised" >See Volunteers</md-button>
+    <md-button ng-click="eventDetails.listCan(eventDetails.event.rsvps)" class="md-primary md-raised" >See Cancellations</md-button>
+
+    <div ng-repeat="people in eventDetails.show"> {{people}} </div>
+</div>
     </div>
     <div flex="50">
-      <event-map flex="50" location="eventDetails.event.location"></event-map>
+      <event-map flex="50" location="eventDetails.event.location" ></event-map>
     </div>
   </div>
 </div>

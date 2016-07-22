@@ -1,50 +1,3 @@
-<script>
-$('#datepick').daterangepicker({
-    "singleDatePicker": true,
-    "timePicker": true,
-    "timePicker24Hour": true,
-    "linkedCalendars": false,
-    "locale": {
-        "format": "dddd MMMM DD, h:mm",
-        "separator": " - ",
-        "applyLabel": "Apply",
-        "cancelLabel": "Cancel",
-        "fromLabel": "From",
-        "toLabel": "To",
-        "customRangeLabel": "Custom",
-        "weekLabel": "W",
-        "daysOfWeek": [
-            "Su",
-            "Mo",
-            "Tu",
-            "We",
-            "Th",
-            "Fr",
-            "Sa"
-        ],
-        "monthNames": [
-            "January",
-            "February",
-            "March",
-            "April",
-            "May",
-            "June",
-            "July",
-            "August",
-            "September",
-            "October",
-            "November",
-            "December"
-        ],
-        "firstDay": 1
-    },
-    "opens": "center"
-}, function(start, end, label) {
-  console.log("New date range selected: ' + start.format('EEEE MMMM d, h:mm') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')");
-});
-</script>
-
-
 <div layout="column" layout-padding>
   <div flex ng-show="eventAdd.isAdmin()">
     <md-checkbox ng-model="eventAdd.event.public" aria-label="Public Event?" ng-init="eventAdd.event.public=true">
@@ -90,29 +43,17 @@ $('#datepick').daterangepicker({
   </md-input-container>
     <md-input-container>
     <label>
-      Volunteers:
-    </label>
-    <input type="text" ng-model="eventAdd.event.volunteers"/>
-  </md-input-container>
-    <md-input-container>
-    <label>
       Organizer:
     </label>
     <input type="text" ng-model="eventAdd.event.organizer"/>
-  </md-input-container>
-    <md-input-container>
-    <label>
-      Attendants:
-    </label>
-    <input type="text" ng-model="eventAdd.event.attendants"/>
   </md-input-container>
       <md-input-container>
     <label>
       Chapter:
     </label>
-    <md-select ng-model="eventAdd.event.chapter_id" md-selected-text='eventAdd.getSelected()'>
+    <md-select ng-model="eventAdd.event.chapter" md-selected-text='eventAdd.getSelected()'>
       <md-optgroup label={{chapter.state}} ng-repeat='chapter in eventAdd.chapters'>
-        <md-option ng-value='chapter._id' ng-repeat='chapter in eventAdd.chapters | filter: {state: chapter.state}' > {{chapter.location}} </md-option>
+        <md-option ng-value='chapter.state + " : " + chapter.location' ng-repeat='chapter in eventAdd.chapters | filter: {state: chapter.state}' > {{chapter.location}} </md-option>
       </md-optgroup>
     </md-select>
   </md-input-container>
@@ -124,13 +65,6 @@ $('#datepick').daterangepicker({
             </div>
     </md-card-title-media>
   </div>
-  <div>
-    <label>
-      Location:
-    </label>
-    <div> {{eventAdd.event.location}} </div>
-  </div>
-  
     <md-button ng-click="eventAdd.submit()" class="md-raised">Add Event!</md-button>
     </div>
 </div>

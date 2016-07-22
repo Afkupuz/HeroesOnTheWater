@@ -35,9 +35,7 @@ class EventsDb {
 
     this.perPage = 3;
     this.page = 1;
-    this.sort = {
-      name: 1
-    };
+    this.sort = {date: -1};
 
     this.opt = '';
 
@@ -47,10 +45,7 @@ class EventsDb {
         "Description", 
         "Address", 
         "Resources", 
-        "Volunteers", 
         "Organizer", 
-        "Attendants",
-        "Cancellations", 
         "Chapter"];
 
     this.searchText = '';
@@ -88,6 +83,16 @@ class EventsDb {
         return Meteor.userId();
       }
     });
+  }
+
+  isAuthorized() {
+        if (Meteor.user().auth.auth == 'admin') {
+            return true;
+        };
+        if (Meteor.user().auth.auth == 'manager') {
+            return true;
+        };
+        return false
   }
 
   open(event) {
@@ -156,6 +161,17 @@ function config($stateProvider) {
 
   $stateProvider.state('eventsDb', {
       url: '/eventsdb',
-      template: '<events-db></events-db>'
+      template: '<events-db></events-db>',
+      resolve: {
+        currentUser($q) {
+          if (Meteor.user().auth.auth == 'admin') {
+            return $q.resolve();
+          } else if (Meteor.user().auth.auth == 'manager'){
+            return $q.resolve();
+          } else {
+            return $q.reject('AUTH_REQUIRED');
+          }
+        }
+    }
     });
 }

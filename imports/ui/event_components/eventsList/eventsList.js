@@ -29,7 +29,7 @@ class EventsList {
     $reactive(this).attach($scope);
 
     //date sorting includes filtered out events...
-    this.perPage = 4;
+    this.perPage = 3;
     this.page = 1;
     this.sort = { date: -1 };
     this.searchText = '';
@@ -64,13 +64,31 @@ class EventsList {
       currentUserId() {
         return Meteor.userId();
       },
-      chapter(jac){
-        console.log("id : "+ jac)
-        var x = Chapters.findOne('LBJiLABt3ah7oXkXr')
-        console.log(x)
-        return x
+      eventL(){
+        /* todo- include aggrigates meteor add meteorhacks:aggregate
+        var y = Events.aggregate([
+                          {$unwind: '$chapters'}, 
+                          {$lookup: {
+                                    from: 'chapters', 
+                                    localField: 'chapter_id', 
+                                    foreignField: '_id', 
+                                    as: 'gr'}},
+                           {$sort: {'gr.state': 1}}])
+
+        console.log(y)
+        */
+        return true
       }
     });
+  }
+  isAuthorized() {
+        if (Meteor.user().auth.auth == 'admin') {
+            return true;
+        };
+        if (Meteor.user().auth.auth == 'manager') {
+            return true;
+        };
+        return false;
   }
 
   isOwner(event) {
@@ -85,7 +103,6 @@ class EventsList {
     this.sort = sort;
   }
 }
-
 
 const name = 'eventsList';
 const template = Meteor.isCordova ? mobileTemplate : webTemplate;

@@ -1,49 +1,3 @@
-<script>
-$('#datepick').daterangepicker({
-    "singleDatePicker": true,
-    "timePicker": true,
-    "timePicker24Hour": true,
-    "linkedCalendars": false,
-    "locale": {
-        "format": "dddd MMMM DD, h:mm",
-        "separator": " - ",
-        "applyLabel": "Apply",
-        "cancelLabel": "Cancel",
-        "fromLabel": "From",
-        "toLabel": "To",
-        "customRangeLabel": "Custom",
-        "weekLabel": "W",
-        "daysOfWeek": [
-            "Su",
-            "Mo",
-            "Tu",
-            "We",
-            "Th",
-            "Fr",
-            "Sa"
-        ],
-        "monthNames": [
-            "January",
-            "February",
-            "March",
-            "April",
-            "May",
-            "June",
-            "July",
-            "August",
-            "September",
-            "October",
-            "November",
-            "December"
-        ],
-        "firstDay": 1
-    },
-    "opens": "center"
-}, function(start, end, label) {
-  console.log("New date range selected: ' + start.format('EEEE MMMM d, h:mm') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')");
-});
-</script>
-
 
 <div layout="column" layout-padding>
   <md-input-container>
@@ -85,21 +39,9 @@ $('#datepick').daterangepicker({
   </md-input-container>
     <md-input-container>
     <label>
-      Volunteers:
-    </label>
-    <input type="text" ng-model="eventModify.event.volunteers"/>
-  </md-input-container>
-    <md-input-container>
-    <label>
       Organizer:
     </label>
     <input type="text" ng-model="eventModify.event.organizer"/>
-  </md-input-container>
-    <md-input-container>
-    <label>
-      Attendants:
-    </label>
-    <input type="text" ng-model="eventModify.event.attendants"/>
   </md-input-container>
       <md-input-container>
     <label>
@@ -115,12 +57,5 @@ $('#datepick').daterangepicker({
             </div>
     </md-card-title-media>
   </div>
-  <div>
-    <label>
-      Location:
-    </label>
-    <div> {{eventModify.event.location}} </div>
-  </div>
-  
     <md-button ng-click="eventModify.getlocation(eventModify.event)" class="md-raised">Save Changes</md-button>
 </div>

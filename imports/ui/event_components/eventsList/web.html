@@ -1,5 +1,5 @@
 <div layout="column" layout-padding>
-  <event-add-button ng-show="eventsList.isLoggedIn"></event-add-button>
+  <event-add-button ng-show="eventsList.isAuthorized()"></event-add-button>
 
   <div flex>
     <h2 class="md-display-1">List of the events:</h2>
@@ -21,7 +21,6 @@
           <md-card-title-text>
             <span class="md-headline" ui-sref="eventDetails({ eventId: event._id })">
               {{event.name}}
-              <event-remove event="event"></event-remove>
             </span>
             <span class="md-subhead">{{event.description}}</span>
           </md-card-title-text>
@@ -33,19 +32,12 @@
         </md-card-title>
         <md-card-content>
           <p>{{event.date | date: "EEEE, MMMM d, y @ h:mm:ss a"}}</p>
-          <p>{{event.chapter_id}}</p>
-          <p ng-bind="eventList.chapter('sad')"> this is cool </p>
+          <p>Location: {{event.address}}</p>
           <event-rsvps-list rsvps="event.rsvps"></event-rsvps-list>
-
-          <event-unanswered event="event" ng-if="!event.public"></event-unanswered>
-
-          <event-creator event="event"></event-creator>
+          <p>Oranized by: {{event.organizer}}</p>
         </md-card-content>
         <md-card-actions>
           <event-rsvp event="event" ></event-rsvp>
-          <div ng-hide="eventsList.isLoggedIn">
-            <i>Sign in to RSVP for this event.</i>
-          </div>
         </md-card-actions>
       </md-card>
       <dir-pagination-controls on-page-change="eventsList.pageChanged(newPageNumber)"></dir-pagination-controls>

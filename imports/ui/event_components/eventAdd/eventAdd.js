@@ -65,8 +65,11 @@ class EventAdd {
   }
 
   getSelected(){
-    console.log('thias')
-    console.log(this.event.chapter_id)
+    if (this.event.chapter !== undefined) {
+          return this.event.chapter;
+        } else {
+          return "Please select Chapter";
+        }
   }
 
   //checks for admin auth when creating events for public/private

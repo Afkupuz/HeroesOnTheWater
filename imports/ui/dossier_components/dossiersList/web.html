@@ -1,8 +1,5 @@
 <div layout="column" layout-padding>
 
-
-
-
   <div flex>
     <h2 class="md-display-1">List of the Users:</h2>
   </div>
@@ -27,8 +24,8 @@
       <tr >
       <td ng-repeat="subject in dossiersList.column" > {{subject}} </td>
       <td> Picture </td>
-      <td> Edit </td>
-      <td> Delete </td>
+      <td ng-show="dossiersList.isAuthorized()"> Edit </td>
+      <td ng-show="dossiersList.isAuthorized()"> Delete </td>
       </tr>  
 
       <tr ng-repeat="user in dossiersList.users">
@@ -47,8 +44,8 @@
               <dossier-image images="user.profile.picture"></dossier-image>
             </div>
         </td>
-        <td><md-button ng-click="dossiersList.open({ userId: user._id })" class="md-primary md-raised" >Edit</md-button></td>
-        <td> <dossier-remove user="user"></dossier-remove> </td>
+        <td ng-show="dossiersList.isAuthorized()"><md-button ng-click="dossiersList.open({ userId: user._id })" class="md-primary md-raised" >Edit</md-button></td>
+        <td ng-show="dossiersList.isAuthorized()"> <dossier-remove user="user"></dossier-remove> </td>
       </tr>
     </tbody>
   </table>
