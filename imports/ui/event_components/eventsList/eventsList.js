@@ -82,13 +82,17 @@ class EventsList {
     });
   }
   isAuthorized() {
-        if (Meteor.user().auth.auth == 'admin') {
-            return true;
-        };
-        if (Meteor.user().auth.auth == 'manager') {
-            return true;
-        };
+      if (Meteor.user() == undefined){
         return false;
+      }
+      if (Meteor.user().auth.auth == 'admin') {
+          return true;
+      };
+      if (Meteor.user().auth.auth == 'manager') {
+          return true;
+      };
+    
+      return false;
   }
 
   isOwner(event) {

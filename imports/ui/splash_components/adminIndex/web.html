@@ -1,0 +1,31 @@
+
+<div ng-cloak>
+  <md-content>
+    <md-tabs md-dynamic-height md-border-bottom>
+      <md-tab label="Events">
+        <md-content class="md-padding">
+          <events-db></events-db>
+          <div class="spacer" style="height: 100px;"></div>
+          </md-content>
+      </md-tab>
+      <md-tab label="Profiles">
+        <md-content class="md-padding">
+          <dossiers-list></dossiers-list>
+          <div class="spacer" style="height: 100px;"></div>
+        </md-content>
+      </md-tab>
+      <md-tab label="Donations">
+        <md-content class="md-padding">
+          <h1 class="md-display-2">Donations</h1>
+          <md-card ng-repeat='donate in adminIndex.donations'>
+            <p>Name: {{donate.name}} </p>
+            <p>Organization: {{donate.organization}} </p>
+            <p>Contact: {{donate.contact}} </p>
+            <p>Pledge: ${{donate.amount}} </p>
+          </md-card>
+          <div class="spacer" style="height: 10px;"></div>
+        </md-content>
+      </md-tab>
+    </md-tabs>
+  </md-content>
+</div>

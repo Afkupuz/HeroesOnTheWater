@@ -11,6 +11,7 @@ import { Meteor } from 'meteor/meteor';
 import webTemplate from './web.html';
 import mobileTemplate from './mobile.html';
 import { name as SplashIndex } from '../../splash_components/splashIndex/splashIndex';
+import { name as AdminIndex } from '../../splash_components/adminIndex/adminIndex';
 
 
 class Splash {}
@@ -25,6 +26,7 @@ export default angular.module(name, [
   ngSanitize,
   uiRouter,
   SplashIndex,
+  AdminIndex,
   'accounts.ui',
   'ionic'
 ]).component(name, {

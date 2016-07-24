@@ -164,12 +164,10 @@ function config($stateProvider) {
       template: '<events-db></events-db>',
       resolve: {
         currentUser($q) {
-          if (Meteor.user().auth.auth == 'admin') {
-            return $q.resolve();
-          } else if (Meteor.user().auth.auth == 'manager'){
-            return $q.resolve();
-          } else {
+          if (Meteor.user().auth.auth != 'admin' || Meteor.user().auth.auth == 'manager') {
             return $q.reject('AUTH_REQUIRED');
+          } else {
+            return $q.resolve();
           }
         }
     }
