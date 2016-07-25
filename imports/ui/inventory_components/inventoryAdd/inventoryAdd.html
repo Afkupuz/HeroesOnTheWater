@@ -11,11 +11,13 @@
     </label>
     <input type="text" ng-model="inventoryAdd.inventory.description"/>
   </md-input-container>
-  <div flex>
-    <md-checkbox ng-model="inventoryAdd.inventory.public" aria-label="Public Inventory?">
-      Public Inventory?
-    </md-checkbox>
-  </div>
+  <md-input-container>
+    <label>
+      Chapter:
+    </label>
+    <input type="text" ng-model="inventoryAdd.inventory.chapter"/>
+  </md-input-container>
+
   <div flex>
     <md-button ng-click="inventoryAdd.submit()" class="md-raised">Add Inventory!</md-button>
   </div>

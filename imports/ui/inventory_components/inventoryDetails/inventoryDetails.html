@@ -11,11 +11,10 @@
         <input ng-model="inventoryDetails.inventory.description" ng-disabled="!inventoryDetails.isLoggedIn">
       </md-input-container>
 
-      <div>
-        <md-checkbox ng-model="inventoryDetails.inventory.public" ng-disabled="!inventoryDetails.isLoggedIn" aria-label="Public Inventory?">
-          Public Inventory?
-        </md-checkbox>
-      </div>
+      <md-input-container>
+        <label>Chapter</label>
+        <input ng-model="inventoryDetails.inventory.chapter" ng-disabled="!inventoryDetails.isLoggedIn">
+      </md-input-container>
 
       <div>
         <md-button ng-click="inventoryDetails.save()" class="md-primary md-raised">Save</md-button>
