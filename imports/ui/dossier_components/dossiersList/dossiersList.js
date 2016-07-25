@@ -29,7 +29,7 @@ class DossiersList {
     this.perPage = 3;
     this.page = 1;
     this.sort = {
-      name: 1
+      username: 1
     };
 
     //provides the search option once selected from column dropdown
@@ -52,9 +52,10 @@ class DossiersList {
     this.searchText = '';
 
     //added parameters to the subscription so that it can be searched
-    this.subscribe('users', () => [
-        this.getReactively('searchText'),
-        this.getReactively('opt')
+    this.subscribe('users', () => [{
+        skip: parseInt((this.getReactively('page') - 1) * this.perPage),
+        sort: this.getReactively('sort')
+      },this.getReactively('searchText'), this.getReactively('opt')
     ]);
 
     this.subscribe('images');
@@ -67,7 +68,9 @@ class DossiersList {
       },
       users() {
         console.log(Meteor.user())
-        return Meteor.users.find({});
+        return Meteor.users.find({}, {
+          sort : this.getReactively('sort')
+        });
       },
       dossiersCount() {
         return Counts.get('numberOfDossiers');

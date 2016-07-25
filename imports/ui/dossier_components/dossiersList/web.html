@@ -1,5 +1,6 @@
 <div layout="column" layout-padding>
 
+
   <div flex>
     <h2 class="md-display-1">List of the Users:</h2>
   </div>
@@ -15,39 +16,41 @@
         <md-option data-ng-repeat="o in dossiersList.column">{{o}}</md-option>
       </md-select>
     </md-input-container>
+
+    <dossiers-sort on-change="dossiersList.sortChanged(sort)" property="username" order="-1"></dossiers-sort>
   </div>
 
-<div layout="column" layout-gt-sm="row" class='datagrid'>
-  <table>
-    <thead></thead>
-    <tbody>
-      <tr >
-      <td ng-repeat="subject in dossiersList.column" > {{subject}} </td>
-      <td> Picture </td>
-      <td ng-show="dossiersList.isAuthorized()"> Edit </td>
-      <td ng-show="dossiersList.isAuthorized()"> Delete </td>
-      </tr>  
+  <div layout="column" layout-gt-sm="row" class='datagrid'>
+    <table>
+      <thead></thead>
+      <tbody>
+        <tr >
+        <td ng-repeat="subject in dossiersList.column" > {{subject}} </td>
+        <td> Picture </td>
+        <td ng-show="dossiersList.isAuthorized()"> Edit </td>
+        <td ng-show="dossiersList.isAuthorized()"> Delete </td>
+        </tr>  
 
-      <tr ng-repeat="user in dossiersList.users">
-        <td ui-sref="dossierDetails({ userId: user._id })"> {{user._id}} </td>
-        <td> {{user.auth.auth}} </td>
-        <td> {{user.auth.note}} </td>
-        <td> {{user.emails[0].address}} </td>
-        <td> {{user.createdAt | date :  "dd/MM/y"}} </td>
-        <td> {{user.profile.username}} </td>
-        <td> {{user.profile.first_name}} </td>
-        <td> {{user.profile.last_name}} </td>
-        <td> {{user.profile.phone}} </td>
-        <td> {{user.profile.bio}} </td>
-        <td> {{user.profile.chapter}} </td>
-        <td><div style="height:80px" ng-if="user.profile.picture">
-              <dossier-image images="user.profile.picture"></dossier-image>
-            </div>
-        </td>
-        <td ng-show="dossiersList.isAuthorized()"><md-button ng-click="dossiersList.open({ userId: user._id })" class="md-primary md-raised" >Edit</md-button></td>
-        <td ng-show="dossiersList.isAuthorized()"> <dossier-remove user="user"></dossier-remove> </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+        <tr ng-repeat="user in dossiersList.users">
+          <td ui-sref="dossierDetails({ userId: user._id })"> {{user._id}} </td>
+          <td> {{user.auth.auth}} </td>
+          <td> {{user.auth.note}} </td>
+          <td> {{user.emails[0].address}} </td>
+          <td> {{user.createdAt | date :  "dd/MM/y"}} </td>
+          <td> {{user.profile.username}} </td>
+          <td> {{user.profile.first_name}} </td>
+          <td> {{user.profile.last_name}} </td>
+          <td> {{user.profile.phone}} </td>
+          <td> {{user.profile.bio}} </td>
+          <td> {{user.profile.chapter}} </td>
+          <td><div style="height:80px" ng-if="user.profile.picture">
+                <dossier-image images="user.profile.picture"></dossier-image>
+              </div>
+          </td>
+          <td ng-show="dossiersList.isAuthorized()"><md-button ng-click="dossiersList.open({ userId: user._id })" class="md-primary md-raised" >Edit</md-button></td>
+          <td ng-show="dossiersList.isAuthorized()"> <dossier-remove user="user"></dossier-remove> </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </div>

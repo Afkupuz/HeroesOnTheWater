@@ -114,8 +114,6 @@ var x = Events.findOne('Micmw2CBgA9bTaeLk')
             };
             break;
         }
-      console.log(opt)
-      console.log(searchString)
     }
 
     Counts.publish(this, 'numberOfEvents', Events.find(selector), {

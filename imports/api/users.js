@@ -9,6 +9,9 @@ if (Meteor.isServer) {
     var regex = new RegExp(`.*${searchString}.*`, 'i')
 
     if (typeof searchString === 'string' && searchString.length) {
+
+      console.log(opt)
+      console.log(searchString)
       
       switch(opt) {
         case 'ID':
@@ -34,10 +37,10 @@ if (Meteor.isServer) {
         default:
           return Meteor.users.find({ 'profile.username' : regex });
         }
-    }
-
+    }else{
+      console.log('else')
     return Meteor.users.find({});
-
+}
   });
 
   Meteor.users.deny({
@@ -80,8 +83,8 @@ if (Meteor.isServer) {
 
       if (fields.length !== 2 || fields[1] !== 'profile') {
       return false;
-      }                                                                                                           //
-      return true;                                                                                                 // 1416
+      }                    
+      return true;                          
   },
   remove() {
     if (Meteor.user().auth['auth'] == 'admin') {
