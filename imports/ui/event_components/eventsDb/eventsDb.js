@@ -124,7 +124,7 @@ class EventsDb {
   alert(event) {
     this.$mdDialog.show({
       controller($mdDialog) {
-        'ngInjected';
+        'ngInject';
 
         //helps pass selected id to alert modal
         this.getval = () => {

@@ -15,7 +15,7 @@ class EventAlert {
 
 		$reactive(this).attach($scope);
 
-		this.eventId = this.pass['eventId'];
+		this.eventId = this.passed['eventId'];
 
 		this.subscribe('events');
 		this.subscribe('users');
@@ -30,29 +30,40 @@ class EventAlert {
 				return Meteor.users.find({});
 			}
 		});
+		console.log(this.event);
+
+		this.eventAttendees = getEventAttendees(this.event);
+		console.log(this.eventAttendees)
+
+		console.log(this.eventAttendees);
+
+
 	}
+
+	
 }
 
-this.eventRSVPs = function(event) {
+function getEventAttendees (someEvent) {
 
-	listOfNumbers = [];
-	console.log(event);
+		var listOfAttendees = [];
+			for (var i in someEvent.rsvps) {
+				console.log(someEvent.rsvps[i].user);
+				var attendeeUserId = someEvent.rsvps[i].user;
+				var attendee = Meteor.users.findOne({ _id: attendeeUserId});
 
-	for (var i in event.rsvps.rsvp) {
+				if (attendee.profile.phone != null) {
+					console.log(attendee.profile.phone);
+					listOfAttendees.push(attendee);
 
-		var attendee = Meteor.users.findOne({_id: event.rsvps.rsvp[i]});
+				}
 
-		if (attendee.profile.phone != null) {
-
-			listOfNumbers.push(attendee.profile.phone);
-
-		}
+			}
+			console.log(listOfAttendees);
+			return listOfAttendees
 
 	}
 
-	return listOfNumbers
 
-};
 
 const name = 'eventAlert';
 

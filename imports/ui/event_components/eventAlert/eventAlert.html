@@ -1,0 +1,20 @@
+<div layout="column" layout-padding>
+  <md-input-container>
+    <label>
+      Recipients:
+    </label>
+    <!-- Show list of recipients -->
+  </md-input-container>
+
+    <div ng-repeat="attendee in eventAlert.eventAttendees">
+      <span>{{attendee.profile.phone}}</span>
+    </div>
+
+  <md-input-container>
+    <label>
+      Alert Message:
+    </label>
+    <textarea rows='3'></textarea>
+  </md-input-container>
+
+</div>
