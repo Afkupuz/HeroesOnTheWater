@@ -56,16 +56,8 @@ class InventoryModify {
     }, {
       $set: {
         name: this.inventory.name,
-        date: this.inventory.date,
         description: this.inventory.description,
-        address: this.inventory.address,
-        resources: this.inventory.resources,
-        volunteers: this.inventory.volunteers,
-        organizer: this.inventory.organizer,
-        attendants: this.inventory.attendants,
-        chapter: this.inventory.chapter,
-        images: this.inventory.images
-
+        chapter: this.inventory.chapter
       }
     }, (error) => {
       if (error) {

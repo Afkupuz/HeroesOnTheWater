@@ -44,14 +44,7 @@ class InventoriesDb {
 
     this.column = [
         "Name", 
-        //"Date", 
         "Description", 
-        //"Address", 
-        //"Resources", 
-        //"Volunteers", 
-        //"Organizer", 
-        //"Attendants",
-        //"Cancellations", 
         "Chapter",
         "Creator"];
 
@@ -163,6 +156,6 @@ function config($stateProvider) {
 
   $stateProvider.state('inventoriesDb', {
       url: '/inventoriesdb',
-      template: '<inventories-db></inventories-db>'
+      template: '<inventories-db></inventories-db>',
     });
 }

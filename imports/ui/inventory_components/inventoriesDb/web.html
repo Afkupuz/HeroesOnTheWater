@@ -2,7 +2,7 @@
   <inventory-add-button ng-show="inventoriesDb.isLoggedIn"></inventory-add-button>
 
   <div flex>
-    <h2 class="md-display-1">List of the inventories:</h2>
+    <h2 class="md-display-1">List of inventories:</h2>
   </div>
 
   <div flex layout="row" layout-padding>
@@ -17,47 +17,44 @@
       </md-select>
     </md-input-container>
 
-    
+    <inventories-sort on-change="inventoriesDb.sortChanged(sort)" property="date" order="-1"></inventories-sort>
   </div>
 
-  <table>
-    <thead>
+  <div layout="column" layout-gt-sm="row" class='datagrid'>
+    <table class = "table table-striped">
+      <thead>
         <style>
           td{
-              border: 1px solid black;
-              padding: 20px;
+                border: 1px solid black;
+                padding: 20px;
             }
+          </style>
+      </thead>
+      <tbody>
+        <tr >
+        <td> Link </td>
+        <td ng-repeat="subject in inventoriesDb.column" > {{subject}} </td>
+        <td> Edit </td>
+        <td> Delete </td>
+        </tr>  
 
-        </style>
-    </thead>
-    <tbody>
-      <tr >
-      <td ng-repeat="subject in inventoriesDb.column" > {{subject}} </td>
-      </tr>  
-      <tr ng-repeat="inventory in inventoriesDb.inventories">
-       <td ui-sref="inventoryDetails({ inventoryId: inventory._id })"> {{inventory.name}} </td>
-        <!--<td>    {{inventory.name}}    </td> -->
-        <td  class = "table table-striped">   {{inventory.description}} </td> 
-        <td  class = "table table-striped">   {{inventory.chapter}}     </td>
-        <td> <inventory-creator inventory="inventory"></inventory-creator> </td>
-        <!--<td><div style="height:80px" ng-if="inventory.images">
-              <inventory-image images="inventory.images"></inventory-image>
-            </div></td>-->
-        <td><md-button ng-click="inventoryiesDb.open({ inventoryId: inventory._id })" class="md-primary md-raised" >Edit</md-button></td>
-        <!--<td><md-button ng-click="inventory-remove innventory" class="md-primary md-raised" >Delete</md-button></td>-->
-        <!--<td><md-button ng-click="inventory-remove inventory" class"md-primary md-raised">Delete</md-button></td>-->
-        <td> <inventory-remove inventory="inventory"></inventory-remove> Delete</td> 
-      </tr>
-    </tbody>
-  </table>
+        <tr ng-repeat="inventory in inventoriesDb.inventories">
+          <td ui-sref="inventoryDetails({ inventoryId: inventory._id })"> Detail Page </td>
+          <td> {{inventory.name}} </td>
+          <td> {{inventory.description}} </td>
+          <td> {{inventory.chapter}} </td>
+          <td> <inventory-creator inventory="inventory"></inventory-creator> </td>
 
 
-  <div layout="column" layout-gt-sm="row">
-    <div flex="50">
-      
-    <dir-pagination-controls on-page-change="inventoriessDb.pageChanged(newPageNumber)"></dir-pagination-controls>
-    
-    <div flex="50">
-    </div>
+
+          <td><md-button ng-click="inventoriesDb.open({ inventoryId: inventory._id })" class="md-primary md-raised">Edit</md-button></td>
+
+       <!-- Delete Function -->
+       <td> <inventory-remove inventory="inventory"> </inventory-remove> </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
+
 </div>
+
