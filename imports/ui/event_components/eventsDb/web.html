@@ -21,7 +21,7 @@
   </div>
 
   <div layout="column" layout-gt-sm="row" class='datagrid'>
-    <table>
+    <table class="table table-striped">
       <thead></thead>
       <tbody>
         <tr >
@@ -33,6 +33,7 @@
         <td> Picture </td>
         <td ng-show="eventsDb.isAuthorized()"> Edit </td>
         <td ng-show="eventsDb.isAuthorized()"> Delete </td>
+        <td ng-show="eventsDb.isAuthorized()"> Alert </td>
         </tr>  
 
         <tr ng-repeat="event in eventsDb.events">
@@ -51,6 +52,7 @@
                 <event-image images="event.images"></event-image>
               </div></td>
           <td ng-show="eventsDb.isAuthorized()"><md-button ng-click="eventsDb.open({ eventId: event._id })" class="md-primary md-raised" >Edit</md-button></td>
+          <td ng-show="eventsDb.isAuthorized()"><md-button ng-click="eventsDb.alert({ eventId: event._id })" class='md-warning md-raised'>Alert</md-button></td>
           <td ng-show="eventsDb.isAuthorized()"> <event-remove event="event"></event-remove> </td>
         </tr>
       </tbody>

@@ -24,6 +24,9 @@ import { name as EventImage } from '../eventImage/eventImage';
 import modalTemplate from './eventModifyModal.html';
 import { name as EventModify } from '../eventModify/eventModify';
 
+import alertModalTemplate from './eventAlertModal.html';
+import { name as EventAlert } from '../eventAlert/eventAlert';
+
 class EventsDb {
   constructor($scope, $reactive, $mdDialog, $mdMedia) {
     'ngInject';
@@ -118,6 +121,30 @@ class EventsDb {
     })
   }
 
+  alert(event) {
+    this.$mdDialog.show({
+      controller($mdDialog) {
+        'ngInjected';
+
+        //helps pass selected id to alert modal
+        this.getval = () => {
+          return event
+        }
+
+        //close alert modal
+        this.close = () => {
+          $mdDialog.hide();
+        }
+      },
+      controllerAs: 'eventAlertModal',
+      template: alertModalTemplate,
+      targetEvent: event,
+      parent: angular.element(document.body),
+      clickOutsideToClose: true,
+      fullscreen: this.$mdMedia('sm') || this.$mdMedia('xs')
+    })
+  }
+
   isOwner(event) {
     return this.isLoggedIn && event.owner === this.currentUserId;
   }
@@ -148,7 +175,8 @@ export default angular.module(name, [
   EventRsvpsList,
   EventImage,
   EventAttendees,
-  EventModify
+  EventModify,
+  EventAlert
 ]).component(name, {
   template,
   controllerAs: name,
