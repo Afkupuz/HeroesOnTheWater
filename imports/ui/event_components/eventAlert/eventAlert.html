@@ -4,17 +4,19 @@
       Recipients:
     </label>
     <!-- Show list of recipients -->
+    <ul class='list-styled'>
+      <li ng-repeat="attendee in eventAlert.eventAttendees">
+        {attendee.profile.phone}}
+      </li>
   </md-input-container>
-
-    <div ng-repeat="attendee in eventAlert.eventAttendees">
-      <span>{{attendee.profile.phone}}</span>
-    </div>
 
   <md-input-container>
     <label>
-      Alert Message:
+      Message:
     </label>
-    <textarea rows='3'></textarea>
+    <textarea rows='3' ng-model='eventAlert.message'></textarea>
   </md-input-container>
+
+  <md-button ng-click="eventAlert.send()" class="md-raised">Send</md-button>
 
 </div>

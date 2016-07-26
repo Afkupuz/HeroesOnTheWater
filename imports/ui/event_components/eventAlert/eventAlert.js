@@ -30,40 +30,36 @@ class EventAlert {
 				return Meteor.users.find({});
 			}
 		});
-		console.log(this.event);
 
 		this.eventAttendees = getEventAttendees(this.event);
-		console.log(this.eventAttendees)
-
 		console.log(this.eventAttendees);
 
+		console.log(this.message);
 
-	}
+	};
 
-	
+	send() {
+
+	};
+
 }
 
+// This function will create a list of user objects if they are attending event
 function getEventAttendees (someEvent) {
 
-		var listOfAttendees = [];
-			for (var i in someEvent.rsvps) {
-				console.log(someEvent.rsvps[i].user);
-				var attendeeUserId = someEvent.rsvps[i].user;
-				var attendee = Meteor.users.findOne({ _id: attendeeUserId});
-
-				if (attendee.profile.phone != null) {
-					console.log(attendee.profile.phone);
-					listOfAttendees.push(attendee);
-
-				}
+	var listOfAttendees = [];
+		for (var i in someEvent.rsvps) {
+			console.log(someEvent.rsvps[i].user);
+			var attendeeUserId = someEvent.rsvps[i].user;
+			var attendee = Meteor.users.findOne({ _id: attendeeUserId});
+			if (attendee.profile.phone != null) {
+				console.log(attendee.profile.phone);
+				listOfAttendees.push(attendee);
 
 			}
-			console.log(listOfAttendees);
-			return listOfAttendees
-
-	}
-
-
+		}
+	return listOfAttendees
+};
 
 const name = 'eventAlert';
 
