@@ -51,10 +51,11 @@
           <td><md-button ng-click="inventoriesDb.open({ inventoryId: inventory._id })" class="md-primary md-raised">Edit</md-button></td>
 
       <!-- Delete Function -->
-       
-      <td> <inventory-remove inventory="inventory"> </inventory-remove> </td> 
-      
-          
+        <td><md-button ng-click = "InventoryRemove"  class = "md-primary md-raised"> Delete</md-button></td>
+
+
+
+      <!-- <td> <inventory-remove inventory="inventory"> </inventory-remove> </td>  -->
         </tr>
       </tbody>
     </table>

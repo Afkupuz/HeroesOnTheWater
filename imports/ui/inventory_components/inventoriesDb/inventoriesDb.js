@@ -124,6 +124,14 @@ class InventoriesDb {
   sortChanged(sort) {
     this.sort = sort;
   }
+
+  remove(){
+    Remove.insert(this.remove);
+    alert("Are you sure want to delete?")
+    this.remove = {}
+  }
+
+  
 }
 
 const name = 'inventoriesDb';

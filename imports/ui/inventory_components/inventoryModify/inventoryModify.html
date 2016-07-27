@@ -2,31 +2,35 @@
 <div layout="column" layout-padding>
   <md-input-container>
     <label>
-     Name:
+     Edit Inventory Details:
     </label>
-    <input type="text" ng-model="inventoryModify.inventoryModify.name"/>
+    <input type="text" ng-model="inventoryModify.inventory.name"/>
   </md-input-container>
   <div style="height:100px">
   <md-input-container>
     <label>
       Description:
     </label>
-    <input type="text" ng-model="inventoryModify.inventoryModify.description"/>
+    <input type="text" ng-model="inventoryModify.inventory.description"/>
   </md-input-container>
     
   <md-input-container>
     <label>
       Chapter:
     </label>
-    <input type="text" ng-model="inventoryModify.inventoryModify.chapter"/>
+    <input type="text" ng-model="inventoryModify.inventory.chapter"/>
   </md-input-container>
   <div>
-    <inventoryModify-upload files="inventoryModify.inventoryModify.images"></inventoryModify-upload>
+    <inventory-upload files="inventoryModify.inventory.images"></inventory-upload>
     <md-card-title-media ng-if="inventoryModify.inventoryModify.images">
             <div class="md-media-lg card-media">
-              <inventoryModify-image images="inventoryModify.inventoryModify.images"></inventoryModify-image>
+              <inventory-image images="inventoryModify.inventory.images"></inventory-image>
             </div>
     </md-card-title-media>
   </div>
     <md-button ng-click="inventoryModify.getlocation(inventoryModify.inventory)" class="md-raised">Save Changes</md-button>
 </div>
+
+
+
+<!-- getlocation(inventoryModify.inventory)-->
