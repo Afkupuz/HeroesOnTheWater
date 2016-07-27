@@ -1,20 +1,21 @@
 <div layout="column" layout-padding>
-  <md-input-container>
+  <div class>
     <label>
       Recipients:
     </label>
-    <ul class='list-styled'>
-      <li ng-repeat="attendee in eventAlert.eventAttendees">
+    <!-- Show list of recipients -->
+    <ul class='list-group'>
+      <li class='list-group-item' ng-repeat="attendee in eventAlert.eventAttendees">
         {{attendee.profile.phone}}
       </li>
     </ul>
-  </md-input-container>
+  </div>
 
   <md-input-container>
     <label>
       Message:
     </label>
-    <textarea rows='3' ng-model='eventAlert.message'></textarea>
+    <textarea ng-model='eventAlert.message' required md-maxlength='140' rows='5'></textarea>
   </md-input-container>
 
   <md-button ng-click="eventAlert.send()" class="md-raised">Send</md-button>
