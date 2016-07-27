@@ -1,98 +1,444 @@
-<ion-view title="Heroes On The Water" id="page2" class=" ">
-    <ion-content padding="true" style="background: url(img/XzNxdyzlTAm5bI7GgFdd_calm_water_lake.jpg) no-repeat center;background-size:cover;" class="has-header">
-        <div class="spacer" style="width: 300px; height: 49px;"></div>
-        <h1 id="heroesOnTheWater-heading6" style="color:#000000;text-align:center;" class=" ">Heroes</h1>
-        <h3 id="heroesOnTheWater-heading7" style="color:#000000;" class=" ">On</h3>
-        <h3 id="heroesOnTheWater-heading8" style="color:#000000;text-align:center;" class=" ">The</h3>
-        <h1 id="heroesOnTheWater-heading9" style="color:#000000;text-align:right;" class=" ">Water</h1>
-        <div class="spacer" style="width: 300px; height: 52px;"></div>
-        <div id="heroesOnTheWater-button-bar4" class=" button-bar ">
-            <button id="heroesOnTheWater-button16" class=" button button-positive  button-block ">Go Fish</button>
-            <button id="heroesOnTheWater-button18" class=" button button-positive  button-block ">Volunteer</button>
+
+<nav id="menu" class="navbar navbar-default navbar-fixed-top" style="background-color:rgba(0,0,51,0.4);">
+  <div class="container"> 
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      <a class="navbar-brand" href="index.html">Heroes On The Water</a></div>
+    
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/splash" class="page-scroll">Home</a></li>
+        <li><a href="#about-section" class="page-scroll">About</a></li>
+        <li><a href="#events-section" class="page-scroll">Events</a></li>
+        <li><a ng-show="splashIndex.isAuthorized()" href='http://localhost:3000/splash/admin'>Admin</a></li>
+        <li><a href="#donation-section" class="page-scroll">Donate</a></li>
+        <li><a href="#contact-section" class="page-scroll">Contact</a></li>
+      </ul>
+    </div> 
+  </div>
+</nav>
+
+<!-- Header -->
+<header id="header-section">
+  <div class="text-center" name="home">
+    <div class="intro-text">
+      <h1 class="wow zoomIn">Heroes On The Water</h1>
+      <p class="wow fadeInDown" data-wow-delay="600ms">Helping our warriors relax through the calming power of nature</p>
+      <div class="clearfix"></div>
+      <a href="#about-section" class="btn btn-default btn-lg page-scroll wow fadeInDown" data-wow-delay="1000ms">Find Out More</a> </div>
+  </div>
+</header>
+<!-- About Section -->
+<div id="about-section">
+  <div class="container">
+    <div class="row">
+      <div class="section-title text-center center wow fadeInDown">
+        <h2>About us</h2>
+        <hr>
+      </div>
+      <div class="row wow fadeInDown" data-wow-delay="200ms">
+        <div class="col-md-6"> <img src="img/about.jpg" class="img-about" style="margin-top:-20px;"><img src="img/about1.jpg" class="img-about"><img src="img/about2.jpg" class="img-about"> </div>
+        <div class="col-md-6">
+          <div class="about-text">
+            <h3><span class="color">Who</span> we are</h3>
+            <p>Heroes on the Water helps our Nation’s warriors and veterans from all branches of the United States military unwind using the therapeutic qualities of fishing from kayaks. What looks like a day trip of paddling and fishing is in fact something much deeper and long-lasting.</p>
+            <p>Founded in 2007, our unique kayak fishing program allows the participants a chance to decompress from the stresses associated with combat and the physical rigors of rehabilitation. Warriors enjoy these benefits while on guided fishing trips held in local communities around the country.</p>
+            <h3><span class="color">What</span> we do</h3>
+            <p>Participants receive basic kayak fishing and paddling instruction, angling clinics and paddling classes for participants with skill sets ranging from beginners to the most experienced paddlers.</p>
+            <p>The program also assists these personnel in adapting these newly developed skills to their new abilities. Adaptive kayaks, kayaking accessories and angling equipment is offered on an as needed basis to accommodate a soldier’s particular needs.</p>
+            <p>Our program is unique in that it is a long-term activity, not a one-time event. We believe that the effectiveness of the program is a direct result of engaging the wounded military personnel for the long-term.</p>
+            <p>One soldier, at the Center for the Intrepid, called what we do “Triple Therapy” or “all at once therapy.” On post he has to go to the gym for physical therapy, then go upstairs for his occupational therapy, and then go to the psychologist for mental therapy. With kayak fishing he gets it all at once – physical therapy from paddling and fishing, occupational therapy learning a lifetime sport/activity, and mental therapy from relaxing in nature with no distractions or expectations of performance.</p>
+            <h3><span class="color">Our</span> mission</h3>
+            <p>To help warriors relax, rehabilitate and reintegrate through kayak fishing and the outdoors.</p>
+          </div>
         </div>
-        <div class="spacer" style="height: 100px;"></div>
-        <div>{{splashIndex.getval()}}</div>
-
-        <events-list></events-list>
-        
-        <div class="spacer" style="height: 100px;"></div>
-
-        <h1 id="heroesOnTheWater-heading12" style="color:#000000;" class=" ">Stories</h1>
-        <p id="heroesOnTheWater-markdown3" style="color:#000000;" class=" ">See his story</p>
-        <div style="position:relative;overflow:hidden;padding-bottom:56.25%;height:0;" id="heroesOnTheWater-video1" class=" ">
-            <iframe src="https://www.youtube.com/embed/iZQFKPaVNMQ?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen="" width="560" height="315" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Achievements Section -->
+<div id="achievements" class="text-center">
+  <div class="container">
+    <div class="space"></div>
+    <div class="row wow fadeInDown" data-wow-delay="400ms">
+      <div class="col-md-3 col-sm-3">
+        <div class="achievement-box"> <span class="count">25,311</span>
+          <h4>Warriors & Family Members Served</h4>
         </div>
-        <div class="spacer" style="height: 100px;"></div>
-        <p id="heroesOnTheWater-markdown2" style="color:#000000;" class=" ">This is a different story</p>
-        <div style="position:relative;overflow:hidden;padding-bottom:56.25%;height:0;" id="heroesOnTheWater-video2" class=" ">
-            <iframe src="https://www.youtube.com/embed/ayU_twAeTfo?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen="" width="560" height="315" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+      </div>
+      <div class="col-md-3 col-sm-3">
+        <div class="achievement-box"> <span class="count">56%</span>
+          <h4>Reduction in overall stress</h4>
         </div>
-
-        <div class="spacer" style="height: 100px;"></div>
-
-        <h1 id="heroesOnTheWater-heading14" style="color:#000000;" class=" ">About HOW</h1>
-        <p id="heroesOnTheWater-markdown4" style="color:#000000;" class=" ">Heroes on the Water helps our Nation’s warriors and veterans from all branches of the United States military unwind using the therapeutic qualities of fishing from kayaks. What looks like a day trip of paddling and fishing is in fact something
-            much deeper and long-lasting.</p>
-        <p id="heroesOnTheWater-markdown5" style="color:#000000;" class=" ">Founded in 2007, our unique kayak fishing program allows the participants a chance to decompress from the stresses associated with combat and the physical rigors of rehabilitation. Warriors enjoy these benefits while on guided fishing trips held
-            in local communities around the country.</p>
-
-        <div class="spacer" style="height: 100px;"></div>
-
-        <h1 id="heroesOnTheWater-heading10" style="color:#000000;" class=" ">Additional Info</h1>
-        <ion-list id="heroesOnTheWater-list3" class=" ">
-            <ion-item id="heroesOnTheWater-list-item9" class="  ">Link to wounded warriors
-                <span class="item-note">Get help</span>
-            </ion-item>
-            <ion-item id="heroesOnTheWater-list-item10" class="  ">Link to udacity
-                <span class="item-note">Learn!</span>
-            </ion-item>
-            <ion-item id="heroesOnTheWater-list-item11" class="  ">Link to RedWhiteBlue
-                <span class="item-note">Support</span>
-            </ion-item>
-            <ion-item id="heroesOnTheWater-list-item12" class="  ">Link to ""
-                <span class="item-note">stuff</span>
-            </ion-item>
-        </ion-list>
-
-        <div class="spacer" style="height: 100px;"></div>
-
-        <h1 id="heroesOnTheWater-heading15" style="color:#000000;" class=" ">Donate</h1>
+      </div>
+      <div class="col-md-3 col-sm-3">
+        <div class="achievement-box"> <span class="count">62%</span>
+          <h4>Reduction in hyper vigilance</h4>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-3">
+        <div class="achievement-box"> <span class="count">63%</span>
+          <h4>Reduction in avoidance behavior</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Events Section -->
+<div id="events-section" class="text-center">
+  <div class="container">
+    <div class="section-title center wow fadeInDown">
+      <events-list></events-list>
+    </div>
+  </div>
+</div>
+<!-- Portfolio Section -->
+<div id="portfolio-section">
+  <div class="container">
+    <div class="section-title text-center wow fadeInDown">
+      <h2>Our Warriors</h2>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="portfolio-items">
+        <div class="col-sm-6 col-md-3 col-lg-3 web">
+          <div class="portfolio-item wow fadeInDown" data-wow-delay="200ms">
+            <div class="hover-bg"> <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+              <div class="hover-text">
+                <h4>Brandon</h4>
+                <p>HOW Helped me through every problem</p>
+                <div class="clearfix"></div>
+              </div>
+              <img src="img/portfolio/01.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3 app">
+          <div class="portfolio-item wow fadeInDown" data-wow-delay="400ms">
+            <div class="hover-bg"> <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
+              <div class="hover-text">
+                <h4>Josh</h4>
+                <p>There’s no pressure to do anything but relax and enjoy nature</p>
+                <div class="clearfix"></div>
+              </div>
+              <img src="img/portfolio/02.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3 web">
+          <div class="portfolio-item wow fadeInDown" data-wow-delay="600ms">
+            <div class="hover-bg"> <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
+              <div class="hover-text">
+                <h4>Freedom Captured.</h4>
+                <p>YouTube</p>
+                <div class="clearfix"></div>
+              </div>
+              <img src="img/portfolio/03.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3 web">
+          <div class="portfolio-item wow fadeInDown" data-wow-delay="800ms">
+            <div class="hover-bg"> <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
+              <div class="hover-text">
+                <h4>Heroes On The Water</h4>
+                <p>YouTube</p>
+                <div class="clearfix"></div>
+                <i class="fa fa-plus"></i> </div>
+              <img src="img/portfolio/04.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3 app">
+          <div class="portfolio-item wow fadeInDown" data-wow-delay="1000ms">
+            <div class="hover-bg"> <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
+              <div class="hover-text">
+                <h4>My First HOW Experience</h4>
+                <p>YouTube</p>
+                <div class="clearfix"></div>
+              </div>
+              <img src="img/portfolio/05.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3 branding">
+          <div class="portfolio-item wow fadeInDown" data-wow-delay="1200ms">
+            <div class="hover-bg"> <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
+              <div class="hover-text">
+                <h4>It's all about the warrior</h4>
+                <p>Click to see</p>
+                <div class="clearfix"></div>
+              </div>
+              <img src="img/portfolio/06.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Donation Section -->
+<div id="donation-section" class="text-center">
+  <div class="container" style="font-weight:300;font-size:20px">
+    <h1 id="heroesOnTheWater-heading15" style="color:blue" class=" ">Donate</h1>
         <form id="heroesOnTheWater-form1" class="list ">
             
             <md-input-container>
-                <label>
+                <label style="color:blue">
                 Your Name:
                 </label>
                 <input type="text" ng-model="splashIndex.donations.name"/>
             </md-input-container>
             <md-input-container>
-                <label>
+                <label style="color:blue">
                 Organization:
                 </label>
                 <input type="text" ng-model="splashIndex.donations.organization"/>
             </md-input-container>
             <md-input-container>
-                <label>
+                <label style="color:blue">
                 Contact:
-                </label>
+                </label style="color:blue">
                 <input type="text" ng-model="splashIndex.donations.contact"/>
             </md-input-container>
             <md-input-container>
-                <label>
+                <label style="color:blue">
                 Amount:
                 </label>
                 <input type="text" ng-model="splashIndex.donations.amount"/>
             </md-input-container>
                 
-            <md-button ng-click="splashIndex.donate()" class="md-raised">Donate!</md-button>
+            <md-button style="color:blue" ng-click="splashIndex.donate()" class="md-raised">Donate!</md-button>
 
 
         </form>
+  </div>
+</div>
 
-        <div class="spacer" style="height: 100px;"></div>
+<!-- Contact Section -->
+<div id="contact-section">
+  <div class="container">
+    <div class="section-title text-center wow fadeInDown">
+      <h2>Contact us</h2>
+      <hr>
+      <div class="clearfix"></div>
+    </div>
+    <div class="col-md-4 wow fadeInDown" data-wow-delay="200ms">
+      <h3>Contact Info</h3>
+      <div class="space"></div>
+      <p><i class="fa fa-map-marker fa-fw pull-left fa-2x"></i>321 Awesome Street<br>
+        New York, NY 17022</p>
+      <div class="space"></div>
+      <p><i class="fa fa-envelope-o fa-fw pull-left fa-2x"></i>info@companyname.com</p>
+      <div class="space"></div>
+      <p><i class="fa fa-phone fa-fw pull-left fa-2x"></i>+1 800 123 1234</p>
+    </div>
+    <div class="col-md-8 wow fadeInDown" data-wow-delay="200ms">
+      <h3>Leave us a message</h3>
+      <form name="sentMessage" id="contactForm" novalidate>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="text" id="name" class="form-control" placeholder="Name" required="required">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="email" id="email" class="form-control" placeholder="Email" required="required">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <textarea name="message" id="message" class="form-control" rows="4" placeholder="Message" required></textarea>
+          <p class="help-block text-danger"></p>
+        </div>
+        <div id="success"></div>
+        <button type="submit" class="btn btn-default">Send Message</button>
+      </form>
+    </div>
+  </div>
+</div>
+<div id="social-section">
+  <div class="container">
+    <div class="social">
+      <ul>
+        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+        <li><a href="#"><i class="fa fa-github"></i></a></li>
+        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div id="footer" class="text-center">
+  <div class="container">
+    <p>Copyright &copy; Bytes R Us team ATT Interns</p>
+  </div>
+</div>
 
-        <h1 id="heroesOnTheWater-heading16" style="color:#000000;" class=" ">Disclaimers</h1>
-        <p id="heroesOnTheWater-markdown6" style="color:#000000;text-align:center;" class=" ">(C) AT&amp;T Interns: Bytes R Us</p>
-        <div class="spacer" style="width: 300px; height: 345px;"></div>
-    </ion-content>
-</ion-view>
+<!-- Portfolio Modals --> 
+
+<!-- Portfolio Modal 1 -->
+<div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-content">
+    <div class="close-modal" data-dismiss="modal">
+      <div class="lr">
+        <div class="rl"> </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+          <div class="modal-body"> 
+            <h2>Brandon's Story</h2>
+            <p class="item-intro">Brandon's life was changed for the better with HOW</p>
+            <img class="img-responsive img-centered" src="img/portfolio/01.jpg" alt="">
+            <p>“Heroes On the Water BAMC Program has helped me through every problem and anything I go through, on and off the water. I can turn to the people I fish with for help when I need it. Every week I have something to do, to look forward to….and it’s the stuff I love most! Going out and being on the water where I know that nobody can touch me, a safe zone, with Brothers who understand and have gone through the same stuff I have. HOWBAMC has given me something I thought I lost when I left my unit….Brothers!”</p>
+            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Portfolio Modal 2 -->
+<div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-content">
+    <div class="close-modal" data-dismiss="modal">
+      <div class="lr">
+        <div class="rl"> </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+          <div class="modal-body"> 
+            <h2>Josh's Story</h2>
+            <p class="item-intro">Another warrior who's life was changed by HOW</p>
+            <img class="img-responsive img-centered" src="img/portfolio/02.jpg" alt="">
+            <p>“I had never been in a kayak and didn’t know anything about them. After only two outings with HOW, I’ve found the camaraderie and knowledge is amazing and second to none. From the basics of how to get in the kayak to the advanced breathing and paddling techniques, everyone has something to share. Heroes on the Water gives Veterans a simple way to get back to nature, regardless of the injury. There’s no pressure to do anything but relax and enjoy nature. HOW gives us happy and positive events to look forward to and plan.”</p>
+            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Portfolio Modal 3 -->
+<div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-content">
+    <div class="close-modal" data-dismiss="modal">
+      <div class="lr">
+        <div class="rl"> </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+          <div class="modal-body"> 
+            <h2>Freedom Captured. Heroes on the Water</h2>
+            <div style="position:relative;overflow:hidden;padding-bottom:56.25%;height:0;" id="heroesOnTheWater-video1" class=" ">
+              <iframe src="https://www.youtube.com/embed/iZQFKPaVNMQ?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen="" width="560" height="315" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+            </div>
+            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Portfolio Modal 4 -->
+<div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-content">
+    <div class="close-modal" data-dismiss="modal">
+      <div class="lr">
+        <div class="rl"> </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+          <div class="modal-body"> 
+            <h2>Heroes on the Water</h2>
+            <div style="position:relative;overflow:hidden;padding-bottom:56.25%;height:0;" id="heroesOnTheWater-video2" class=" ">
+              <iframe src="https://www.youtube.com/embed/ayU_twAeTfo?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen="" width="560" height="315" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+            </div>
+            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Portfolio Modal 5 -->
+<div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-content">
+    <div class="close-modal" data-dismiss="modal">
+      <div class="lr">
+        <div class="rl"> </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+          <div class="modal-body"> 
+            <h2>Heroes on the Water</h2>
+            <div style="position:relative;overflow:hidden;padding-bottom:56.25%;height:0;" id="heroesOnTheWater-video1" class=" ">
+              <iframe width="854" height="480" src="https://www.youtube.com/embed/VPtQ6q0lCJA" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Portfolio Modal 6 -->
+<div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-content">
+    <div class="close-modal" data-dismiss="modal">
+      <div class="lr">
+        <div class="rl"> </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+          <div class="modal-body"> 
+            <!-- Project Details Go Here -->
+            <h2>“First and Foremost It’s About the Warrior”</h2>
+            <img class="img-responsive img-centered" src="img/portfolio/06.jpg" alt="">
+            <p>“Remember why we are doing this – it’s for the warriors.”</p>
+
+            <p>Shawn Waggoner, the South Florida Heroes on the Water (HOW) chapter coordinator has first-hand experience with the ups and downs of building a chapter. The South Florida chapter is not yet a year old, and still they have managed to create some pretty amazing events while keeping the momentum going. So what is their secret?</p>
+
+            <p>“We remember why we are here, which is for the warriors. It’s not about titles or the job we do. It’s to help and potentially save lives by putting on a good event that has a relaxed, stress-free environment. “</p>
+
+            <p>Keeping Priorities Straight</p>
+
+            <p>Shawn and the rest of the team stay focused on service to the warriors so they can continue to enhance events and grow the chapter. But that is not always an easy task with a team of volunteers with very diverse personalities. One of the ways they coFirst & Foremost So FL Blog Post Feb 2015ntinue to be successful is to recognize the gifts each person brings to the table.</p>
+
+            <p>“We all want to serve the warriors, so we make a point to always work as a team. When we first started, we were in different roles. As time passed, we recognized gifts and shifted our leadership team to better utilize those gifts and talents. It takes a lot of openness and maturity to shuffle the deck like that and stay focused.“</p>
+
+            <p>Another tactic South Florida used was to reach out to other chapters and ask for tips, best practices and lessons learned.</p>
+
+            <p>“We are all in this together and focused on continuing to better serve our warriors. The other chapter leaders are very willing to help, and it allowed us to leverage the experience and talent of the community.”</p>
+
+            <p>The South Florida team also documented roles and responsibilities so that each team member understands their primary function. Then they cross-trained the team to ensure coverage and that nothing slips through the cracks.</p>
+
+            <p>Remember Why We Do This</p>
+
+            <p>South Florida has continued to grow each event from humble beginnings by staying focused on the warrior experience. This includes have a meeting after every event to evaluate the processes and overall event execution. It ensures that each event runs more smoothly and that hiccups that occur are resolved.</p>
+
+            <p>“It’s important to remember we are not alone. There are members of the community, sponsors, donors and volunteers who are willing to help us make a difference in a warrior’s life. Every chapter goes through some struggles, but we stay positive and keep on charging so we can continue to serve more warriors.”</p>
+
+            <p>If you are interested in helping a warrior begin the journey toward peace, you can do so by donating, volunteering, or starting a chapter in your area!</p>
+
+            <p>The chapter leaders, volunteers and community continue to show how committed they are about helping Heroes on the Water serve warriors in building a more peaceful, fulfilling life at home. Our sincere thanks to all those who serve our warriors!</p>
+            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

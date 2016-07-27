@@ -40,6 +40,22 @@ class SplashIndex {
     this.donations = {}
   }
 
+  isLoggedIn(){
+    return !!Meteor.userId()
+  }
+  
+  isAuthorized(){ 
+    if (Meteor.userId() != null){
+        if (Meteor.user().auth.auth == 'admin'){
+          return true
+        }
+        if (Meteor.user().auth.auth == 'manager'){
+          return true
+        }
+      }
+    return false
+  }
+
 }
 
 
