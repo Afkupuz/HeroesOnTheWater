@@ -10,7 +10,7 @@ import webTemplate from './web.html';
 import mobileTemplate from './mobile.html';
 import { Inventories } from '../../../api/inventories';
 import { name as InventoriesSort } from '../inventoriesSort/inventoriesSort';
-import { name as InventoriesMap } from '../inventoriesMap/inventoriesMap';
+//import { name as InventoriesMap } from '../inventoriesMap/inventoriesMap';
 import { name as InventoryAddButton } from '../inventoryAddButton/inventoryAddButton';
 import { name as InventoryRemove } from '../inventoryRemove/inventoryRemove';
 import { name as InventoryCreator } from '../inventoryCreator/inventoryCreator';
@@ -81,7 +81,7 @@ export default angular.module(name, [
   uiRouter,
   utilsPagination,
   InventoriesSort,
-  InventoriesMap,
+  //InventoriesMap,
   InventoryAddButton,
   InventoryRemove,
   InventoryCreator,
