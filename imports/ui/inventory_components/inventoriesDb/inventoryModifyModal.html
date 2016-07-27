@@ -1,0 +1,16 @@
+<md-dialog aria-label="New inventory" ng-cloak>
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>Edit inventory</h2>
+      <span flex></span>
+      <md-button ng-click="inventoryModifyModal.close()">
+        Close
+      </md-button>
+    </div>
+  </md-toolbar>
+  <md-dialog-content>
+    <div class="md-dialog-content">
+      <inventory-modify done="inventoryModifyModal.close()" passed="inventoryModifyModal.getval()" ></inventory-modify>
+    </div>
+  </md-dialog-content>
+</md-dialog>

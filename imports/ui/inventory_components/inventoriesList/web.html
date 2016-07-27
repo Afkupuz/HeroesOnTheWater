@@ -24,6 +24,7 @@
               <inventory-remove inventory="inventory"></inventory-remove>
             </span>
             <span class="md-subhead">{{inventory.description}}</span>
+             <span class="md-subhead">{{inventory.chapter}}</span>
           </md-card-title-text>
           <md-card-title-media ng-if="inventory.images">
             <div class="md-media-lg card-media">
@@ -32,19 +33,11 @@
           </md-card-title-media>
         </md-card-title>
         <md-card-content>
-          <inventory-rsvps-list rsvps="inventory.rsvps"></inventory-rsvps-list>
-
-          <inventory-unanswered inventory="inventory" ng-if="!inventory.public"></inventory-unanswered>
-          <div ng-if="inventory.public">
-            Everyone is invited
-          </div>
-
           <inventory-creator inventory="inventory"></inventory-creator>
         </md-card-content>
         <md-card-actions>
-          <inventory-rsvp inventory="inventory" ng-show="inventoriesList.isLoggedIn"></inventory-rsvp>
+          <!--<inventory-rsvp inventory="inventory" ng-show="inventoriesList.isLoggedIn"></inventory-rsvp>-->
           <div ng-hide="inventoriesList.isLoggedIn">
-            <i>Sign in to RSVP for this inventory.</i>
           </div>
         </md-card-actions>
       </md-card>

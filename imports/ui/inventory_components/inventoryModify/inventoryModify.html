@@ -1,0 +1,32 @@
+
+<div layout="column" layout-padding>
+  <md-input-container>
+    <label>
+     Name:
+    </label>
+    <input type="text" ng-model="inventoryModify.inventoryModify.name"/>
+  </md-input-container>
+  <div style="height:100px">
+  <md-input-container>
+    <label>
+      Description:
+    </label>
+    <input type="text" ng-model="inventoryModifyModify.inventoryModify.description"/>
+  </md-input-container>
+    
+  <md-input-container>
+    <label>
+      Chapter:
+    </label>
+    <input type="text" ng-model="inventoryModifyModify.inventoryModify.chapter"/>
+  </md-input-container>
+  <div>
+    <inventoryModify-upload files="inventoryModifyModify.inventoryModify.images"></inventoryModify-upload>
+    <md-card-title-media ng-if="inventoryModifyModify.inventoryModify.images">
+            <div class="md-media-lg card-media">
+              <inventoryModify-image images="inventoryModifyModify.inventoryModify.images"></inventoryModify-image>
+            </div>
+    </md-card-title-media>
+  </div>
+    <md-button ng-click="inventoryModifyModify.getlocation(inventoryModifyModify.inventoryModify)" class="md-raised">Save Changes</md-button>
+</div>

@@ -12,6 +12,7 @@ import webTemplate from './web.html';
 import mobileTemplate from './mobile.html';
 import { name as InventoriesList } from '../../inventory_components/inventoriesList/inventoriesList';
 import { name as InventoryDetails } from '../../inventory_components/inventoryDetails/inventoryDetails';
+import { name as InventoriesDb } from '../../inventory_components/inventoriesDb/inventoriesDb';
 
 class Inventory_main {}
 
@@ -26,6 +27,7 @@ export default angular.module(name, [
   uiRouter,
   InventoriesList,
   InventoryDetails,
+  InventoriesDb,
   'accounts.ui',
   'ionic'
 ]).component(name, {
@@ -66,7 +68,7 @@ function run($rootScope, $state) {
   'ngInject';
 
   $rootScope.$on('$stateChangeError',
-    (event, toState, toParams, fromState, fromParams, error) => {
+    (inventory, toState, toParams, fromState, fromParams, error) => {
       if (error === 'AUTH_REQUIRED') {
         $state.go('inventories');
       }
