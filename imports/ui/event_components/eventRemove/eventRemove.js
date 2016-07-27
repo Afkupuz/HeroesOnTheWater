@@ -8,8 +8,10 @@ class EventRemove {
   remove() {
     var check = confirm("Are you sure you want to delete event?")
 
-    if (this.event) {
-      Events.remove(this.event._id);
+    if (check == true) {
+      if (this.event) {
+        Events.remove(this.event._id);
+      }
     }
   }
 }

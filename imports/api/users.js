@@ -38,7 +38,6 @@ if (Meteor.isServer) {
           return Meteor.users.find({ 'profile.username' : regex });
         }
     }else{
-      console.log('else')
     return Meteor.users.find({});
 }
   });

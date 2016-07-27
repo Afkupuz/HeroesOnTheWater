@@ -42,10 +42,8 @@ class DossierDetails {
         if (!userDB.ready()){
           return false
         }
-        console.log("checking 1....")
+
         if (Meteor.user().profile.first_name == "" || Meteor.user().profile.first_name == undefined){
-          console.log("checking 2....")
-          console.log(Meteor.user().profile.first_name)
           this.open({userId : this.userId})
         }
 
@@ -74,9 +72,7 @@ class DossierDetails {
             });
       },
       user() {
-        var x = Meteor.users.findOne(this.userId)
-        console.log(x)
-        return x;
+        return Meteor.users.findOne(this.userId)
       },
       isLoggedIn() {
         return !!Meteor.userId();
@@ -154,7 +150,6 @@ function config($stateProvider) {
     resolve: {
         currentUser($q) {
           if (Meteor.user() == undefined) {
-            console.log(Meteor.user.auth.auth)
             return $q.reject('AUTH_REQUIRED');
           } else {
             return $q.resolve();

@@ -72,8 +72,6 @@ class EventsDb {
         return Events.findOne('Micmw2CBgA9bTaeLk')
       },
       users() {
-        //var x = Meteor.users.findOne('PwT9tYc9GroZcny8Y')
-        //console.log(x)
         return Meteor.users.find({});
       },
       eventsCount() {

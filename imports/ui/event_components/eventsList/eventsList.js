@@ -34,7 +34,16 @@ class EventsList {
     this.sort = { date: -1 };
     this.searchText = '';
 
-    this.tess = '';
+    this.opt = '';
+
+    this.column = [
+        "Name", 
+        "Date", 
+        "Description", 
+        "Address", 
+        "Resources", 
+        "Organizer", 
+        "Chapter"];
 
     this.today = new Date()
 
@@ -42,7 +51,7 @@ class EventsList {
         limit: parseInt(this.perPage),
         skip: parseInt((this.getReactively('page') - 1) * this.perPage),
         sort: this.getReactively('sort')
-      }, this.getReactively('searchText')
+      }, this.getReactively('searchText'), this.getReactively('opt')
     ]);
 
     this.subscribe('users');

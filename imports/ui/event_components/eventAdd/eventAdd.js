@@ -42,7 +42,6 @@ class EventAdd {
     //this is an asynchronous call which means it must be manually
     //sync'd with user input by calling it through getlocation() 
     this.googleJson = function(callback){
-      console.log(this.event.address)
       $http.get('http://maps.google.com/maps/api/geocode/json?address='+ this.event.address +'&sensor=false').then(function(response) {
             callback(response);
       });
@@ -85,15 +84,11 @@ class EventAdd {
 
     var self = this
      this.googleJson(function(val){
-          console.log(val)
           var lat = val.data.results[0].geometry.location.lat;
           var lng = val.data.results[0].geometry.location.lng;
           self.create(lat, lng);
         });
-
-     console.log(this.location)
-
-  }
+    }
 
   reset() {
     this.event = {};

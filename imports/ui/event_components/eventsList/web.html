@@ -1,7 +1,7 @@
 <div layout="column" layout-padding>
 
   <div flex>
-    <h2 class="md-display-1">Events:</h2>
+    <h2 class="md-display-1">Events</h2>
   </div>
 
   <div flex layout="row" layout-padding>
@@ -9,18 +9,20 @@
       <label>Search</label>
       <input ng-model="eventsList.searchText">
     </md-input-container>
+    <md-input-container>
+    <label>Column</label>
+    <md-select ng-model="eventsList.opt">
+        <md-option data-ng-repeat="o in eventsList.column">{{o}}</md-option>
+      </md-select>
+    </md-input-container>
 
     <events-sort on-change="eventsList.sortChanged(sort)" property="date" order="-1"></events-sort>
   </div>
 
-  <div flex="50">
-      <events-map events="eventsList.events"></events-map>
-    </div>
-
   <div layout="column" layout-gt-sm="row">
 
     <div flex="50">
-      <md-card dir-paginate="event in eventsList.events | itemsPerPage: eventsList.perPage" total-items="eventsList.eventsCount">
+      <md-card dir-paginate="event in eventsList.events | itemsPerPage: eventsList.perPage" total-items="eventsList.eventsCount" style="text-align:left">
         <md-card-title>
           <md-card-title-text>
             <span class="md-headline" ui-sref="eventDetails({ eventId: event._id })">
@@ -48,4 +50,9 @@
     </div>
 
   </div>
+
+    <div flex="50">
+      <events-map events="eventsList.events"></events-map>
+    </div>
+
 </div>

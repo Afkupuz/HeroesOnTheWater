@@ -61,20 +61,11 @@ class InventoriesDb {
 
     this.helpers({
       inventories() {
-        var x = Inventories.find({}, {
+        return Inventories.find({}, {
           sort : this.getReactively('sort')
         });
-        console.log(x)
-        return x;
-      },
-      inventory() {
-        var x = Inventories.findOne('Micmw2CBgA9bTaeLk')
-        console.log(x)
-        return x;
       },
       users() {
-        //var x = Meteor.users.findOne('PwT9tYc9GroZcny8Y')
-        //console.log(x)
         return Meteor.users.find({});
       },
       inventoriesCount() {
@@ -96,7 +87,6 @@ class InventoriesDb {
 
         //helps pass selected id to modal edit
         this.getval = () => {
-          console.log(inventory)
           return inventory
         }
 

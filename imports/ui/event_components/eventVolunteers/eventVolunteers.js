@@ -43,7 +43,6 @@ class EventVolunteers {
           }
           else {
               this.attendants.push(this.event.rsvps[i].user)
-              console.log(this.event.rsvps[i].user)
           }
         }
 

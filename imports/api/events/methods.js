@@ -113,7 +113,7 @@ export function rsvp(eventId, rsvp) {
     }
   }
   else {
-    console.log("no user ffF")
+    console.log("no user")
       const hasUserRsvp = _.findWhere(event.rsvps, {
         user: this.userId
       });

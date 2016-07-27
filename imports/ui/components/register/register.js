@@ -29,7 +29,6 @@ class Register {
         if (err) {
           this.error = err;
         } else {
-          console.log(this.$state)
           this.$state.go('splash');
         }
       })

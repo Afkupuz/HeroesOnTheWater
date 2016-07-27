@@ -1,7 +1,7 @@
 <div layout="column" layout-padding>
   <div layout="column" layout-gt-sm="row"  layout-padding>
 
-<div>
+<div flex="50">
      <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
         <md-card-title>
           <md-card-title-text>
@@ -25,8 +25,9 @@
         </md-card-actions>
       </md-card>
 </div>
-<div>
-    <div ng-show="dossierDetails.eventsY.length > 0" style="background-color:rgba(0,255,0,0.1);">
+</div>
+<div layout="row" layout-gt-sm="row"  layout-padding>
+    <div ng-show="dossierDetails.eventsY.length > 0" style="background-color:rgba(0,255,0,0.1);margin:20px">
       <label>Confirmed</label>
         <div ng-repeat="event in dossierDetails.eventsY">
         <p> · · · · · · · · · · · · · · · · · · · · </p>
@@ -39,7 +40,7 @@
         <p ng-show="dossierDetails.isUser()"> <event-rsvp event="event" ></event-rsvp> </p>
         </div>
     </div>
-    <div  ng-show="dossierDetails.eventsV.length > 0" style="background-color:rgba(204, 0, 204,0.1);">
+    <div  ng-show="dossierDetails.eventsV.length > 0" style="background-color:rgba(204, 0, 204,0.1);margin:20px">
       <label>Volunteered</label>
         <div ng-repeat="event in dossierDetails.eventsV">
         <p> · · · · · · · · · · · · · · · · · · · · </p>
@@ -52,7 +53,7 @@
         <p ng-show="dossierDetails.isUser()"> <event-rsvp event="event" ></event-rsvp> </p>
         </div>
     </div>
-    <div  ng-show="dossierDetails.eventsC.length > 0" style="background-color:rgba(255,0,0,0.1);">
+    <div  ng-show="dossierDetails.eventsC.length > 0" style="background-color:rgba(255,0,0,0.1);margin:20px">
       <label>Cancelled</label>
         <div ng-repeat="event in dossierDetails.eventsC">
         <p> · · · · · · · · · · · · · · · · · · · · </p>
@@ -66,4 +67,6 @@
         </div>
     </div>
  </div>
+ </div>
+
 

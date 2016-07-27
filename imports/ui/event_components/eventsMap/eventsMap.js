@@ -9,15 +9,27 @@ import template from './eventsMap.html';
  * EventsMap component
  */
 class EventsMap {
-  constructor() {
+  constructor($scope, $reactive) {
+    'ngInject';
+
+    this.isFocused = false
+
     this.map = {
       center: {
         latitude: 45,
         longitude: -73
       },
-      zoom: 8
+      zoom: 8,
+      options: {
+        scrollwheel: this.isFocused}
     };
+
   }
+  //todo make map scrollwheel enabled
+  focusChanged(){
+    this.isFocused = true
+  }
+
 }
 
 const name = 'eventsMap';
