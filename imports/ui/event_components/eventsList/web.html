@@ -1,7 +1,7 @@
 <div layout="column" layout-padding>
 
   <div flex>
-    <h2 class="md-display-1">List of the events:</h2>
+    <h2 class="md-display-1">Events:</h2>
   </div>
 
   <div flex layout="row" layout-padding>
@@ -13,7 +13,12 @@
     <events-sort on-change="eventsList.sortChanged(sort)" property="date" order="-1"></events-sort>
   </div>
 
+  <div flex="50">
+      <events-map events="eventsList.events"></events-map>
+    </div>
+
   <div layout="column" layout-gt-sm="row">
+
     <div flex="50">
       <md-card dir-paginate="event in eventsList.events | itemsPerPage: eventsList.perPage" total-items="eventsList.eventsCount">
         <md-card-title>
@@ -41,8 +46,6 @@
       </md-card>
       <dir-pagination-controls on-page-change="eventsList.pageChanged(newPageNumber)"></dir-pagination-controls>
     </div>
-    <div flex="50">
-      <events-map events="eventsList.events"></events-map>
-    </div>
+
   </div>
 </div>
