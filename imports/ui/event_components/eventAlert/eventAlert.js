@@ -32,17 +32,40 @@ class EventAlert {
 		});
 
 		this.eventAttendees = getEventAttendees(this.event);
-		console.log(this.eventAttendees);
-
-		console.log(this.message);
 
 	};
 
 	send() {
+		
+		var messageText = this.message;
+		var eventAttendees = getEventAttendees(this.event);
+
+		for (var i in eventAttendees) {
+			var phoneNumber = eventAttendees[i].profile.phone.toString();
+			var smsOptions = {
+				to: phoneNumber,
+				message: messageText
+			};
+
+			Meteor.call('sendSMS', smsOptions, function(err, result) {
+				if (err) {
+					alert("There was an error sending the message. See the console.");
+					console.warn("There was an error sending the message.", smsOptions, err);
+					return;
+				}
+
+				alert("Message sent successfully. See the console for more info.");
+
+				console.log("Message sent. Result: ", result);
+			});
+
+		}
 
 	};
 
 }
+
+
 
 // This function will create a list of user objects if they are attending event
 function getEventAttendees (someEvent) {

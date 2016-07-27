@@ -3,11 +3,11 @@
     <label>
       Recipients:
     </label>
-    <!-- Show list of recipients -->
     <ul class='list-styled'>
       <li ng-repeat="attendee in eventAlert.eventAttendees">
-        {attendee.profile.phone}}
+        {{attendee.profile.phone}}
       </li>
+    </ul>
   </md-input-container>
 
   <md-input-container>
