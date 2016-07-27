@@ -36,20 +36,7 @@ class InventoryModify {
     });
   }
 
-  submit() {
-    this.inventory.owner = Meteor.user()._id;
-    Inventories.insert(this.inventory);
-
-    if(this.done) {
-      this.done();
-    }
-
-    this.reset();
-  }
-
   save() {
-    this.inventory.date.setHours(this.inventory.time.getHours())
-    this.inventory.date.setMinutes(this.inventory.time.getMinutes())
 
     Inventories.update({
       _id: this.inventory._id

@@ -21,14 +21,8 @@
   </div>
 
   <div layout="column" layout-gt-sm="row" class='datagrid'>
-    <table class = "table table-striped">
+    <table class ="table table-striped">
       <thead>
-        <style>
-          td{
-                border: 1px solid black;
-                padding: 20px;
-            }
-          </style>
       </thead>
       <tbody>
         <tr >
@@ -46,15 +40,19 @@
           <td> <inventory-creator inventory="inventory"></inventory-creator> </td>
 
 
-
+      <!-- Edit Function -->
+          
           <td><md-button ng-click="inventoriesDb.open({ inventoryId: inventory._id })" class="md-primary md-raised">Edit</md-button></td>
 
-       <!-- Delete Function -->
-       <td> <inventory-remove inventory="inventory"> </inventory-remove> </td>
+      <!-- Delete Function -->
+        <td><inventory-remove inventory="inventory"></inventory-remove></td>
+
+
+
+      <!-- <td> <inventory-remove inventory="inventory"> </inventory-remove> </td>  -->
         </tr>
       </tbody>
     </table>
   </div>
 
 </div>
-

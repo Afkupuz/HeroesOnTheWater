@@ -1,4 +1,3 @@
-//meteor add dangrossman:bootstrap-daterangepicker
 
 import angular from 'angular';
 import angularMeteor from 'angular-meteor';
@@ -61,11 +60,20 @@ class InventoriesDb {
 
     this.helpers({
       inventories() {
-        return Inventories.find({}, {
+        var x = Inventories.find({}, {
           sort : this.getReactively('sort')
         });
+        console.log(x)
+        return x;
+      },
+      inventory() {
+        var x = Inventories.findOne('Micmw2CBgA9bTaeLk')
+        console.log(x)
+        return x;
       },
       users() {
+        //var x = Meteor.users.findOne('PwT9tYc9GroZcny8Y')
+        //console.log(x)
         return Meteor.users.find({});
       },
       inventoriesCount() {
@@ -87,6 +95,7 @@ class InventoriesDb {
 
         //helps pass selected id to modal edit
         this.getval = () => {
+          console.log(inventory)
           return inventory
         }
 
@@ -114,6 +123,14 @@ class InventoriesDb {
   sortChanged(sort) {
     this.sort = sort;
   }
+
+  remove(){
+    Remove.insert(this.remove);
+    alert("Are you sure want to delete?")
+    this.remove = {}
+  }
+
+  
 }
 
 const name = 'inventoriesDb';

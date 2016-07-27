@@ -3,13 +3,28 @@ import { Mongo } from 'meteor/mongo';
 export const Inventories = new Mongo.Collection('inventories');
 
 Inventories.allow({
-  insert(userId, inventory) {
-    return userId && inventory.owner === userId;
+  insert() {
+    if (Meteor.user().auth['auth'] == 'admin') {
+      return true;
+    };
+    if (Meteor.user().auth['auth'] == 'manager') {
+      return true;
+    };
   },
-  update(userId, inventory, fields, modifier) {
-    return userId && inventory.owner === userId;
+  update() {
+    if (Meteor.user().auth['auth'] == 'admin') {
+      return true;
+    };
+    if (Meteor.user().auth['auth'] == 'manager') {
+      return true;
+    };
   },
-  remove(userId, inventory) {
-    return userId && inventory.owner === userId;
+  remove() {
+    if (Meteor.user().auth['auth'] == 'admin') {
+      return true;
+    };
+    if (Meteor.user().auth['auth'] == 'admin') {
+      return true;
+    };
   }
 });
