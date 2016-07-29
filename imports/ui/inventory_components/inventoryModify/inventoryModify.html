@@ -1,11 +1,12 @@
 <div layout="column" layout-padding>
+
   <md-input-container>
     <label>
      Edit Inventory Details:
     </label>
     <input type="text" ng-model="inventoryModify.inventory.name"/>
   </md-input-container>
-  <div style="height:100px">
+
   <md-input-container>
     <label>
       Description:
@@ -19,13 +20,16 @@
     </label>
     <input type="text" ng-model="inventoryModify.inventory.chapter"/>
   </md-input-container>
+
   <div>
     <inventory-upload files="inventoryModify.inventory.images"></inventory-upload>
-    <md-card-title-media ng-if="inventoryModify.inventoryModify.images">
+    <md-card-title-media ng-if="inventoryModify.images">
             <div class="md-media-lg card-media">
               <inventory-image images="inventoryModify.inventory.images"></inventory-image>
             </div>
     </md-card-title-media>
   </div>
+  
     <md-button ng-click="inventoryModify.save()" class="md-raised">Save Changes</md-button>
+
 </div>

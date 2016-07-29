@@ -44,7 +44,8 @@ class InventoryModify {
       $set: {
         name: this.inventory.name,
         description: this.inventory.description,
-        chapter: this.inventory.chapter
+        chapter: this.inventory.chapter,
+        images: this.event.images
       }
     }, (error) => {
       if (error) {
@@ -57,7 +58,7 @@ class InventoryModify {
       this.done();
     }
   }
-
+  
   reset() {
     this.inventory = {};
   }

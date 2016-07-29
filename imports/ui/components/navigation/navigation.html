@@ -5,10 +5,10 @@
         <img src="img/howlogo.png">
       </span>
     </h2>
-    <md-button href='http://localhost:3000/events'> Events </md-button>
-    <md-button ng-show="navigation.isAuthorized()" href='http://localhost:3000/splash/admin'> Admin </md-button>
+    <md-button href='/events'> Events </md-button>
+    <md-button ng-show="navigation.isAuthorized()" href='/splash/admin'> Admin </md-button>
     <md-button ng-show="navigation.isLoggedIn()" ui-sref="dossierDetails({ userId: Meteor.userId() })"> Profile </md-button>
-    <md-button href='http://localhost:3000/splash#donation-section'> Donate </md-button>
+    <md-button href='/splash#donation-section'> Donate </md-button>
     <span flex></span>
     <auth></auth>
   </div>
