@@ -7,9 +7,9 @@ import '../imports/api/inventories';
 
 // Configure the Twilio client
 var twilioClient = new Twilio({
-	from: Meteor.settings.TWILIO.FROM,
-	sid: Meteor.settings.TWILIO.SID,
-	token: Meteor.settings.TWILIO.TOKEN
+	from: '+15005550006',
+	sid: 'ACb6eeacae7e6e900169ea48585ee9a049',
+	token: 'f1fdd6130374254af6f2396882db51dc'
 });
 
 Meteor.methods({
