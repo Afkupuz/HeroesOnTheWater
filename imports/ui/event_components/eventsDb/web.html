@@ -53,7 +53,7 @@
               </div></td>
           <td ng-show="eventsDb.isAuthorized()"><md-button ng-click="eventsDb.open({ eventId: event._id })" class="md-primary md-raised" >Edit</md-button></td>
           <td ng-show="eventsDb.isAuthorized()"> <event-remove event="event"></event-remove> </td>
-          <td ng-show="eventsDb.isAuthorized()"><md-button ng-click="eventsDb.alert({ eventId: event._id })" class='md-warning md-raised'>Alert</md-button></td>
+          <td ng-show="eventsDb.isAuthorized()"><md-button ng-click="eventsDb.alert({ eventId: event._id })" style="background-color:orange" class='md-warning md-raised'>Alert</md-button></td>
         </tr>
       </tbody>
     </table>
